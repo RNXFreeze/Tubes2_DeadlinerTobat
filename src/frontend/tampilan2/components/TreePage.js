@@ -1,4 +1,17 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function TreePage({algorithmType, searchElement, setSearchElement}) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  // DUMMY FUNCTION
+  const searchRecipe = async (element, algorithm) => {
+      // TODO: implement BFS/DFS here
+      console.log('Searching for:', element, 'using', algorithm);
+      await new Promise(resolve => setTimeout(resolve, 1000)); // simulasi loading
+  };
+
   return (
     <main className="flex-grow p-6 overflow-auto">
       <div className="mb-6 text-center items-center">
@@ -15,16 +28,32 @@ export default function TreePage({algorithmType, searchElement, setSearchElement
                     className="flex-grow px-4 py-2 outline-none"
                 />
                 <button 
-                    disabled={searchElement.trim() === ' '}
+                    disabled={searchElement.trim() === '' || isLoading}
                     className={`px-4 py-2 ${
-                        searchElement.trim() === ''
+                        searchElement.trim() === '' || isLoading
                             ? 'bg-purple-300 text-white cursor-not-allowed'
                             : 'bg-purple-500 text-white hover:bg-purple-400'
                     }`}
-                    onClick={() => {
-                        console.log("Search clicked:", setSearchElement, algorithmType);
-                    }}>
-                    Search
+                    onClick={async () => {
+                        setIsLoading(true);
+                        try {
+                            await searchRecipe(searchElement, algorithmType);
+                        } finally {
+                            setIsLoading(false);
+                        }
+                    }}
+                >
+                    {isLoading ? (
+                      <div className="flex items-center space-x-2">
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"></path>
+                          </svg>
+                          <span>Load</span>
+                      </div>
+                  ) : (
+                      'Search'
+                  )}
                 </button>
             </div>
         </div>

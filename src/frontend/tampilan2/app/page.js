@@ -35,6 +35,8 @@ export default function Home() {
         algorithmType={algorithmType}
         searchElement={searchElement}
         setSearchElement={setSearchElement}
+        execTime={setExecTime}
+        nodeCount={setNodeCount}
         />
       </div>
     </div>

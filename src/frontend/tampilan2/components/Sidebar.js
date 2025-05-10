@@ -16,7 +16,7 @@ export default function Sidebar({
   return (
     <aside className="bg-purple-200 px-4 py-6 space-y-16 min-w-[300px]">
       <div className="flex justify-center text-2xl font-semibold mb-12">
-        Search Panel
+        Recipe Panel
       </div>
       <div><RecipeToggle
         recipeType={recipeType}
