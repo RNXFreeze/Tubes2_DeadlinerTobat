@@ -14,15 +14,15 @@
 package backend
 
 import (
-	"bufio";
-	"encoding/json";
-	"flag";
+	"os";
 	"fmt";
 	"log";
-	"os";
+	"time";
+	"flag";
+	"bufio";
 	"strconv";
 	"strings";
-	"time";
+	"encoding/json";
 )
 
 func DisplayResultTerminal(res BFSMultiResult , t time.Time) {
