@@ -8,10 +8,10 @@
 /* Tanggal    : Minggu, 11 Mei 2025                                    */
 /* Tugas      : Tugas Besar 2 - Strategi Algoritma (IF2211-24)         */
 /* File Path  : Tubes2_DeadlinerTobat/src/backend/main_algorithm.go    */
-/* Deskripsi  : F02 - Main Algorithm (BFS - DFS - BIDERECTIONAL)       */
+/* Deskripsi  : F02 - Main Algorithm (BFS - DFS - BIDIRECTIONAL)       */
 /* PIC F02    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana         */
 
-package backend
+package backend;
 
 import (
 	"os";

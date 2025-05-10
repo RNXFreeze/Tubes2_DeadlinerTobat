@@ -11,11 +11,11 @@
 /* Deskripsi  : F01 - Main Program (Connection)                        */
 /* PIC F01    : K01 - 13523050 - Mayla Yaffa Ludmilla                  */
 
-package main
+package main;
 
 import (
-	"fmt"
-	"Tubes2_DeadlinerTobat/src/backend"
+	"fmt";
+	"Tubes2_DeadlinerTobat/src/backend";
 )
 
 func main() {

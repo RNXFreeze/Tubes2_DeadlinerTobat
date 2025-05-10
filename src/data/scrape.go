@@ -14,13 +14,13 @@
 package main
 
 import (
-	"encoding/json"
+	"os"
 	"fmt"
 	"log"
-	"net/http"
-	"os"
 	"strconv"
 	"strings"
+	"net/http"
+	"encoding/json"
 	"github.com/PuerkitoBio/goquery"
 )
 
