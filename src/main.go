@@ -19,6 +19,7 @@ import (
 )
 
 func main() {
+	backend.Multithreading();
 	fmt.Println("!!! SELAMAT DATANG DI LITTLE ALCHEMY 2 SEARCHING ALGORITHM !!!");
 	fmt.Println("==============================================================");
 	fmt.Println("Oleh : Kelompok 21 - Deadliner Tobat");

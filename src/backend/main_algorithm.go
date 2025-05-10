@@ -25,7 +25,7 @@ import (
 	"encoding/json";
 )
 
-func DisplayResultTerminal(res BFSMultiResult , t time.Time) {
+func DisplayResultTerminal(res BFSResult , t time.Time) {
 	ms := time.Since(t).Milliseconds();
 	fmt.Println();
 	fmt.Printf("Total Recipe : %d Recipe\n" , len(res.Trees));
@@ -62,7 +62,7 @@ func MainTerminal() {
 				DisplayResultTerminal(res , start);
 			} else if (algorithm == "DFS") {
 				res := DFS(gallery , target , DFSOptions{MaxRecipes : max_recipe});
-				DisplayResultTerminal(res.toMulti() , start);
+				DisplayResultTerminal(res.ToMultipleResult() , start);
 			} else if (algorithm == "BDR") {
 				res := BDR(gallery , target , max_recipe);
 				DisplayResultTerminal(res , start);
@@ -78,8 +78,7 @@ func MainTerminal() {
 				answer = strings.ToLower(strings.TrimSpace(input));
 				if (answer != "y" && answer != "n") {
 					fmt.Println("Input tidak valid, silakan coba lagi.");
-				}
-				if (answer == "y") {
+				} else {
 					fmt.Println("=====================================================");
 					break;
 				}
