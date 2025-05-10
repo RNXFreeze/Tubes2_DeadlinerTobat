@@ -1,14 +1,3 @@
-/* Kelompok   : Kelompok 21 - Deadliner Tobat                          */
-/* Nama - 1   : Muhammad Raihan Nazhim Oktana                          */
-/* NIM - 1    : K01 - 13523021 - Teknik Informatika (IF-Ganesha) ITB   */
-/* Nama - 2   : Mayla Yaffa Ludmilla                                   */
-/* NIM - 2    : K01 - 13523050 - Teknik Informatika (IF-Ganesha) ITB   */
-/* Nama - 3   : Anella Utari Gunadi                                    */
-/* NIM - 3    : K02 - 13523078 - Teknik Informatika (IF-Ganesha) ITB   */
-/* Tanggal    : Rabu, 07 Mei 2025                                      */
-/* Tugas      : Tugas Besar 2 - Strategi Algoritma (IF2211-24)         */
-/* Deskripsi  : F07 - Scrapping (Website Little Alchemy 2)             */
-
 package main
 
 import (
@@ -17,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
+
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -42,40 +33,58 @@ func main() {
 		log.Fatal(err)
 	}
 
-	output := make(map[string][][]string)
+	// map[tier]map[element][][]string
+	output := make(map[string]map[string][][]string)
 
-	doc.Find("tr").Each(func(i int, s *goquery.Selection) {
+	currentTier := ""
+
+	doc.Find("h2, h3, tr").Each(func(i int, s *goquery.Selection) {
+		if goquery.NodeName(s) == "h2" || goquery.NodeName(s) == "h3" {
+			heading := strings.TrimSpace(s.Text())
+			if strings.HasPrefix(heading, "Tier") {
+				parts := strings.Fields(heading)
+				if len(parts) >= 2 {
+					currentTier = strings.ToLower(parts[0] + " " + parts[1])
+					if _, exists := output[currentTier]; !exists {
+						output[currentTier] = make(map[string][][]string)
+					}
+				}
+			}
+			return
+		}
+
+		if goquery.NodeName(s) != "tr" || currentTier == "" {
+			return
+		}
+
 		left := s.Find("td").First()
 		right := left.Next()
 
-		element := left.Find("a").Text()
+		element := strings.TrimSpace(left.Find("a").Text())
 		if element == "" {
-			return 
+			return
 		}
 
 		var recipes [][]string
-
 		right.Find("li").Each(func(j int, li *goquery.Selection) {
-			parts := []string{}
-
+			var parts []string
 			li.Find("a").Each(func(k int, a *goquery.Selection) {
-				text := a.Text()
+				text := strings.TrimSpace(a.Text())
 				if text != "" {
 					parts = append(parts, text)
 				}
 			})
-
 			if len(parts) == 2 {
 				recipes = append(recipes, parts)
 			}
 		})
 
 		if len(recipes) > 0 {
-			output[element] = recipes
+			output[currentTier][element] = recipes
 		}
 	})
 
-	file, err := os.Create("output.json")
+	file, err := os.Create("output_by_tier.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -88,5 +97,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Scraping completed. Data saved to output.json")
+	fmt.Println("Scraping completed. Data saved to output_by_tier.json")
 }
