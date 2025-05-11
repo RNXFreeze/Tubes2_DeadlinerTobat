@@ -1,0 +1,91 @@
+{
+  "name": "Primordial soup",
+  "children": [
+    {
+      "name": "Lava",
+      "children": [
+        {
+          "name": "Earth"
+        },
+        {
+          "name": "Fire"
+        }
+      ]
+    },
+    {
+      "name": "Sea",
+      "children": [
+        {
+          "name": "Lake",
+          "children": [
+            {
+              "name": "Pond",
+              "children": [
+                {
+                  "name": "Puddle",
+                  "children": [
+                    {
+                      "name": "Water"
+                    },
+                    {
+                      "name": "Water"
+                    }
+                  ]
+                },
+                {
+                  "name": "Puddle",
+                  "children": [
+                    {
+                      "name": "Water"
+                    },
+                    {
+                      "name": "Water"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Water"
+            }
+          ]
+        },
+        {
+          "name": "Lake",
+          "children": [
+            {
+              "name": "Pond",
+              "children": [
+                {
+                  "name": "Puddle",
+                  "children": [
+                    {
+                      "name": "Water"
+                    },
+                    {
+                      "name": "Water"
+                    }
+                  ]
+                },
+                {
+                  "name": "Puddle",
+                  "children": [
+                    {
+                      "name": "Water"
+                    },
+                    {
+                      "name": "Water"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Water"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
