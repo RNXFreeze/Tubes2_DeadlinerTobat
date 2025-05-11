@@ -24,6 +24,7 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 	} else if (max_recipe < 0) {
 		max_recipe = 1;
 	}
+	counter := 0;
 	visited := map[string]struct{}{};
 	GetTier := func(n string) int {
 		if element , check := gallery.GalleryName[n] ; check {
@@ -33,6 +34,7 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 	}
 	element := gallery.GalleryName[target];
 	if (element == nil || len(element.Parents) == 0) {
+		counter++;
 		return BFSResult{Trees : nil , VisitedCount : 1};
 	} else {
 		var result []*RecipeNode;
@@ -40,10 +42,11 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 			if (GetTier(rec[0]) >= element.Tier || GetTier(rec[1]) >= element.Tier) {
 				continue;
 			} else {
+				counter++;
 				root := &RecipeNode{Name : target}
 				root.Parents = []*RecipeNode {
-					BuildSubBFS(gallery , rec[0] , visited , GetTier),
-					BuildSubBFS(gallery , rec[1] , visited , GetTier),
+					BuildSubBFS(gallery , rec[0] , visited , GetTier , &counter),
+					BuildSubBFS(gallery , rec[1] , visited , GetTier , &counter),
 				}
 				result = append(result , root);
 				if (len(result) >= max_recipe) {
@@ -51,14 +54,15 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 				}
 			}
 		}
-		return BFSResult{Trees : result , VisitedCount : len(visited)};
+		return BFSResult{Trees : result , VisitedCount : counter};
 	}
 }
 
-func BuildSubBFS(gallery *Gallery , name string , visited map[string]struct{} , GetTier func(string) int) *RecipeNode {
+func BuildSubBFS(gallery *Gallery , name string , visited map[string]struct{} , GetTier func(string) int , counter *int) *RecipeNode {
 	root := &RecipeNode{Name : name};
 	queue := []*RecipeNode{root};
 	for (len(queue) > 0) {
+		(*counter)++;
 		cur := queue[0];
 		queue = queue[1:];
 		visited[cur.Name] = struct{}{};

@@ -52,7 +52,8 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 	if (limit == 0) {
 		limit = int(^uint(0) >> 1);
 	}
-	memo := map[string][]*RecipeNode{};
+	counter := 0;
+	memory := map[string][]*RecipeNode{};
 	visited := map[string]struct{}{};
 	onStack := map[string]bool{};
 	GetTier := func(n string) int {
@@ -64,16 +65,17 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 	}
 	var enumerate func(string) []*RecipeNode;
 	enumerate = func(name string) []*RecipeNode {
+		counter++;
 		if (onStack[name]) {
-			return []*RecipeNode{{Name: name}};
-		} else if v , check := memo[name] ; check {
+			return []*RecipeNode{{Name : name}};
+		} else if v , check := memory[name] ; check {
 			return CloneSlice(v);
 		}
 		visited[name] = struct{}{};
 		element := gallery.GalleryName[name];
 		if (element == nil || len(element.Parents) == 0) {
-			memo[name] = []*RecipeNode{{Name : name}};
-			return memo[name];
+			memory[name] = []*RecipeNode{{Name : name}};
+			return memory[name];
 		}
 		onStack[name] = true;
 		var res []*RecipeNode;
@@ -97,7 +99,7 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 					}
 				}
 			}
-			memo[name] = res;
+			memory[name] = res;
 			onStack[name] = false;
 			return CloneSlice(res);
 	}
@@ -112,5 +114,5 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 			}
 		}();
 	}
-	return DFSResult{Trees : tree , VisitedCount : len(visited)};
+	return DFSResult{Trees : tree , VisitedCount : counter};
 }

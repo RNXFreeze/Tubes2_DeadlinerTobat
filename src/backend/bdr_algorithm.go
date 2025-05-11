@@ -15,6 +15,7 @@ package backend
 
 import (
 	"sync";
+	"sync/atomic";
 )
 
 func GetElementTier(gallery *Gallery , name string) int {
@@ -25,7 +26,8 @@ func GetElementTier(gallery *Gallery , name string) int {
 	}
 }
 
-func EnumerateBDR(gallery *Gallery , name string , limit int , memory *sync.Map , visited *sync.Map , stack map[string]bool) []*RecipeNode {
+func EnumerateBDR(gallery *Gallery , name string , limit int , memory *sync.Map , visited *sync.Map , stack map[string]bool , counter *int64) []*RecipeNode {
+	atomic.AddInt64(counter , 1);
 	if (limit == 0) {
 		return nil;
 	} else if value , check := memory.Load(name) ; check {
@@ -46,8 +48,8 @@ func EnumerateBDR(gallery *Gallery , name string , limit int , memory *sync.Map 
 					if (GetElementTier(gallery , a) >= element.Tier || GetElementTier(gallery , b) >= element.Tier) {
 						continue;
 					} else {
-						el := EnumerateBDR(gallery , a , limit , memory , visited , stack);
-						er := EnumerateBDR(gallery , b , limit , memory , visited , stack);
+						el := EnumerateBDR(gallery , a , limit , memory , visited , stack , counter);
+						er := EnumerateBDR(gallery , b , limit , memory , visited , stack , counter);
 						for _ , l := range el {
 							for _ , r := range er {
 								out = append(out , &RecipeNode {Name : name , Parents : []*RecipeNode{l , r}});
@@ -73,10 +75,11 @@ func BDR(gallery *Gallery , target string , max_recipe int) BFSResult {
 	}
 	root := gallery.GalleryName[target];
 	if (root == nil || len(root.Parents) == 0) {
-		leaf := &RecipeNode{Name: target};
+		leaf := &RecipeNode{Name : target};
 		return BFSResult{Trees : []*RecipeNode{leaf} , VisitedCount : 1};
 	} else {
 		var (
+			counter int64;
 			memory  sync.Map;
 			visited sync.Map;
 			sync_wg sync.WaitGroup;
@@ -90,8 +93,8 @@ func BDR(gallery *Gallery , target string , max_recipe int) BFSResult {
 				sync_wg.Add(1);
 				go func(x , y string) {
 					defer sync_wg.Done();
-					el := EnumerateBDR(gallery , x , max_recipe , &memory , &visited , map[string]bool{});
-					er := EnumerateBDR(gallery , y , max_recipe , &memory , &visited , map[string]bool{});
+					el := EnumerateBDR(gallery , x , max_recipe , &memory , &visited , map[string]bool{} , &counter);
+					er := EnumerateBDR(gallery , y , max_recipe , &memory , &visited , map[string]bool{} , &counter);
 					for _ , l := range el {
 						for _ , r := range er {
 							channel <- &RecipeNode {Name : target , Parents : []*RecipeNode{l , r}};
@@ -110,20 +113,18 @@ func BDR(gallery *Gallery , target string , max_recipe int) BFSResult {
 				trees = append(trees , t);
 				if (len(trees) >= max_recipe) {
 					go func() {
-						for range channel{}
+						for range channel{};
 					}();
 					break collect;
 				}
 			}
-		vis_cnt := 0;
 		visited.Range(func(_ any , _ any) bool {
-			vis_cnt++;
 			return true;
 		});
 		if (len(trees) == 0) {
 			return BFS(gallery , target , max_recipe);
 		} else {
-			return BFSResult{Trees : trees , VisitedCount : vis_cnt}
+			return BFSResult{Trees : trees , VisitedCount : int(counter)}
 		}
 		
 	}
