@@ -13,6 +13,10 @@
 
 package backend;
 
+import (
+	"sync/atomic"
+)
+
 type DFSOptions struct {
 	MaxRecipes int;
 	LiveChan   chan<- *RecipeNode;
@@ -52,10 +56,10 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 	if (limit == 0) {
 		limit = int(^uint(0) >> 1);
 	}
-	counter := 0;
+	var counter int64 = 0;
+	stack := map[string]bool{};
 	memory := map[string][]*RecipeNode{};
 	visited := map[string]struct{}{};
-	onStack := map[string]bool{};
 	GetTier := func(n string) int {
 		if element , check := gallery.GalleryName[n] ; check {
 			return element.Tier;
@@ -65,8 +69,8 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 	}
 	var enumerate func(string) []*RecipeNode;
 	enumerate = func(name string) []*RecipeNode {
-		counter++;
-		if (onStack[name]) {
+		atomic.AddInt64(&counter , 1);
+		if (stack[name]) {
 			return []*RecipeNode{{Name : name}};
 		} else if v , check := memory[name] ; check {
 			return CloneSlice(v);
@@ -77,7 +81,7 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 			memory[name] = []*RecipeNode{{Name : name}};
 			return memory[name];
 		}
-		onStack[name] = true;
+		stack[name] = true;
 		var res []*RecipeNode;
 		outer :
 			for _ , r := range element.Parents {
@@ -100,7 +104,7 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 				}
 			}
 			memory[name] = res;
-			onStack[name] = false;
+			stack[name] = false;
 			return CloneSlice(res);
 	}
 	tree := enumerate(target);
@@ -114,5 +118,5 @@ func DFS(gallery *Gallery , target string , option DFSOptions) DFSResult {
 			}
 		}();
 	}
-	return DFSResult{Trees : tree , VisitedCount : counter};
+	return DFSResult{Trees : tree , VisitedCount : int(counter)};
 }

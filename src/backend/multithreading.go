@@ -16,5 +16,5 @@ package backend
 import "runtime"
 
 func Multithreading() {
-	runtime.GOMAXPROCS(runtime.NumCPU());
+	runtime.GOMAXPROCS(max(runtime.NumCPU() / 2 , runtime.NumCPU() - 2));
 }

@@ -13,6 +13,10 @@
 
 package backend;
 
+import (
+	"sync/atomic"
+)
+
 type BFSResult struct {
 	Trees        []*RecipeNode;
 	VisitedCount int;
@@ -24,7 +28,7 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 	} else if (max_recipe < 0) {
 		max_recipe = 1;
 	}
-	counter := 0;
+	var counter int64 = 0;
 	visited := map[string]struct{}{};
 	GetTier := func(n string) int {
 		if element , check := gallery.GalleryName[n] ; check {
@@ -34,15 +38,15 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 	}
 	element := gallery.GalleryName[target];
 	if (element == nil || len(element.Parents) == 0) {
-		counter++;
-		return BFSResult{Trees : nil , VisitedCount : 1};
+		atomic.AddInt64(&counter , 1);
+		return BFSResult{Trees : nil , VisitedCount : int(counter)};
 	} else {
 		var result []*RecipeNode;
 		for _ , rec := range element.Parents {
 			if (GetTier(rec[0]) >= element.Tier || GetTier(rec[1]) >= element.Tier) {
 				continue;
 			} else {
-				counter++;
+				atomic.AddInt64(&counter , 1);
 				root := &RecipeNode{Name : target}
 				root.Parents = []*RecipeNode {
 					BuildSubBFS(gallery , rec[0] , visited , GetTier , &counter),
@@ -54,15 +58,15 @@ func BFS(gallery *Gallery , target string , max_recipe int) BFSResult {
 				}
 			}
 		}
-		return BFSResult{Trees : result , VisitedCount : counter};
+		return BFSResult{Trees : result , VisitedCount : int(counter)};
 	}
 }
 
-func BuildSubBFS(gallery *Gallery , name string , visited map[string]struct{} , GetTier func(string) int , counter *int) *RecipeNode {
+func BuildSubBFS(gallery *Gallery , name string , visited map[string]struct{} , GetTier func(string) int , counter *int64) *RecipeNode {
 	root := &RecipeNode{Name : name};
 	queue := []*RecipeNode{root};
 	for (len(queue) > 0) {
-		(*counter)++;
+		atomic.AddInt64(counter , 1);
 		cur := queue[0];
 		queue = queue[1:];
 		visited[cur.Name] = struct{}{};
