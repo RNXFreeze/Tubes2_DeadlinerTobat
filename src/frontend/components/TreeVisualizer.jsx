@@ -3,48 +3,32 @@ import Tree from 'react-d3-tree';
 import { useState, useEffect } from 'react';
 
 export default function TreeVisualizer({ target }) {
-  const [treeData, setTreeData] = useState(null);     // data yang ditampilkan
-  const [fullTree, setFullTree] = useState(null);     // data lengkap dari API
+  const [treeData, setTreeData] = useState(null);
+  const [incomingTrees, setIncomingTrees] = useState([]);
 
-  // Jalankan traversal animasi ketika ada data baru
-  /*
   useEffect(() => {
-  if (!data) return;
+    if (!target) return;
 
-  const combined = combineTrees(data); // gabungkan multi tree jadi satu root
-  if (!combined) {
-    console.warn("No valid trees to combine");
-    return;
-  }
-  const root = { name: combined.name, children: [] };
+    setIncomingTrees([]); // reset saat target baru
 
-  setFullTree(combined);
-  setTreeData(root);
+    const baseURL = 'http://localhost:8080/api';
+    const es = new EventSource(`${baseURL}/bfs/stream?target=${encodeURIComponent(target)}`);
 
-  treeLiveTraversal(root, combined, setTreeData);
-}, [data]);
-*/
+    es.onmessage = (e) => {
+      const newTree = JSON.parse(e.data);
+      console.log('SSE-node:', newTree);
 
-useEffect(() => {
-  if (!target) return;
+      setIncomingTrees(prev => {
+        const updated = [...prev, newTree];
+        const combined = combineTrees(updated, target);
+        setTreeData(combined);
+        return updated;
+      });
+    };
 
-  const root = { name: target, children: [] };
-  setTreeData(root);
-
-  const es = new EventSource(`/api/bfs/stream?target=${target}`);
-  es.onmessage = (e) => {
-    console.log("SSE-node:", e.data);
-    const node = JSON.parse(e.data); 
-
-    updateTreeLive(root, node, setTreeData);
-  };
-  es.onerror = () => es.close();
-
-  
-
-  return () => es.close(); 
-}, [target]);
-
+    es.onerror = () => es.close();
+    return () => es.close();
+  }, [target]);
 
   return (
     <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
@@ -91,46 +75,66 @@ useEffect(() => {
   );
 }
 
-async function treeLiveTraversal(liveRoot, fullNode, setTreeData) {
-  const queue = [{ liveNode: liveRoot, fullNode }];
+function mergeIntoRoot(root, newTree) {
+  if (root.name === newTree.name) {
+    // gabungkan children dari tree baru ke root
+    root.children = [...(root.children || []), ...(newTree.children || [])];
 
-  while (queue.length > 0) {
-    const { liveNode, fullNode } = queue.shift();
-
-    if (fullNode.children) {
-      for (const child of fullNode.children) {
-        const newChild = { name: child.name, children: [] };
-        liveNode.children.push(newChild);
-        setTreeData(JSON.parse(JSON.stringify(liveRoot)));
-
-        await new Promise((res) => setTimeout(res, 300));
-        queue.push({ liveNode: newChild, fullNode: child });
-      }
-    }
+    // root.children = mergeChildren(root.children || [], newTree.children || []);
+  } else {
+    // cari node yang cocok di bawah root, lalu merge
+    insertNodeRecursively(root, newTree);
   }
 }
 
-function combineTrees(trees) {
+// function mergeChildren(oldChildren, newChildren) {
+//   const merged = [...oldChildren];
+
+//   for (const newChild of newChildren) {
+//     const existing = merged.find(c => c.name === newChild.name);
+
+//     if (existing) {
+//       existing.children = mergeChildren(existing.children || [], newChild.children || []);
+//     } else {
+//       merged.push(newChild);
+//     }
+//   }
+
+//   return merged;
+// }
+
+function insertNodeRecursively(current, incoming) {
+  if (current.name === incoming.name) {
+    current.children = [...(current.children || []), ...(incoming.children || [])];
+    return true;
+  }
+
+  if (!current.children) return false;
+
+  for (const child of current.children) {
+    if (insertNodeRecursively(child, incoming)) return true;
+  }
+
+  return false;
+}
+
+function combineTrees(trees, rootName = "Root") {
   if (!Array.isArray(trees) || trees.length === 0) return null;
 
-  const rootName = trees[0]?.name || "Unknown";
-  const recipeGroups = [];
+  const recipePairs = [];
 
   for (const tree of trees) {
-    if (!tree) continue;
+    if (!tree || !Array.isArray(tree.children)) continue;
 
-    const children = tree.children || [];
-
-    recipeGroups.push({
+    // Bungkus masing-masing tree agar tidak tercampur di visual
+    recipePairs.push({
       name: '',
-      children: children
+      children: tree.children
     });
   }
 
-  if (recipeGroups.length === 0) return null;
-
   return {
     name: rootName,
-    children: recipeGroups
+    children: recipePairs
   };
 }

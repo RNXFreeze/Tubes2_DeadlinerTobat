@@ -12,48 +12,42 @@ export default function TreePage({
   nodeCount,
   setNodeCount,
   maxRecipe,
-  treeData,
-  setTreeData
 }) {
+  const [target, setTarget] = useState('');    // ← state baru untuk trigger SSE
   const [isLoading, setIsLoading] = useState(false);
 
   const searchRecipe = async () => {
     if (!searchElement.trim()) return;
 
+    setTarget(searchElement);                  // ← set target sebelum fetch
+    setIsLoading(true);
     const baseURL = 'http://localhost:8080/api';
-    const target = encodeURIComponent(searchElement.trim());
     let url = '';
 
     if (algorithmType === 'BFS') {
-        url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
+      url = `${baseURL}/bfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
     } else if (algorithmType === 'DFS') {
-        url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
-    } else if (algorithmType === 'BDR') {
-        url = `${baseURL}/bdr?target=${target}&max_recipe=${maxRecipe}`;
+      url = `${baseURL}/dfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
+    } else {
+      url = `${baseURL}/bdr?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
     }
 
     try {
-        setIsLoading(true);
-        const t0 = performance.now();
+      const t0 = performance.now();
+      const res = await fetch(url);
+      const data = await res.json();
+      const t1 = performance.now();
 
-        const res = await fetch(url);
-        const data = await res.json();
-
-        const t1 = performance.now();
-
-        setTreeData(Array.isArray(data.trees) ? data.trees : []);
-        setExecTime((t1 - t0).toFixed(2));
-        setNodeCount(data.visited_count || null);
-        console.log("API result:", data);
+      setExecTime((t1 - t0).toFixed(2));
+      setNodeCount(data.visited_count);
     } catch (err) {
-        console.error('API error:', err);
-        setTreeData([]);
-        setExecTime(null);
-        setNodeCount(null);
+      console.error(err);
+      setExecTime(null);
+      setNodeCount(null);
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-    };
+  };
 
   return (
     <main className="flex-grow p-6 overflow-auto">
@@ -103,7 +97,7 @@ export default function TreePage({
       </div>
 
       <div className="min-w-[800px] min-h-[500px] border rounded bg-white p-4">
-        <TreeVisualizer data={treeData}/>
+        <TreeVisualizer target={target} />
       </div>
     </main>
   );
