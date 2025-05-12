@@ -150,7 +150,7 @@ function AlgorithmDropdown({ algorithmType, setAlgorithm }) {
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                    value: "Bidirectional",
+                    value: "BDR",
                     children: "Bidirectional"
                 }, void 0, false, {
                     fileName: "[project]/components/AlgorithmDropdown.js",
@@ -393,49 +393,79 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 ;
-function TreeVisualizer({ data }) {
-    const [treeData, setTreeData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const useDummy = false;
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if ("TURBOPACK compile-time falsy", 0) {
-            "TURBOPACK unreachable";
-        } else {
-            // Ini contoh kalau pake websocket
-            const root = {
-                name: '',
-                children: []
-            };
-            setTreeData(root);
-            const socket = new WebSocket('ws://localhost:8080/'); // ganti URL sesuai server backend-mu
-            socket.onmessage = (event)=>{
-                const newNode = JSON.parse(event.data);
-                updateTreeLive(root, newNode, setTreeData);
-            };
-            socket.onerror = (err)=>{
-                console.error('WebSocket error:', err);
-            };
-            return ()=>{
-                socket.close(); // cleanup kalau component unmount
-            };
-        }
-    }, []);
+function TreeVisualizer({ target }) {
+    const [treeData, setTreeData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); // data yang ditampilkan
+    const [fullTree, setFullTree] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); // data lengkap dari API
+    // Jalankan traversal animasi ketika ada data baru
+    /*
+  useEffect(() => {
+  if (!data) return;
+
+  const combined = combineTrees(data); // gabungkan multi tree jadi satu root
+  if (!combined) {
+    console.warn("No valid trees to combine");
+    return;
+  }
+  const root = { name: combined.name, children: [] };
+
+  setFullTree(combined);
+  setTreeData(root);
+
+  treeLiveTraversal(root, combined, setTreeData);
+}, [data]);
+*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!target) return;
+        const root = {
+            name: target,
+            children: []
+        };
+        setTreeData(root);
+        const es = new EventSource(`/api/bfs/stream?target=${target}`);
+        es.onmessage = (e)=>{
+            console.log("SSE-node:", e.data);
+            const node = JSON.parse(e.data);
+            updateTreeLive(root, node, setTreeData);
+        };
+        es.onerror = ()=>es.close();
+        return ()=>es.close();
+    }, [
+        target
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
             width: '100%',
-            height: '600px'
+            height: '100vh',
+            overflow: 'auto',
+            background: '#fafafa'
         },
         children: treeData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$d3$2d$tree$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
             data: treeData,
             orientation: "vertical",
             collapsible: false,
             translate: {
-                x: 300,
-                y: 50
+                x: 600,
+                y: 100
             },
+            zoom: 0.6,
+            zoomable: true,
             pathFunc: "elbow",
-            shouldRenderLabel: false,
+            nodeSize: {
+                x: 120,
+                y: 100
+            },
+            separation: {
+                siblings: 0.6,
+                nonSiblings: 0.8
+            },
             renderCustomNodeElement: ({ nodeDatum })=>{
                 const isLeaf = !nodeDatum.children || nodeDatum.children.length === 0;
+                if (nodeDatum.name === '') {
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {}, void 0, false, {
+                        fileName: "[project]/components/TreeVisualizer.jsx",
+                        lineNumber: 65,
+                        columnNumber: 22
+                    }, void 0);
+                }
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -445,7 +475,7 @@ function TreeVisualizer({ data }) {
                             strokeWidth: 2
                         }, void 0, false, {
                             fileName: "[project]/components/TreeVisualizer.jsx",
-                            lineNumber: 60,
+                            lineNumber: 69,
                             columnNumber: 17
                         }, void 0),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
@@ -463,56 +493,32 @@ function TreeVisualizer({ data }) {
                             children: nodeDatum.name
                         }, void 0, false, {
                             fileName: "[project]/components/TreeVisualizer.jsx",
-                            lineNumber: 61,
+                            lineNumber: 70,
                             columnNumber: 17
                         }, void 0)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/TreeVisualizer.jsx",
-                    lineNumber: 59,
-                    columnNumber: 17
+                    lineNumber: 68,
+                    columnNumber: 15
                 }, void 0);
             }
         }, void 0, false, {
             fileName: "[project]/components/TreeVisualizer.jsx",
-            lineNumber: 48,
+            lineNumber: 52,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/TreeVisualizer.jsx",
-        lineNumber: 46,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }
-function updateTreeLive(currentRoot, incomingNode, setTreeData) {
-    const clone = JSON.parse(JSON.stringify(currentRoot));
-    function insertNode(current, target) {
-        if (current.name === '' || current.name === target.name) {
-            current.name = target.name;
-            current.children = [];
-        }
-        if (target.children && target.children.length > 0) {
-            for (const child of target.children){
-                let existing = current.children.find((c)=>c.name === child.name);
-                if (!existing) {
-                    existing = {
-                        name: child.name,
-                        children: []
-                    };
-                    current.children.push(existing);
-                }
-                insertNode(existing, child);
-            }
-        }
-    }
-    insertNode(clone, incomingNode);
-    setTreeData(clone);
-}
-async function treeLiveVisualization(liveRoot, fullData, setTreeData) {
+async function treeLiveTraversal(liveRoot, fullNode, setTreeData) {
     const queue = [
         {
             liveNode: liveRoot,
-            fullNode: fullData
+            fullNode
         }
     ];
     while(queue.length > 0){
@@ -524,8 +530,8 @@ async function treeLiveVisualization(liveRoot, fullData, setTreeData) {
                     children: []
                 };
                 liveNode.children.push(newChild);
-                setTreeData(JSON.parse(JSON.stringify(liveRoot))); // force re-render
-                await new Promise((res)=>setTimeout(res, 300)); // delay update
+                setTreeData(JSON.parse(JSON.stringify(liveRoot)));
+                await new Promise((res)=>setTimeout(res, 300));
                 queue.push({
                     liveNode: newChild,
                     fullNode: child
@@ -533,6 +539,24 @@ async function treeLiveVisualization(liveRoot, fullData, setTreeData) {
             }
         }
     }
+}
+function combineTrees(trees) {
+    if (!Array.isArray(trees) || trees.length === 0) return null;
+    const rootName = trees[0]?.name || "Unknown";
+    const recipeGroups = [];
+    for (const tree of trees){
+        if (!tree) continue;
+        const children = tree.children || [];
+        recipeGroups.push({
+            name: '',
+            children: children
+        });
+    }
+    if (recipeGroups.length === 0) return null;
+    return {
+        name: rootName,
+        children: recipeGroups
+    };
 }
 }}),
 "[project]/components/TreePage.js [app-ssr] (ecmascript)": ((__turbopack_context__) => {
@@ -559,8 +583,10 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
         let url = '';
         if (algorithmType === 'BFS') {
             url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
-        } else {
-            url = `${baseURL}/dfs?target=${target}`;
+        } else if (algorithmType === 'DFS') {
+            url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
+        } else if (algorithmType === 'BDR') {
+            url = `${baseURL}/bdr?target=${target}&max_recipe=${maxRecipe}`;
         }
         try {
             setIsLoading(true);
@@ -592,7 +618,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                         children: "Little Alchemy Recipe Finder"
                     }, void 0, false, {
                         fileName: "[project]/components/TreePage.js",
-                        lineNumber: 59,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -608,7 +634,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                     className: "flex-grow px-4 py-2 outline-none"
                                 }, void 0, false, {
                                     fileName: "[project]/components/TreePage.js",
-                                    lineNumber: 64,
+                                    lineNumber: 66,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -640,7 +666,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                                         strokeWidth: "4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TreePage.js",
-                                                        lineNumber: 90,
+                                                        lineNumber: 92,
                                                         columnNumber: 31
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -649,48 +675,48 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                                         d: "M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TreePage.js",
-                                                        lineNumber: 91,
+                                                        lineNumber: 93,
                                                         columnNumber: 31
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/TreePage.js",
-                                                lineNumber: 89,
+                                                lineNumber: 91,
                                                 columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Load"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/TreePage.js",
-                                                lineNumber: 93,
+                                                lineNumber: 95,
                                                 columnNumber: 27
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/TreePage.js",
-                                        lineNumber: 88,
+                                        lineNumber: 90,
                                         columnNumber: 23
                                     }, this) : 'Search'
                                 }, void 0, false, {
                                     fileName: "[project]/components/TreePage.js",
-                                    lineNumber: 71,
+                                    lineNumber: 73,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/TreePage.js",
-                            lineNumber: 63,
+                            lineNumber: 65,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/TreePage.js",
-                        lineNumber: 62,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/TreePage.js",
-                lineNumber: 58,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -699,18 +725,18 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                     data: treeData
                 }, void 0, false, {
                     fileName: "[project]/components/TreePage.js",
-                    lineNumber: 104,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/TreePage.js",
-                lineNumber: 103,
+                lineNumber: 105,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/TreePage.js",
-        lineNumber: 57,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }

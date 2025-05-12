@@ -1,11 +1,14 @@
 package main
 
 import (
+	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
 
 	"Tubes2_DeadlinerTobat/src/backend"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -89,7 +92,44 @@ func main() {
 		})
 	})
 
+	r.GET("/api/bfs/stream", func(c *gin.Context) {
+		target := c.Query("target")
+		if target == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "'target' is required"})
+			return
+		}
+		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+
+		w := c.Writer
+		flusher, ok := w.(http.Flusher)
+		if !ok {
+			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "streaming not supported"})
+			return
+		}
+		w.Header().Set("Content-Type", "text/event-stream")
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Connection", "keep-alive")
+
+		results := make(chan *backend.RecipeNode)
+		go func() {
+			backend.BFSStream(gallery, target, maxRecipe, results)
+			close(results)
+		}()
+
+		enc := json.NewEncoder(w)
+		for node := range results {
+			fmt.Fprint(w, "data: ")
+			if err := enc.Encode(node); err != nil {
+				log.Println("encode:", err)
+				break
+			}
+			fmt.Fprint(w, "\n")
+			flusher.Flush()
+		}
+	})
+
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
 	}
+
 }

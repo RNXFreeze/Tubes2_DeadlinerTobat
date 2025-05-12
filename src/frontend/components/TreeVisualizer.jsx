@@ -2,11 +2,12 @@
 import Tree from 'react-d3-tree';
 import { useState, useEffect } from 'react';
 
-export default function TreeVisualizer({ data }) {
+export default function TreeVisualizer({ target }) {
   const [treeData, setTreeData] = useState(null);     // data yang ditampilkan
   const [fullTree, setFullTree] = useState(null);     // data lengkap dari API
 
   // Jalankan traversal animasi ketika ada data baru
+  /*
   useEffect(() => {
   if (!data) return;
 
@@ -22,6 +23,28 @@ export default function TreeVisualizer({ data }) {
 
   treeLiveTraversal(root, combined, setTreeData);
 }, [data]);
+*/
+
+useEffect(() => {
+  if (!target) return;
+
+  const root = { name: target, children: [] };
+  setTreeData(root);
+
+  const es = new EventSource(`/api/bfs/stream?target=${target}`);
+  es.onmessage = (e) => {
+    console.log("SSE-node:", e.data);
+    const node = JSON.parse(e.data); 
+
+    updateTreeLive(root, node, setTreeData);
+  };
+  es.onerror = () => es.close();
+
+  
+
+  return () => es.close(); 
+}, [target]);
+
 
   return (
     <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
