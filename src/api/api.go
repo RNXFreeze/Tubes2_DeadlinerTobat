@@ -1,19 +1,30 @@
+/* Kelompok   : Kelompok 21 - Deadliner Tobat                                    */
+/* Nama - 1   : Muhammad Raihan Nazhim Oktana                                    */
+/* NIM - 1    : K01 - 13523021 - Teknik Informatika (IF-Ganesha) ITB             */
+/* Nama - 2   : Mayla Yaffa Ludmilla                                             */
+/* NIM - 2    : K01 - 13523050 - Teknik Informatika (IF-Ganesha) ITB             */
+/* Nama - 3   : Anella Utari Gunadi                                              */
+/* NIM - 3    : K02 - 13523078 - Teknik Informatika (IF-Ganesha) ITB             */
+/* Tanggal    : Senin, 12 Mei 2025                                               */
+/* Tugas      : Tugas Besar 2 - Strategi Algoritma (IF2211-24)                   */
+/* File Path  : Tubes2_DeadlinerTobat/src/backend/stream.go                      */
+/* Deskripsi  : F00A - Main Program API (Connection Frontend & Backend)          */
+/* PIC F00A   : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
+
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
-	"net/http"
 	"strconv"
-
-	"Tubes2_DeadlinerTobat/src/backend"
-
-	"github.com/gin-contrib/cors"
+	"net/http"
+	"encoding/json"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
+	"Tubes2_DeadlinerTobat/src/backend"
 )
 
-type bfsResponse struct {
+type BFSResponse struct {
 	Target       string                `json:"target"`
 	VisitedCount int                   `json:"visited_count"`
 	Trees        []*backend.RecipeNode `json:"trees"`
@@ -38,9 +49,9 @@ func main() {
 		}
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
-		res := backend.BFS(gallery, target, maxRecipe)
+		res := backend.BFS(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
 
-		c.JSON(http.StatusOK, bfsResponse{
+		c.JSON(http.StatusOK, BFSResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees, // sudah JSON-marshal-able karena ada tag di RecipeNode
@@ -55,11 +66,9 @@ func main() {
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
-		res := backend.DFS(gallery, target, backend.DFSOptions{
-			MaxRecipes: maxRecipe,
-		})
+		res := backend.DFS(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
 
-		c.JSON(http.StatusOK, bfsResponse{ // pake bfsResponse aja biar simple
+		c.JSON(http.StatusOK, BFSResponse{ // pake BFSResponse aja biar simple
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,
@@ -76,10 +85,10 @@ func main() {
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
 		// panggil fungsi BDR dari backend
-		res := backend.BDR(gallery, target, maxRecipe)
+		res := backend.BDR(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
 
 		// kembalikan dengan format yang sama seperti BFS/DFS
-		c.JSON(http.StatusOK, bfsResponse{
+		c.JSON(http.StatusOK, BFSResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,
@@ -111,8 +120,9 @@ func main() {
 		w.Header().Set("Connection", "keep-alive")
 
 		results := make(chan *backend.RecipeNode)
+		option := backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : results};
 		go func() {
-			backend.BFSStream(gallery, target, maxRecipe, results)
+			backend.BFSStream(gallery, target, option)
 			close(results)
 		}()
 
