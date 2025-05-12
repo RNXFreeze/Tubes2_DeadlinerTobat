@@ -26,8 +26,8 @@ export default function TreePage({
 
     if (algorithmType === 'BFS') {
         url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
-    } else {
-        url = `${baseURL}/dfs?target=${target}`;
+    } else if (algorithmType === 'DFS') {
+        url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
     }
 
     try {

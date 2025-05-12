@@ -91,22 +91,23 @@ function combineTrees(trees) {
   if (!Array.isArray(trees) || trees.length === 0) return null;
 
   const rootName = trees[0]?.name || "Unknown";
-  const recipePairs = [];
+  const recipeGroups = [];
 
   for (const tree of trees) {
-    if (!tree || !Array.isArray(tree.children) || tree.children.length !== 2) continue;
+    if (!tree) continue;
 
-    // Ambil pasangan untuk satu recipe
-    const pair = {
+    const children = tree.children || [];
+
+    recipeGroups.push({
       name: '',
-      children: tree.children
-    };
-
-    recipePairs.push(pair);
+      children: children
+    });
   }
+
+  if (recipeGroups.length === 0) return null;
 
   return {
     name: rootName,
-    children: recipePairs
+    children: recipeGroups
   };
 }
