@@ -43,7 +43,6 @@ func main() {
 			Trees:        res.Trees, // sudah JSON-marshal-able karena ada tag di RecipeNode
 		})
 	})
-
 	r.GET("/api/dfs", func(c *gin.Context) {
 		target := c.Query("target")
 		if target == "" {
@@ -51,10 +50,16 @@ func main() {
 			return
 		}
 
-		path := backend.DFS(gallery, target, backend.DFSOptions{}) // misal fungsi DFS mengembalikan []string
-		c.JSON(http.StatusOK, gin.H{
-			"target": target,
-			"path":   path,
+		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+
+		res := backend.DFS(gallery, target, backend.DFSOptions{
+			MaxRecipes: maxRecipe,
+		})
+
+		c.JSON(http.StatusOK, bfsResponse{ // pake bfsResponse aja biar simple
+			Target:       target,
+			VisitedCount: res.VisitedCount,
+			Trees:        res.Trees,
 		})
 	})
 
