@@ -11,21 +11,21 @@
 /* Deskripsi  : F07 - Data Structure (Node & Tree & Mapping)                     */
 /* PIC F07    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend;
+package backend
 
 import (
-	"os";
-	"fmt";
-	"time";
-	"strconv";
-	"strings";
-	"encoding/json";
+	"encoding/json"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+	"time"
 )
 
 type Element struct {
-	Name    string;
-	Tier    int;
-	Parents [][]string;
+	Name    string
+	Tier    int
+	Parents [][]string
 }
 type Gallery struct {
 	GalleryName map[string]*Element;
@@ -158,7 +158,7 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 			return 1;
 		}
 		best := 0
-		visited[name] = true
+		visited[name] = true;
 		for _ , p := range element.Parents {
 			t1 := CalculateTier(p[0] , gallery , visited);
 			t2 := CalculateTier(p[1] , gallery , visited);
@@ -181,73 +181,78 @@ func LoadRecipeGallery(path string) (*Gallery , error) {
 		raw := map[string]any{};
 		if err := json.NewDecoder(file).Decode(&raw) ; err != nil {
 			return nil , fmt.Errorf("decode JSON : %w" , err);
-		}
-		gallery := &Gallery{GalleryName: map[string]*Element{}};
-		check := false;
-		for k := range raw {
-			if (strings.HasPrefix(strings.ToLower(k) , "tier")) {
-				check = true;
-				break;
+		} else {
+			gallery := &Gallery{GalleryName : map[string]*Element{}};
+			check := false;
+			for key := range raw {
+				if (strings.HasPrefix(strings.ToLower(key), "tier")) {
+					check = true;
+					break;
+				}
 			}
-		}
-		if (check) {
-			for k , v := range raw {
-				if (!strings.HasPrefix(strings.ToLower(k) , "tier")) {
-					continue;
-				} else {
-					str := strings.TrimSpace(strings.TrimPrefix(strings.ToLower(k) , "tier"));
-					num , _ := strconv.Atoi(str);
-					inner , check := v.(map[string]any);
-					if (!check) {
-						continue;
-					} else {
-						for name , arr := range inner {
-							gallery.GalleryName[name] = &Element {
-								Name    : name,
-								Tier    : num,
-								Parents : Transform(arr.([]any)),
+			if (check) {
+				for key , value := range raw {
+					if (strings.HasPrefix(strings.ToLower(key) , "tier")) {
+						str := strings.TrimSpace(strings.TrimPrefix(strings.ToLower(key) , "tier"));
+						num , _ := strconv.Atoi(str);
+						inner , check := value.(map[string]any);
+						if (check) {
+							for name , arr := range inner {
+								gallery.GalleryName[name] = &Element{
+									Name    : name,
+									Tier    : num,
+									Parents : Transform(arr.([]any)),
+								}
 							}
 						}
 					}
 				}
-			}
-		} else {
-			for name , arr := range raw {
-				gallery.GalleryName[name] = &Element {
-					Name    : name,
-					Tier    : -1,
-					Parents : Transform(arr.([]any)),
+			} else {
+				for name , arr := range raw {
+					gallery.GalleryName[name] = &Element{
+						Name    : name,
+						Tier    : -1,
+						Parents : Transform(arr.([]any)),
+					}
 				}
 			}
-		}
-		for base := range base_element {
-			if _ , check := gallery.GalleryName[base] ; !check {
-				gallery.GalleryName[base] = &Element{Name : base , Tier : 0 , Parents : nil};
-			} else {
-				gallery.GalleryName[base].Tier = 0;
+			for base := range base_element {
+				if _ , check := gallery.GalleryName[base] ; !check {
+					gallery.GalleryName[base] = &Element{Name : base , Tier : 0 , Parents : nil};
+				} else {
+					gallery.GalleryName[base].Tier = 0
+				}
 			}
-		}
-		for name , element := range gallery.GalleryName {
-			if (element.Tier < 0) {
-				CalculateTier(name, gallery, map[string]bool{});
+			for name , element := range gallery.GalleryName {
+				if (element.Tier < 0) {
+					CalculateTier(name , gallery , map[string]bool{});
+				}
 			}
+			return gallery , nil;
 		}
-		return gallery , nil;
 	}
 }
 
-func StreamTree(root *RecipeNode , dst chan<-*RecipeNode , delay time.Duration) {
-	if (root == nil) {
-		close(dst);
+func StreamTree(root *RecipeNode , destination chan<- *RecipeNode , delay time.Duration) {
+	if root == nil {
+		close(destination);
 	} else {
-		q := []*RecipeNode{root};
-		for (len(q) > 0) {
-			cur := q[0];
-			q = q[1:];
-			dst <- cur;
+		queue := []*RecipeNode{root};
+		for (len(queue) > 0) {
+			cur := queue[0];
+			queue = queue[1:];
+			destination <- cur;
 			time.Sleep(delay);
-			q = append(q , cur.Parents ...);
+			queue = append(queue , cur.Parents...);
 		}
-		close(dst);
+		close(destination);
 	}
+}
+
+func (gallery *Gallery) GetAllNames() []string {
+	names := make([]string , 0 , len(gallery.GalleryName));
+	for name := range gallery.GalleryName {
+		names = append(names , name);
+	}
+	return names;
 }

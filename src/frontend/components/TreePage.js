@@ -3,15 +3,57 @@
 import { useState } from 'react';
 import TreeVisualizer from './TreeVisualizer';
 
-export default function TreePage({algorithmType, searchElement, setSearchElement}) {
+export default function TreePage({
+  algorithmType,
+  searchElement,
+  setSearchElement,
+  execTime,
+  setExecTime,
+  nodeCount,
+  setNodeCount,
+  maxRecipe,
+  treeData,
+  setTreeData
+}) {
   const [isLoading, setIsLoading] = useState(false);
 
-  // DUMMY FUNCTION
-  const searchRecipe = async (searchElement, algorithmType) => {
-      // TODO: implement BFS/DFS here
-      console.log('Searching for:', searchElement, 'using', algorithmType);
-      await new Promise(resolve => setTimeout(resolve, 1000)); // simulasi loading
-  };
+  const searchRecipe = async () => {
+    if (!searchElement.trim()) return;
+
+    const baseURL = 'http://localhost:8080/api';
+    const target = encodeURIComponent(searchElement.trim());
+    let url = '';
+
+    if (algorithmType === 'BFS') {
+        url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
+    } else if (algorithmType === 'DFS') {
+        url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
+    } else if (algorithmType === 'BDR') {
+        url = `${baseURL}/bdr?target=${target}&max_recipe=${maxRecipe}`;
+    }
+
+    try {
+        setIsLoading(true);
+        const t0 = performance.now();
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const t1 = performance.now();
+
+        setTreeData(Array.isArray(data.trees) ? data.trees : []);
+        setExecTime((t1 - t0).toFixed(2));
+        setNodeCount(data.visited_count || null);
+        console.log("API result:", data);
+    } catch (err) {
+        console.error('API error:', err);
+        setTreeData([]);
+        setExecTime(null);
+        setNodeCount(null);
+    } finally {
+        setIsLoading(false);
+    }
+    };
 
   return (
     <main className="flex-grow p-6 overflow-auto">
@@ -60,9 +102,8 @@ export default function TreePage({algorithmType, searchElement, setSearchElement
         </div>
       </div>
 
-      {/* Placeholder area for recipe tree */}
       <div className="min-w-[800px] min-h-[500px] border rounded bg-white p-4">
-        <TreeVisualizer />
+        <TreeVisualizer data={treeData}/>
       </div>
     </main>
   );

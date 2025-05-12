@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import TreePage from '../components/TreePage';
@@ -12,6 +12,7 @@ export default function Home() {
   const [searchElement, setSearchElement] = useState('');
   const [execTime, setExecTime] = useState(null);
   const [nodeCount, setNodeCount] = useState(null);
+  const [treeData, setTreeData] = useState([]); 
 
   // Dummy values
   // const execTime = 1;
@@ -32,11 +33,16 @@ export default function Home() {
           nodeCount={nodeCount}
         />
         <TreePage 
-        algorithmType={algorithmType}
-        searchElement={searchElement}
-        setSearchElement={setSearchElement}
-        execTime={setExecTime}
-        nodeCount={setNodeCount}
+          algorithmType={algorithmType}
+          searchElement={searchElement}
+          setSearchElement={setSearchElement}
+          execTime={execTime}
+          setExecTime={setExecTime}
+          nodeCount={nodeCount}
+          setNodeCount={setNodeCount}
+          maxRecipe={maxRecipe}
+          treeData={treeData}
+          setTreeData={setTreeData}
         />
       </div>
     </div>

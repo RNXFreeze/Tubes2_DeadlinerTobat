@@ -93,7 +93,7 @@ func MainTerminal() {
 	} else {
 		for {
 			input := bufio.NewReader(os.Stdin);
-			var target string
+			var target string;
 			for {
 				fmt.Print("Target Element              : ");
 				tgt , _ := input.ReadString('\n');
@@ -103,7 +103,7 @@ func MainTerminal() {
 				}
 				fmt.Println("Input target elemen tidak valid.");
 			}
-			var algorithm string
+			var algorithm string;
 			for {
 				fmt.Print("Algorithm (BFS/DFS/BDR)     : ");
 				alg , _ := input.ReadString('\n');
@@ -114,7 +114,7 @@ func MainTerminal() {
 					fmt.Println("Input pilihan algoritma tidak valid.");
 				}
 			}
-			var max_recipe int
+			var max_recipe int;
 			for {
 				fmt.Print("Max Recipe (0 = All Recipe) : ");
 				mrc , _ := input.ReadString('\n');
