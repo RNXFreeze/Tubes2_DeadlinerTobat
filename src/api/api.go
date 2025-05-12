@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"example.com/tubes2_deadlinertobat/src/backend"
+	"Tubes2_DeadlinerTobat/src/backend"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
