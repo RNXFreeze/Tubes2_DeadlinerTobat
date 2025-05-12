@@ -12,7 +12,7 @@ export default function AlgorithmDropdown({algorithmType, setAlgorithm}) {
                 <option value="DFS">
                     DFS
                 </option>
-                <option value="Bidirectional">
+                <option value="BDR">
                     Bidirectional
                 </option>
             </select>

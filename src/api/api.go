@@ -63,6 +63,26 @@ func main() {
 		})
 	})
 
+	r.GET("/api/bdr", func(c *gin.Context) {
+		target := c.Query("target")
+		if target == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "query param 'target' is required"})
+			return
+		}
+
+		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+
+		// panggil fungsi BDR dari backend
+		res := backend.BDR(gallery, target, maxRecipe)
+
+		// kembalikan dengan format yang sama seperti BFS/DFS
+		c.JSON(http.StatusOK, bfsResponse{
+			Target:       target,
+			VisitedCount: res.VisitedCount,
+			Trees:        res.Trees,
+		})
+	})
+
 	r.GET("/api/elements", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"elements": gallery.GetAllNames(), // misal fungsi helper di backend

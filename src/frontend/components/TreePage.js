@@ -28,6 +28,8 @@ export default function TreePage({
         url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
     } else if (algorithmType === 'DFS') {
         url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
+    } else if (algorithmType === 'BDR') {
+        url = `${baseURL}/bdr?target=${target}&max_recipe=${maxRecipe}`;
     }
 
     try {
