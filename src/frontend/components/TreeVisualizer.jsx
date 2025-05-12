@@ -1,79 +1,65 @@
-'use client'
+'use client';
 import Tree from 'react-d3-tree';
 import { useState, useEffect } from 'react';
 
-export default function TreeVisualizer({data}) {
-  const [treeData, setTreeData] = useState(null);
-  const useDummy = false;
+export default function TreeVisualizer({ data }) {
+  const [treeData, setTreeData] = useState(null);     // data yang ditampilkan
+  const [fullTree, setFullTree] = useState(null);     // data lengkap dari API
 
+  // Jalankan traversal animasi ketika ada data baru
   useEffect(() => {
-    if(useDummy){
-        // Dummy Test
-        fetch('/dummy_tree.json')
-          .then(res => res.json())
-          .then(data => {
-            // Start with just root
-            const root = JSON.parse(JSON.stringify(data));
-            root.children = []; // kosongin anaknya dulu
-            setTreeData(root);
-    
-            // Simulasikan live traversal
-            treeLiveVisualization(root, data, setTreeData);
-          });
-    } else {
-        // Ini contoh kalau pake websocket
-        const root = { name: '', children: [] };
-        setTreeData(root);
+  if (!data) return;
 
-        const socket = new WebSocket('ws://localhost:8080/'); // ganti URL sesuai server backend-mu
+  const combined = combineTrees(data); // gabungkan multi tree jadi satu root
+  if (!combined) {
+    console.warn("No valid trees to combine");
+    return;
+  }
+  const root = { name: combined.name, children: [] };
 
-        socket.onmessage = (event) => {
-            const newNode = JSON.parse(event.data);
-            updateTreeLive(root, newNode, setTreeData);
-        };
+  setFullTree(combined);
+  setTreeData(root);
 
-        socket.onerror = (err) => {
-            console.error('WebSocket error:', err);
-        };
-
-        return () => {
-            socket.close(); // cleanup kalau component unmount
-        };
-    }
-  }, []);
+  treeLiveTraversal(root, combined, setTreeData);
+}, [data]);
 
   return (
-    <div style={{ width: '100%', height: '600px' }}>
+    <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
       {treeData && (
         <Tree
           data={treeData}
           orientation="vertical"
           collapsible={false}
-          translate={{ x: 300, y: 50 }}
+          translate={{ x: 600, y: 100 }}
+          zoom={0.6}
+          zoomable={true}
           pathFunc="elbow"
-          shouldRenderLabel={false}
+          nodeSize={{ x: 120, y: 100 }}
+          separation={{ siblings: 0.6, nonSiblings: 0.8 }}
           renderCustomNodeElement={({ nodeDatum }) => {
             const isLeaf = !nodeDatum.children || nodeDatum.children.length === 0;
-
+            if (nodeDatum.name === '') {
+              return <g></g>;
+            }
             return (
-                <g>
+              <g>
                 <circle r={15} fill={isLeaf ? 'white' : 'purple'} stroke="purple" strokeWidth={2} />
                 <text
-                    y={-30}
-                    x={0}
-                    textAnchor="middle" 
-                    alignmentBaseline="middle"
-                    style={{
+                  y={-30}
+                  x={0}
+                  textAnchor="middle"
+                  alignmentBaseline="middle"
+                  style={{
                     fontSize: '16px',
                     fontFamily: 'system-ui, sans-serif',
                     fontWeight: 300,
                     fill: 'black',
                     textShadow: 'none'
-                    }}
+                  }}
                 >
-                    {nodeDatum.name}
+                  {nodeDatum.name}
                 </text>
-                </g>
+              </g>
             );
           }}
         />
@@ -82,33 +68,8 @@ export default function TreeVisualizer({data}) {
   );
 }
 
-function updateTreeLive(currentRoot, incomingNode, setTreeData) {
-  const clone = JSON.parse(JSON.stringify(currentRoot));
-
-  function insertNode(current, target) {
-    if (current.name === '' || current.name === target.name) {
-      current.name = target.name;
-      current.children = [];
-    }
-
-    if (target.children && target.children.length > 0) {
-      for (const child of target.children) {
-        let existing = current.children.find(c => c.name === child.name);
-        if (!existing) {
-          existing = { name: child.name, children: [] };
-          current.children.push(existing);
-        }
-        insertNode(existing, child);
-      }
-    }
-  }
-
-  insertNode(clone, incomingNode);
-  setTreeData(clone);
-}
-
-async function treeLiveVisualization(liveRoot, fullData, setTreeData) {
-  const queue = [{ liveNode: liveRoot, fullNode: fullData }];
+async function treeLiveTraversal(liveRoot, fullNode, setTreeData) {
+  const queue = [{ liveNode: liveRoot, fullNode }];
 
   while (queue.length > 0) {
     const { liveNode, fullNode } = queue.shift();
@@ -117,11 +78,35 @@ async function treeLiveVisualization(liveRoot, fullData, setTreeData) {
       for (const child of fullNode.children) {
         const newChild = { name: child.name, children: [] };
         liveNode.children.push(newChild);
-        setTreeData(JSON.parse(JSON.stringify(liveRoot))); // force re-render
-        await new Promise(res => setTimeout(res, 300)); // delay update
+        setTreeData(JSON.parse(JSON.stringify(liveRoot)));
 
+        await new Promise((res) => setTimeout(res, 300));
         queue.push({ liveNode: newChild, fullNode: child });
       }
     }
   }
+}
+
+function combineTrees(trees) {
+  if (!Array.isArray(trees) || trees.length === 0) return null;
+
+  const rootName = trees[0]?.name || "Unknown";
+  const recipePairs = [];
+
+  for (const tree of trees) {
+    if (!tree || !Array.isArray(tree.children) || tree.children.length !== 2) continue;
+
+    // Ambil pasangan untuk satu recipe
+    const pair = {
+      name: '',
+      children: tree.children
+    };
+
+    recipePairs.push(pair);
+  }
+
+  return {
+    name: rootName,
+    children: recipePairs
+  };
 }
