@@ -1,9 +1,10 @@
+'use client'
 import Tree from 'react-d3-tree';
 import { useState, useEffect } from 'react';
 
-export default function TreeVisualizer() {
+export default function TreeVisualizer({data}) {
   const [treeData, setTreeData] = useState(null);
-  const useDummy = true;
+  const useDummy = false;
 
   useEffect(() => {
     if(useDummy){
@@ -24,7 +25,7 @@ export default function TreeVisualizer() {
         const root = { name: '', children: [] };
         setTreeData(root);
 
-        const socket = new WebSocket('ws://localhost:8080/ws'); // ganti URL sesuai server backend-mu
+        const socket = new WebSocket('ws://localhost:8080/'); // ganti URL sesuai server backend-mu
 
         socket.onmessage = (event) => {
             const newNode = JSON.parse(event.data);
