@@ -22,20 +22,32 @@ import (
 	"bufio";
 	"strconv";
 	"strings";
-	"encoding/json";
 )
 
-func DisplayResultTerminal(res BFSResult , t time.Time) {
+func DisplayTreeTerminal(node *RecipeNode, gallery *Gallery , depth int) {
+    strh := strings.Repeat("-" , depth * 3) + ">";
+    tier := 0;
+    if element , check := gallery.GalleryName[node.Name] ; check {
+        tier = element.Tier;
+    }
+    fmt.Printf("%s \"%s\" (Tier %d)\n" , strh , node.Name , tier);
+    for _ , child := range node.Parents {
+        DisplayTreeTerminal(child , gallery , depth + 1);
+    }
+}
+
+func DisplayResultTerminal(res BFSResult , t time.Time , gallery *Gallery) {
 	ms := time.Since(t).Milliseconds();
 	fmt.Println();
 	fmt.Printf("Total Recipe : %d Recipe\n" , len(res.Trees));
 	fmt.Printf("Visited Node : %d Node\n" , res.VisitedCount);
 	fmt.Printf("Time Usage   : %d ms\n" , ms);
 	fmt.Println();
-	for i , t := range res.Trees {
-		b , _ := json.MarshalIndent(t , "" , "  ");
-		fmt.Printf("--- Recipe #%d ---\n%s\n\n" , i + 1 , string(b));
-	}
+	for i , root := range res.Trees {
+        fmt.Printf("--- Recipe #%d ---\n" , i + 1);
+        DisplayTreeTerminal(root , gallery , 0);
+        fmt.Println();
+    }
 }
 
 func MainTerminal() {
@@ -59,13 +71,13 @@ func MainTerminal() {
 			start := time.Now();
 			if (algorithm == "BFS") {
 				res := BFS(gallery , target , max_recipe);
-				DisplayResultTerminal(res , start);
+				DisplayResultTerminal(res , start , gallery);
 			} else if (algorithm == "DFS") {
 				res := DFS(gallery , target , DFSOptions{MaxRecipes : max_recipe});
-				DisplayResultTerminal(res.ToMultipleResult() , start);
+				DisplayResultTerminal(res.ToMultipleResult() , start , gallery);
 			} else if (algorithm == "BDR") {
 				res := BDR(gallery , target , max_recipe);
-				DisplayResultTerminal(res , start);
+				DisplayResultTerminal(res , start , gallery);
 			} else {
 				fmt.Println("Input pilihan algoritma tidak valid.");
 			}

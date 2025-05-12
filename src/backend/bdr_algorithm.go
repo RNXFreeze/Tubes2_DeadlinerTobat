@@ -126,6 +126,5 @@ func BDR(gallery *Gallery , target string , max_recipe int) BFSResult {
 		} else {
 			return BFSResult{Trees : trees , VisitedCount : int(counter)}
 		}
-		
 	}
 }
