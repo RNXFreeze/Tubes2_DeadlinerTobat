@@ -141,6 +141,16 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 				}
 			}
 		}
+		if (len(res) > max_recipe) {
+			res = res[:max_recipe];
+		}
+		if (option.LiveChan != nil) {
+			go func() {
+				for _ , t := range res {
+					option.LiveChan <- t;
+				}
+			}();
+		}
 		return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
 	}
 }
