@@ -202,39 +202,47 @@ function RecipeSlider({ value, setValue }) {
                 lineNumber: 4,
                 columnNumber: 7
             }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                className: "font",
+                children: " (0 for all recipes)"
+            }, void 0, false, {
+                fileName: "[project]/components/RecipeSlider.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-center gap-2 justify-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "1"
+                        children: "0"
                     }, void 0, false, {
                         fileName: "[project]/components/RecipeSlider.js",
-                        lineNumber: 6,
+                        lineNumber: 7,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         type: "range",
-                        min: "1",
+                        min: "0",
                         max: "20",
                         value: value,
                         onChange: (e)=>setValue(e.target.value),
                         className: "w-48"
                     }, void 0, false, {
                         fileName: "[project]/components/RecipeSlider.js",
-                        lineNumber: 7,
+                        lineNumber: 8,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         children: "20"
                     }, void 0, false, {
                         fileName: "[project]/components/RecipeSlider.js",
-                        lineNumber: 15,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/RecipeSlider.js",
-                lineNumber: 5,
+                lineNumber: 6,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -245,7 +253,7 @@ function RecipeSlider({ value, setValue }) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/RecipeSlider.js",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 7
             }, this)
         ]
@@ -281,7 +289,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$RecipeSlider$2
 ;
 function Sidebar({ recipeType, setRecipeType, algorithmType, setAlgorithm, maxRecipe, setMaxRecipe, execTime, nodeCount }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
-        className: "bg-purple-200 px-4 py-6 space-y-16 min-w-[300px]",
+        className: "bg-purple-200 px-4 py-6 space-y-14 min-w-[300px]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex justify-center text-2xl font-semibold mb-12",
@@ -408,52 +416,70 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-function TreeVisualizer({ target }) {
+function TreeVisualizer({ target, algorithmType, maxRecipe, isLive }) {
     _s();
-    const [treeData, setTreeData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null); // data yang ditampilkan
-    const [fullTree, setFullTree] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null); // data lengkap dari API
-    // Jalankan traversal animasi ketika ada data baru
-    /*
-  useEffect(() => {
-  if (!data) return;
-
-  const combined = combineTrees(data); // gabungkan multi tree jadi satu root
-  if (!combined) {
-    console.warn("No valid trees to combine");
-    return;
-  }
-  const root = { name: combined.name, children: [] };
-
-  setFullTree(combined);
-  setTreeData(root);
-
-  treeLiveTraversal(root, combined, setTreeData);
-}, [data]);
-*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+    const [treeData, setTreeData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const incomingTreesRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
+    const treeCountRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
+    const seenSignatures = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Set());
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "TreeVisualizer.useEffect": ()=>{
-            if (!target) return;
-            const root = {
-                name: target,
-                children: []
-            };
-            setTreeData(root);
-            const es = new EventSource(`/api/bfs/stream?target=${target}`);
+            if (!target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
+            const baseURL = 'http://localhost:8080/api';
+            const algoPath = algorithmType.toLowerCase();
+            if (!isLive) {
+                // NON-LIVE MODE: fetch data statis dan gabungkan
+                fetch(`${baseURL}/${algoPath}?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`).then({
+                    "TreeVisualizer.useEffect": (res)=>res.json()
+                }["TreeVisualizer.useEffect"]).then({
+                    "TreeVisualizer.useEffect": (data)=>{
+                        setTreeData(combineTrees(data.trees, target));
+                    }
+                }["TreeVisualizer.useEffect"]).catch({
+                    "TreeVisualizer.useEffect": (err)=>console.error('Fetch error:', err)
+                }["TreeVisualizer.useEffect"]);
+                return;
+            }
+            // LIVE MODE
+            incomingTreesRef.current = [];
+            treeCountRef.current = 0;
+            seenSignatures.current = new Set();
+            const es = new EventSource(`${baseURL}/${algoPath}/stream?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`);
             es.onmessage = ({
                 "TreeVisualizer.useEffect": (e)=>{
-                    console.log("SSE-node:", e.data);
-                    const node = JSON.parse(e.data);
-                    updateTreeLive(root, node, setTreeData);
+                    const newTree = JSON.parse(e.data);
+                    console.log(`[${algorithmType}] SSE-node:`, newTree);
+                    const sig = getSignature(newTree);
+                    if (!seenSignatures.current.has(sig)) {
+                        seenSignatures.current.add(sig);
+                        if (newTree.name === target && Array.isArray(newTree.children) && newTree.children.length === 2) {
+                            treeCountRef.current += 1;
+                        }
+                    }
+                    incomingTreesRef.current.push(newTree);
+                    const combined = combineTrees(incomingTreesRef.current, target);
+                    setTreeData(combined);
+                    if (treeCountRef.current >= maxRecipe) {
+                        es.close();
+                        console.log('Stopped SSE because maxRecipe reached');
+                    }
                 }
             })["TreeVisualizer.useEffect"];
             es.onerror = ({
-                "TreeVisualizer.useEffect": ()=>es.close()
+                "TreeVisualizer.useEffect": ()=>{
+                    es.close();
+                    console.warn(`[${algorithmType}] SSE closed`);
+                }
             })["TreeVisualizer.useEffect"];
             return ({
                 "TreeVisualizer.useEffect": ()=>es.close()
             })["TreeVisualizer.useEffect"];
         }
     }["TreeVisualizer.useEffect"], [
-        target
+        target,
+        maxRecipe,
+        algorithmType,
+        isLive
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
@@ -486,7 +512,7 @@ function TreeVisualizer({ target }) {
                 if (nodeDatum.name === '') {
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {}, void 0, false, {
                         fileName: "[project]/components/TreeVisualizer.jsx",
-                        lineNumber: 65,
+                        lineNumber: 89,
                         columnNumber: 22
                     }, void 0);
                 }
@@ -499,7 +525,7 @@ function TreeVisualizer({ target }) {
                             strokeWidth: 2
                         }, void 0, false, {
                             fileName: "[project]/components/TreeVisualizer.jsx",
-                            lineNumber: 69,
+                            lineNumber: 93,
                             columnNumber: 17
                         }, void 0),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
@@ -517,72 +543,56 @@ function TreeVisualizer({ target }) {
                             children: nodeDatum.name
                         }, void 0, false, {
                             fileName: "[project]/components/TreeVisualizer.jsx",
-                            lineNumber: 70,
+                            lineNumber: 94,
                             columnNumber: 17
                         }, void 0)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/TreeVisualizer.jsx",
-                    lineNumber: 68,
+                    lineNumber: 92,
                     columnNumber: 15
                 }, void 0);
             }
         }, void 0, false, {
             fileName: "[project]/components/TreeVisualizer.jsx",
-            lineNumber: 52,
+            lineNumber: 76,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/TreeVisualizer.jsx",
-        lineNumber: 50,
+        lineNumber: 74,
         columnNumber: 5
     }, this);
 }
-_s(TreeVisualizer, "w8dgupIvCPTI+h+xlHX1EiI7p/I=");
+_s(TreeVisualizer, "gs20CCoe+DAJdDeOcgfIkhSOU3k=");
 _c = TreeVisualizer;
-async function treeLiveTraversal(liveRoot, fullNode, setTreeData) {
-    const queue = [
-        {
-            liveNode: liveRoot,
-            fullNode
-        }
-    ];
-    while(queue.length > 0){
-        const { liveNode, fullNode } = queue.shift();
-        if (fullNode.children) {
-            for (const child of fullNode.children){
-                const newChild = {
-                    name: child.name,
-                    children: []
-                };
-                liveNode.children.push(newChild);
-                setTreeData(JSON.parse(JSON.stringify(liveRoot)));
-                await new Promise((res)=>setTimeout(res, 300));
-                queue.push({
-                    liveNode: newChild,
-                    fullNode: child
-                });
-            }
-        }
-    }
-}
-function combineTrees(trees) {
+function combineTrees(trees, rootName = "Root") {
     if (!Array.isArray(trees) || trees.length === 0) return null;
-    const rootName = trees[0]?.name || "Unknown";
-    const recipeGroups = [];
+    const recipePairs = [];
     for (const tree of trees){
-        if (!tree) continue;
-        const children = tree.children || [];
-        recipeGroups.push({
+        if (!tree || !Array.isArray(tree.children)) continue;
+        // Bungkus masing-masing tree agar tidak tercampur di visual
+        recipePairs.push({
             name: '',
-            children: children
+            children: tree.children
         });
     }
-    if (recipeGroups.length === 0) return null;
+    if (recipePairs.length === 0) return null;
     return {
         name: rootName,
-        children: recipeGroups
+        children: recipePairs
     };
+}
+function getSignature(node) {
+    if (!node) return '';
+    if (!node.children || node.children.length === 0) {
+        return node.name;
+    }
+    // Ambil signature anak-anak
+    const childSigs = node.children.map(getSignature);
+    // Urutkan biar konsisten (misal "Water,Fire" sama dengan "Fire,Water")
+    childSigs.sort();
+    return `${node.name}(${childSigs.join(',')})`;
 }
 var _c;
 __turbopack_context__.k.register(_c, "TreeVisualizer");
@@ -606,34 +616,36 @@ var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
-function TreePage({ algorithmType, searchElement, setSearchElement, execTime, setExecTime, nodeCount, setNodeCount, maxRecipe, treeData, setTreeData }) {
+function TreePage({ algorithmType, searchElement, setSearchElement, execTime, setExecTime, nodeCount, setNodeCount, maxRecipe }) {
     _s();
+    const [target, setTarget] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(''); // ← state baru untuk trigger SSE
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isLive, setIsLive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [confirmedMaxRecipe, setConfirmedMaxRecipe] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(maxRecipe);
     const searchRecipe = async ()=>{
         if (!searchElement.trim()) return;
+        setTarget(searchElement); // ← set target sebelum fetch
+        setConfirmedMaxRecipe(maxRecipe); // baru trigger visualisasi
+        setNodeCount(0);
+        setIsLoading(true);
         const baseURL = 'http://localhost:8080/api';
-        const target = encodeURIComponent(searchElement.trim());
         let url = '';
         if (algorithmType === 'BFS') {
-            url = `${baseURL}/bfs?target=${target}&max_recipe=${maxRecipe}`;
+            url = `${baseURL}/bfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
         } else if (algorithmType === 'DFS') {
-            url = `${baseURL}/dfs?target=${target}&max_recipe=${maxRecipe}`;
-        } else if (algorithmType === 'BDR') {
-            url = `${baseURL}/bdr?target=${target}&max_recipe=${maxRecipe}`;
+            url = `${baseURL}/dfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
+        } else {
+            url = `${baseURL}/bdr?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
         }
         try {
-            setIsLoading(true);
             const t0 = performance.now();
             const res = await fetch(url);
             const data = await res.json();
             const t1 = performance.now();
-            setTreeData(Array.isArray(data.trees) ? data.trees : []);
             setExecTime((t1 - t0).toFixed(2));
-            setNodeCount(data.visited_count || null);
-            console.log("API result:", data);
+            setNodeCount(data.visited_count);
         } catch (err) {
-            console.error('API error:', err);
-            setTreeData([]);
+            console.error(err);
             setExecTime(null);
             setNodeCount(null);
         } finally{
@@ -651,7 +663,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                         children: "Little Alchemy Recipe Finder"
                     }, void 0, false, {
                         fileName: "[project]/components/TreePage.js",
-                        lineNumber: 61,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -667,7 +679,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                     className: "flex-grow px-4 py-2 outline-none"
                                 }, void 0, false, {
                                     fileName: "[project]/components/TreePage.js",
-                                    lineNumber: 66,
+                                    lineNumber: 64,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -699,7 +711,7 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                                         strokeWidth: "4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TreePage.js",
-                                                        lineNumber: 92,
+                                                        lineNumber: 90,
                                                         columnNumber: 31
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -708,72 +720,129 @@ function TreePage({ algorithmType, searchElement, setSearchElement, execTime, se
                                                         d: "M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TreePage.js",
-                                                        lineNumber: 93,
+                                                        lineNumber: 91,
                                                         columnNumber: 31
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/TreePage.js",
-                                                lineNumber: 91,
+                                                lineNumber: 89,
                                                 columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "Load"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/TreePage.js",
-                                                lineNumber: 95,
+                                                lineNumber: 93,
                                                 columnNumber: 27
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/TreePage.js",
-                                        lineNumber: 90,
+                                        lineNumber: 88,
                                         columnNumber: 23
                                     }, this) : 'Search'
                                 }, void 0, false, {
                                     fileName: "[project]/components/TreePage.js",
-                                    lineNumber: 73,
+                                    lineNumber: 71,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/TreePage.js",
-                            lineNumber: 65,
+                            lineNumber: 63,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/TreePage.js",
-                        lineNumber: 64,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/TreePage.js",
-                lineNumber: 60,
+                lineNumber: 58,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center space-x-3 mt-4 justify-center",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-sm font-medium",
+                        children: "Live Tree:"
+                    }, void 0, false, {
+                        fileName: "[project]/components/TreePage.js",
+                        lineNumber: 103,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>setIsLive((prev)=>!prev),
+                        className: `relative w-16 h-8 rounded-full transition-colors duration-300 
+            ${isLive ? 'bg-purple-500' : 'bg-gray-300'}`,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: `absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300
+              ${isLive ? 'translate-x-8' : 'translate-x-0'}`
+                            }, void 0, false, {
+                                fileName: "[project]/components/TreePage.js",
+                                lineNumber: 109,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: `absolute top-1/2 right-2 transform -translate-y-1/2 text-xs font-bold text-white transition-opacity duration-200
+              ${isLive ? 'opacity-0' : 'opacity-100'}`,
+                                children: "OFF"
+                            }, void 0, false, {
+                                fileName: "[project]/components/TreePage.js",
+                                lineNumber: 113,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: `absolute top-1/2 left-2 transform -translate-y-1/2 text-xs font-bold text-white transition-opacity duration-200
+              ${isLive ? 'opacity-100' : 'opacity-0'}`,
+                                children: "ON"
+                            }, void 0, false, {
+                                fileName: "[project]/components/TreePage.js",
+                                lineNumber: 119,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/TreePage.js",
+                        lineNumber: 104,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/TreePage.js",
+                lineNumber: 102,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "min-w-[800px] min-h-[500px] border rounded bg-white p-4",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TreeVisualizer$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    data: treeData
+                children: target && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TreeVisualizer$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    target: target,
+                    algorithmType: algorithmType,
+                    maxRecipe: confirmedMaxRecipe,
+                    isLive: isLive
                 }, void 0, false, {
                     fileName: "[project]/components/TreePage.js",
-                    lineNumber: 106,
-                    columnNumber: 9
+                    lineNumber: 129,
+                    columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/TreePage.js",
-                lineNumber: 105,
+                lineNumber: 127,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/TreePage.js",
-        lineNumber: 59,
+        lineNumber: 57,
         columnNumber: 5
     }, this);
 }
-_s(TreePage, "EmvgwIb3cHpoFpeP+WmEDbjx4y4=");
+_s(TreePage, "GQwqdcdqm5KE8UvyXipPtmNZyfI=");
 _c = TreePage;
 var _c;
 __turbopack_context__.k.register(_c, "TreePage");
