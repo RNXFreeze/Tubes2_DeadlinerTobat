@@ -22,7 +22,7 @@ import (
 	"Tubes2_DeadlinerTobat/src/backend"
 )
 
-type BFSResponse struct {
+type AlgorithmResponse struct {
 	Target       string                `json:"target"`
 	VisitedCount int                   `json:"visited_count"`
 	Trees        []*backend.RecipeNode `json:"trees"`
@@ -49,7 +49,7 @@ func main() {
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 		res := backend.BFS(gallery , target , maxRecipe);
 
-		c.JSON(http.StatusOK, BFSResponse{
+		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees, // sudah JSON-marshal-able karena ada tag di RecipeNode
@@ -66,7 +66,7 @@ func main() {
 
 		res := backend.DFS(gallery , target , maxRecipe);
 
-		c.JSON(http.StatusOK, BFSResponse{ // pake BFSResponse aja biar simple
+		c.JSON(http.StatusOK, AlgorithmResponse{ // pake AlgorithmResponse aja biar simple
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,
@@ -86,7 +86,7 @@ func main() {
 		res := backend.BDR(gallery , target , maxRecipe);
 
 		// kembalikan dengan format yang sama seperti BFS/DFS
-		c.JSON(http.StatusOK, BFSResponse{
+		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,

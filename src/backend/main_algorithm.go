@@ -99,7 +99,7 @@ func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery 
 				*max_recipe = value;
 				break;
 			}
-			fmt.Println("Input max recipe harus berupa bilangan bulat positif.");
+			fmt.Printf("Input output recipe harus berupa bilangan bulat non-negatif dalam rentang (0 - %d).\n" , *max_recipe);
 		}
 		mrp = *max_recipe;
 	}
