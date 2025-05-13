@@ -76,20 +76,11 @@ func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 					}
 					if (len(new_leaf) == 0) {
 						signature := SignatureTree(new_root)
-						if _, check := signature_tree[signature]; !check {
-							signature_tree[signature] = struct{}{}
-							res = append(res, new_root)
-							if option.LiveChan != nil {
-								go func(recipes []*RecipeNode) {
-									for _, t := range recipes {
-										option.LiveChan <- t
-										time.Sleep(1500 * time.Millisecond)
-									}
-								}(res)
-							}
-							return AlgorithmResult{
-								Trees:        res,
-								VisitedCount: int(atomic.LoadInt64(&counter)),
+						if _ , check := signature_tree[signature]; !check {
+							signature_tree[signature] = struct{}{};
+							res = append(res , new_root);
+							if (len(res) >= max_recipe) {
+								break;
 							}
 						}
 					} else {
