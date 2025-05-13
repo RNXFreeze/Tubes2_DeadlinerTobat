@@ -168,7 +168,7 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 		} else if (visited[name]) {
 			return 1;
 		} else {
-			best := 0
+			best := 0;
 			visited[name] = true;
 			for _ , p := range element.Parents {
 				t1 := CalculateTier(p[0] , gallery , visited);
