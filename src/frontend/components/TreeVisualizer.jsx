@@ -9,7 +9,7 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive
   const seenSignatures = useRef(new Set());
   
   useEffect(() => {
-    if (!target || !algorithmType || !maxRecipe || maxRecipe <= 0) return;
+    if (!target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
     
     const baseURL = 'http://localhost:8080/api';
     const algoPath = algorithmType.toLowerCase();
@@ -115,49 +115,6 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive
   );
 }
 
-// function mergeIntoRoot(root, newTree) {
-//   if (root.name === newTree.name) {
-//     // gabungkan children dari tree baru ke root
-//     root.children = [...(root.children || []), ...(newTree.children || [])];
-
-//     // root.children = mergeChildren(root.children || [], newTree.children || []);
-//   } else {
-//     // cari node yang cocok di bawah root, lalu merge
-//     insertNodeRecursively(root, newTree);
-//   }
-// }
-
-// function mergeChildren(oldChildren, newChildren) {
-//   const merged = [...oldChildren];
-
-//   for (const newChild of newChildren) {
-//     const existing = merged.find(c => c.name === newChild.name);
-
-//     if (existing) {
-//       existing.children = mergeChildren(existing.children || [], newChild.children || []);
-//     } else {
-//       merged.push(newChild);
-//     }
-//   }
-
-//   return merged;
-// }
-
-// function insertNodeRecursively(current, incoming) {
-//   if (current.name === incoming.name) {
-//     current.children = [...(current.children || []), ...(incoming.children || [])];
-//     return true;
-//   }
-
-//   if (!current.children) return false;
-
-//   for (const child of current.children) {
-//     if (insertNodeRecursively(child, incoming)) return true;
-//   }
-
-//   return false;
-// }
-
 function combineTrees(trees, rootName = "Root") {
   if (!Array.isArray(trees) || trees.length === 0) return null;
 
@@ -172,6 +129,8 @@ function combineTrees(trees, rootName = "Root") {
       children: tree.children
     });
   }
+
+  if (recipePairs.length === 0) return null;
 
   return {
     name: rootName,

@@ -15,12 +15,15 @@ export default function TreePage({
 }) {
   const [target, setTarget] = useState('');    // ← state baru untuk trigger SSE
   const [isLoading, setIsLoading] = useState(false);
-  const [isLive, setIsLive] = useState(true);
+  const [isLive, setIsLive] = useState(false);
+  const [confirmedMaxRecipe, setConfirmedMaxRecipe] = useState(maxRecipe);
 
   const searchRecipe = async () => {
     if (!searchElement.trim()) return;
 
     setTarget(searchElement);                  // ← set target sebelum fetch
+    setConfirmedMaxRecipe(maxRecipe); // baru trigger visualisasi
+    setNodeCount(0);
     setIsLoading(true);
     const baseURL = 'http://localhost:8080/api';
     let url = '';
@@ -108,14 +111,14 @@ export default function TreePage({
               ${isLive ? 'translate-x-8' : 'translate-x-0'}`}
           />
           <span
-            className={`absolute top-1/2 transform -translate-y-1/2 text-xs font-bold px-2 text-white
-              ${isLive ? 'left-2 opacity-0' : 'right-2 opacity-100'}`}
+            className={`absolute top-1/2 right-2 transform -translate-y-1/2 text-xs font-bold text-white transition-opacity duration-200
+              ${isLive ? 'opacity-0' : 'opacity-100'}`}
           >
             OFF
           </span>
           <span
-            className={`absolute top-1/2 transform -translate-y-1/2 text-xs font-bold px-2 text-white
-              ${isLive ? 'right-2 opacity-100' : 'left-2 opacity-0'}`}
+            className={`absolute top-1/2 left-2 transform -translate-y-1/2 text-xs font-bold text-white transition-opacity duration-200
+              ${isLive ? 'opacity-100' : 'opacity-0'}`}
           >
             ON
           </span>
@@ -126,7 +129,7 @@ export default function TreePage({
             <TreeVisualizer
             target={target}
             algorithmType={algorithmType}
-            maxRecipe={maxRecipe}
+            maxRecipe={confirmedMaxRecipe}
             isLive={isLive}
             />
         )}
