@@ -102,6 +102,8 @@ func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery 
 			fmt.Printf("Input output recipe harus berupa bilangan bulat non-negatif dalam rentang (0 - %d).\n" , *max_recipe);
 		}
 		mrp = *max_recipe;
+	} else {
+		*max_recipe = len(res.Trees);
 	}
 	fmt.Println("==============================================================");
 	fmt.Println();
@@ -115,9 +117,9 @@ func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery 
 		}
     }
 	fmt.Println("======= STATS & INPUT HISTORY =======");
-	fmt.Printf("Target Element              : %s\n" , target);
-	fmt.Printf("Algorithm (BFS/DFS/BDR)     : %s\n" , algorithm);
-	fmt.Printf("Max Recipe (0 = No Recipe)  : %d\n" , *max_recipe);
+	fmt.Printf("Target Element                 : %s\n" , target);
+	fmt.Printf("Algorithm (BFS/DFS/BDR)        : %s\n" , algorithm);
+	fmt.Printf("Display Recipe (0 = No Recipe) : %d\n" , *max_recipe);
 	fmt.Println();
 	fmt.Printf("Total Recipe : %d Recipe\n" , len(res.Trees));
 	fmt.Printf("Visited Node : %d Node\n" , res.VisitedCount);
@@ -168,16 +170,15 @@ func MainTerminal() {
 			atomic.StoreInt64(&counter , 0);
 			start := time.Now();
 			var res AlgorithmResult;
-			SubmitJob(func() {
-				if (algorithm == "BFS") {
-					res = BFS(gallery , target , max_recipe);
-				} else if (algorithm == "DFS") {
-					res = DFS(gallery , target , max_recipe);
-				} else {
-					res = BDR(gallery , target , max_recipe);
-				}
-			});
-			WaitJobs();
+			EnableMultithreading();
+			if (algorithm == "BFS") {
+				res = BFS(gallery , target , max_recipe);
+			} else if (algorithm == "DFS") {
+				res = DFS(gallery , target , max_recipe);
+			} else {
+				res = BDR(gallery , target , max_recipe);
+			}
+			DisableMultithreading();
 			DisplayResultTerminal(res , start , gallery , target , algorithm , &max_recipe);
 			fmt.Println("==============================================================");
 			var answer string;

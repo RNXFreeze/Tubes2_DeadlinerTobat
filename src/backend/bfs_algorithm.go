@@ -13,21 +13,24 @@
 
 package backend;
 
-import "sync/atomic";
+import (
+    "sync";
+    "sync/atomic";
+)
 
 func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
-    if (max_recipe == 0) {
-        max_recipe = int(^uint(0) >> 1);
+    if max_recipe == 0 {
+        max_recipe = int(^uint(0) >> 1)
     }
-	touch();
-	if element , check := gallery.GalleryName[target] ; check && element.Tier == 0 {
+    touch();
+    if element , check := gallery.GalleryName[target] ; (check && element.Tier == 0) {
         node := &RecipeNode{Name : target};
         return AlgorithmResult{Trees : []*RecipeNode{node} , VisitedCount : int(atomic.LoadInt64(&counter))};
     } else {
 		parent_map := make(map[string][][2]string);
 		GetParentPairs := func(name string) [][2]string {
-			if parent , check := parent_map[name] ; check {
-				return parent;
+			if parent_pairs , check := parent_map[name] ; check {
+				return parent_pairs;
 			} else {
 				var all_parent_pairs [][2]string;
 				if element , check := gallery.GalleryName[name] ; check {
@@ -39,55 +42,73 @@ func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 				return all_parent_pairs;
 			}
 		}
-		var res []*RecipeNode;
-		var queue []PartialTree;
-		signature_tree := make(map[string]struct{});
-		root := &RecipeNode{Name : target};
-		queue = append(queue , PartialTree{tree : root , leaf : []*RecipeNode{root}});
-		for (len(queue) > 0 /*&& len(res) < max_recipe*/) {
-			cur := queue[0];
-			exp := cur.leaf[0];
-			rst := cur.leaf[1:];
-			queue = queue[1:];
-			element := gallery.GalleryName[exp.Name];
-			for _ , parent := range GetParentPairs(exp.Name) {
-				touch();
-				l := parent[0];
-				r := parent[1];
-				if (GetTier(gallery , l) < element.Tier && GetTier(gallery , r) < element.Tier) {
-					new_root , clone_map := CloneTreeMap(cur.tree);
-					pl := &RecipeNode{Name : l};
-					pr := &RecipeNode{Name : r};
-					ptr := clone_map[exp];
-					ptr.Parents = []*RecipeNode{pl , pr};
-					new_leaf := make([]*RecipeNode , 0 , len(rst) + 2);
-					for _ , leaf := range rst {
-						new_leaf = append(new_leaf , clone_map[leaf]);
-					}
-					if (IsExpandable(gallery.GalleryName[pl.Name])) {
-						new_leaf = append(new_leaf , pl);
-					}
-					if (IsExpandable(gallery.GalleryName[pr.Name])) {
-						new_leaf = append(new_leaf , pr);
-					}
-					if (len(new_leaf) == 0) {
-						signature := SignatureTree(new_root)
-						if _ , check := signature_tree[signature]; !check {
-							signature_tree[signature] = struct{}{};
-							res = append(res , new_root);
-							if (len(res) >= max_recipe) {
-								break;
+		var (
+			res   []*RecipeNode;
+			next  []PartialTree;
+			queue []PartialTree;
+			mutex_res  sync.Mutex;
+			mutex_next sync.Mutex;
+			signature_tree = make(map[string]struct{});
+		)
+		queue = append(queue , PartialTree{Tree : &RecipeNode{Name : target} , Leaf : []*RecipeNode{{Name : target}}});
+		for (len(queue) > 0 && len(res) < max_recipe) {
+			var wg sync.WaitGroup;
+			next = next[:0];
+			for _ , cur := range queue {
+				exp := cur.Leaf[0];
+				element := gallery.GalleryName[exp.Name];
+				for _ , parent := range GetParentPairs(exp.Name) {
+					touch();
+					l := parent[0];
+					r := parent[1];
+					if (GetTier(gallery , l) < element.Tier && GetTier(gallery , r) < element.Tier) {
+						wg.Add(1);
+						go func(l string , r string , cur PartialTree) {
+							defer wg.Done()
+							new_root , _ := CloneTreeMap(cur.Tree);
+							ptr := FindPointer(new_root, cur.Leaf[0].Name)
+							if (ptr == nil) {
+								return;
+							} else {
+								pl := &RecipeNode{Name : l};
+								pr := &RecipeNode{Name : r};
+								ptr.Parents = []*RecipeNode{pl , pr};
+								var new_leaf []*RecipeNode;
+								for _ , Leaf := range cur.Leaf[1:] {
+									if np := FindPointer(new_root , Leaf.Name) ; np != nil {
+										new_leaf = append(new_leaf , np);
+									}
+								}
+								if (IsExpandable(gallery.GalleryName[l])) {
+									new_leaf = append(new_leaf , pl);
+								}
+								if (IsExpandable(gallery.GalleryName[r])) {
+									new_leaf = append(new_leaf , pr);
+								}
+								if (len(new_leaf) == 0) {
+									signature := SignatureTree(new_root);
+									mutex_res.Lock();
+									if _ , check := signature_tree[signature]; (!check && len(res) < max_recipe) {
+										signature_tree[signature] = struct{}{};
+										res = append(res , new_root);
+									}
+									mutex_res.Unlock();
+								} else {
+									mutex_next.Lock();
+									next = append(next , PartialTree{Tree : new_root , Leaf : new_leaf});
+									mutex_next.Unlock();
+								}
 							}
-						}
-					} else {
-						queue = append(queue , PartialTree{tree : new_root , leaf : new_leaf});
+						}(l , r , cur);
 					}
 				}
 			}
+			wg.Wait();
+			queue , next = next , queue;
 		}
 		if (len(res) > max_recipe) {
 			res = res[:max_recipe];
 		}
-		return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
+		return AlgorithmResult {Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
 	}
 }

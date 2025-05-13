@@ -11,7 +11,7 @@
 /* Deskripsi  : F00 - Main Program API (Connection Frontend & Backend)           */
 /* PIC F00    : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
 
-package main;
+package main
 
 import (
 	"log"
@@ -46,6 +46,7 @@ func main() {
 			return
 		}
 
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 		if maxRecipe == 0 || maxRecipe > 50 {
 			maxRecipe = 50
@@ -57,6 +58,7 @@ func main() {
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,
 		})
+		backend.DisableMultithreading();
 	})
 	r.GET("/api/dfs", func(c *gin.Context) {
 		target := c.Query("target")
@@ -65,12 +67,14 @@ func main() {
 			return
 		}
 
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 		if maxRecipe == 0 || maxRecipe > 50 {
 			maxRecipe = 50
 		}
 
-		res := backend.DFS(gallery , target , maxRecipe);
+		res := backend.DFS(gallery, target, maxRecipe)
+		backend.DisableMultithreading();
 
 		c.JSON(http.StatusOK, AlgorithmResponse{ 
 			Target:       target,
@@ -86,6 +90,7 @@ func main() {
 			return
 		}
 
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 		if maxRecipe == 0 || maxRecipe > 50 {
 			maxRecipe = 50
@@ -103,11 +108,11 @@ func main() {
 	r.GET("/api/elements", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"elements": gallery.GetAllNames(),
+			"elements": gallery.GetAllNames(),
 		})
 	})
 
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
 	}
-
 }

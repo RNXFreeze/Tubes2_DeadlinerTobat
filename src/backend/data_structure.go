@@ -22,9 +22,9 @@ import (
 )
 
 type Element struct {
-	Name    string
-	Tier    int
-	Parents [][]string
+	Name    string;
+	Tier    int;
+	Parents [][]string;
 }
 
 type Gallery struct {
@@ -37,8 +37,8 @@ type RecipeNode struct {
 }
 
 type PartialTree struct {
-    tree *RecipeNode;
-    leaf []*RecipeNode;
+    Tree *RecipeNode;
+    Leaf []*RecipeNode;
 }
 
 type AlgorithmResult struct {
@@ -57,6 +57,21 @@ var base_element = map[string]struct{} {
 func IsBase(name string) bool {
 	_ , check := base_element[name];
 	return check;
+}
+
+func FindPointer(root *RecipeNode , name string) *RecipeNode {
+    if (root == nil) {
+        return nil;
+    } else if (root.Name == name && len(root.Parents) == 0) {
+        return root;
+    } else {
+		for _ , parent := range root.Parents {
+			if node := FindPointer(parent , name) ; node != nil {
+				return node;
+			}
+		}
+		return nil;
+	}
 }
 
 func IsExpandable(element *Element) bool {
@@ -152,20 +167,29 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 			return element.Tier;
 		} else if (visited[name]) {
 			return 1;
-		}
-		best := 0
-		visited[name] = true;
-		for _ , p := range element.Parents {
-			t1 := CalculateTier(p[0] , gallery , visited);
-			t2 := CalculateTier(p[1] , gallery , visited);
-			if t := max(t1 , t2) + 1 ; t > best {
-				best = t;
+		} else {
+			best := 0;
+			visited[name] = true;
+			for _ , p := range element.Parents {
+				t1 := CalculateTier(p[0] , gallery , visited);
+				t2 := CalculateTier(p[1] , gallery , visited);
+				if t := max(t1 , t2) + 1 ; t > best {
+					best = t;
+				}
 			}
+			visited[name] = false;
+			element.Tier = best;
+			return best;
 		}
-		visited[name] = false;
-		element.Tier = best;
-		return best;
 	}
+}
+
+func (gallery *Gallery) GetAllNames() []string {
+	names := make([]string , 0 , len(gallery.GalleryName));
+	for name := range gallery.GalleryName {
+		names = append(names , name);
+	}
+	return names;
 }
 
 func LoadRecipeGallery(path string) (*Gallery , error) {
@@ -235,12 +259,4 @@ func LoadRecipeGallery(path string) (*Gallery , error) {
             return gallery , nil;
         }
     }
-}
-
-func (gallery *Gallery) GetAllNames() []string {
-	names := make([]string , 0 , len(gallery.GalleryName));
-	for name := range gallery.GalleryName {
-		names = append(names , name);
-	}
-	return names;
 }
