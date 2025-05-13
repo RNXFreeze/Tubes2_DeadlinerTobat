@@ -34,7 +34,7 @@ func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			return CloneSlice(value);
 		} else {
 			element := gallery.GalleryName[name];
-			if (element == nil || len(element.Parents) == 0) {
+			if (element == nil || element.Tier == 0 || len(element.Parents) == 0) {
 				memory[name] = []*RecipeNode{{Name : name}};
 				return memory[name];
 			} else {

@@ -14,15 +14,15 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"log"
-	"sort"
-	"strconv"
-	"strings"
-	"net/http"
-	"encoding/json"
-	"github.com/PuerkitoBio/goquery"
+	"os";
+	"fmt";
+	"log";
+	"sort";
+	"strconv";
+	"strings";
+	"net/http";
+	"encoding/json";
+	"github.com/PuerkitoBio/goquery";
 )
 
 func getMythElements() []string {
@@ -32,7 +32,7 @@ func getMythElements() []string {
 	url := "https://little-alchemy.fandom.com/wiki/Elements_(Myths_and_Monsters)"
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", url, nil)
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
 	res, err := client.Do(req)
 	if err != nil {
 		log.Println("Myth HTTP error:", err)
@@ -52,18 +52,15 @@ func getMythElements() []string {
 	}
 
 	doc.Find("div.mw-parser-output table tr").Each(func(_ int, row *goquery.Selection) {
-		tdName := row.Find("td").Eq(0)
-		name := strings.TrimSpace(tdName.Text())
+		name := strings.TrimSpace(row.Find("td").Eq(0).Text())
 		if name != "" {
 			if _, ok := seen[name]; !ok {
 				myth = append(myth, name)
 				seen[name] = struct{}{}
-				fmt.Printf("Found myth element: %s\n", name)
 			}
 		}
 	})
 
-	log.Printf("Myth elements scraped (unique): %d\n", len(myth))
 	return myth
 }
 
@@ -77,127 +74,121 @@ func checkArray(elements []string, target string) bool {
 }
 
 func main() {
-	mythsElements := getMythElements()
-	fmt.Println(mythsElements)
+	// 1) Dapatkan elemen Myth/Monster untuk di-skip
+	mythElements := getMythElements()
+
+	// 2) Fetch halaman utama Little Alchemy 2
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://little-alchemy.fandom.com/wiki/Elements_(Little_Alchemy_2)", nil)
+	req, err := http.NewRequest("GET",
+		"https://little-alchemy.fandom.com/wiki/Elements_(Little_Alchemy_2)", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/91.0.4472.124 Safari/537.36")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
 	res, err := client.Do(req)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer res.Body.Close()
-
-	if res.StatusCode != 200 {
+	if res.StatusCode != http.StatusOK {
 		log.Fatalf("Status code error: %d %s", res.StatusCode, res.Status)
 	}
-
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	// 3) Siapkan struktur output dan inisialisasi tier 0 (base elements)
 	output := make(map[string]map[string][][]string)
-	currentTierKey := ""
+	output["tier 0"] = make(map[string][][]string)
+	currentTier := "tier 0"
 	totalElements := 0
 
-	doc.Find("h2, h3, tr").Each(func(i int, s *goquery.Selection) {
+	doc.Find("h2, h3, tr").Each(func(_ int, s *goquery.Selection) {
 		tag := goquery.NodeName(s)
 
-		if tag == "h2" || tag == "h3" {
-			heading := strings.TrimSpace(s.Text())
-			if strings.HasPrefix(heading, "Tier") {
-				parts := strings.Fields(heading)
-				if len(parts) >= 2 {
-					tierNum, err := strconv.Atoi(parts[1])
-					if err == nil {
-						currentTierKey = fmt.Sprintf("tier %d", tierNum)
-						if _, ok := output[currentTierKey]; !ok {
-							output[currentTierKey] = make(map[string][][]string)
-						}
+		// Deteksi heading Tier N → override currentTier
+		if (tag == "h2" || tag == "h3") && strings.HasPrefix(strings.TrimSpace(s.Text()), "Tier") {
+			parts := strings.Fields(s.Text())
+			if len(parts) >= 2 {
+				if tierNum, err := strconv.Atoi(parts[1]); err == nil {
+					currentTier = fmt.Sprintf("tier %d", tierNum)
+					if _, exists := output[currentTier]; !exists {
+						output[currentTier] = make(map[string][][]string)
 					}
 				}
 			}
 			return
 		}
 
-		if tag != "tr" || currentTierKey == "" {
+		// Proses hanya baris <tr> jika currentTier sudah ada
+		if tag != "tr" || currentTier == "" {
 			return
 		}
 
-		left := s.Find("td").First()
-		right := left.Next()
-
-		element := strings.TrimSpace(left.Find("a").Text())
-		if element == "" {
+		// Nama elemen
+		element := strings.TrimSpace(s.Find("td").First().Find("a").Text())
+		if element == "" || checkArray(mythElements, element) {
 			return
 		}
 
-		if checkArray(mythsElements, element) {
-			return
+		// Tambahkan elemen ke output (jaga unique)
+		if _, exists := output[currentTier][element]; !exists {
+			output[currentTier][element] = nil
+			totalElements++
 		}
 
+		// Kumpulkan resep jika ada
 		var recipes [][]string
-		right.Find("li").Each(func(j int, li *goquery.Selection) {
-			var parts []string
-			li.Find("a").Each(func(k int, a *goquery.Selection) {
-				text := strings.TrimSpace(a.Text())
-				if text != "" {
-					parts = append(parts, text)
+		s.Find("li").Each(func(_ int, li *goquery.Selection) {
+			var pair []string
+			li.Find("a").Each(func(_ int, a *goquery.Selection) {
+				if txt := strings.TrimSpace(a.Text()); txt != "" {
+					pair = append(pair, txt)
 				}
 			})
-			if len(parts) == 2 {
-				if checkArray(mythsElements, parts[0]) || checkArray(mythsElements, parts[1]) {
-					return
-				}
-				recipes = append(recipes, parts)
+			if len(pair) == 2 &&
+				!checkArray(mythElements, pair[0]) &&
+				!checkArray(mythElements, pair[1]) {
+				recipes = append(recipes, []string{pair[0], pair[1]})
 			}
 		})
-
 		if len(recipes) > 0 {
-			output[currentTierKey][element] = recipes
-			totalElements++
+			output[currentTier][element] = recipes
 		}
 	})
 
-	 // write sorted JSON to data.json
-    file, err := os.Create("data.json")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer file.Close()
+	// 4) Tuliskan JSON dengan urutan tier 0..15
+	file, err := os.Create("data.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
-    // collect and sort tier keys numerically
-    tiers := make([]string, 0, len(output))
-    for k := range output {
-        tiers = append(tiers, k)
-    }
-    sort.Slice(tiers, func(i, j int) bool {
-        ai, _ := strconv.Atoi(strings.TrimPrefix(tiers[i], "tier "))
-        aj, _ := strconv.Atoi(strings.TrimPrefix(tiers[j], "tier "))
-        return ai < aj
-    })
+	tiers := make([]string, 0, len(output))
+	for t := range output {
+		tiers = append(tiers, t)
+	}
+	sort.Slice(tiers, func(i, j int) bool {
+		ni, _ := strconv.Atoi(strings.TrimPrefix(tiers[i], "tier "))
+		nj, _ := strconv.Atoi(strings.TrimPrefix(tiers[j], "tier "))
+		return ni < nj
+	})
 
-    // manually marshal per-tier in sorted order
-    file.WriteString("{\n")
-    for idx, tier := range tiers {
-        b, err := json.MarshalIndent(output[tier], "  ", "  ")
-        if err != nil {
-            log.Fatalf("failed to marshal tier %s: %v", tier, err)
-        }
-        // write "tier X": { ... }
-        file.WriteString(fmt.Sprintf("  %q: %s", tier, b))
-        if idx < len(tiers)-1 {
-            file.WriteString(",\n")
-        } else {
-            file.WriteString("\n")
-        }
-    }
-    file.WriteString("}\n")
+	file.WriteString("{\n")
+	for idx, tier := range tiers {
+		b, err := json.MarshalIndent(output[tier], "  ", "  ")
+		if err != nil {
+			log.Fatalf("marshal tier %s: %v", tier, err)
+		}
+		file.WriteString(fmt.Sprintf("  %q: %s", tier, b))
+		if idx < len(tiers)-1 {
+			file.WriteString(",\n")
+		} else {
+			file.WriteString("\n")
+		}
+	}
+	file.WriteString("}\n")
 
-    fmt.Printf("Scraping completed. Data saved to data.json\n")
-    fmt.Printf("Total elements with recipes: %d\n", totalElements)
+	fmt.Printf("Scraping completed. Total elements: %d\n", totalElements)
 }

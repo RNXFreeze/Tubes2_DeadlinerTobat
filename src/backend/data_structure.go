@@ -55,6 +55,7 @@ var base_element = map[string]struct{} {
 	"Water" : {},
 	"Earth" : {},
 	"Fire"  : {},
+	"Time"  : {},
 	"Air"   : {},
 }
 
@@ -173,64 +174,72 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 }
 
 func LoadRecipeGallery(path string) (*Gallery , error) {
-	file , err := os.Open(path);
-	if (err != nil) {
-		return nil , err;
-	} else {
-		defer file.Close();
-		raw := map[string]any{};
-		if err := json.NewDecoder(file).Decode(&raw) ; err != nil {
-			return nil , fmt.Errorf("decode JSON : %w" , err);
-		} else {
-			gallery := &Gallery{GalleryName : map[string]*Element{}};
-			check := false;
-			for key := range raw {
-				if (strings.HasPrefix(strings.ToLower(key), "tier")) {
-					check = true;
-					break;
-				}
-			}
-			if (check) {
-				for key , value := range raw {
-					if (strings.HasPrefix(strings.ToLower(key) , "tier")) {
-						str := strings.TrimSpace(strings.TrimPrefix(strings.ToLower(key) , "tier"));
-						num , _ := strconv.Atoi(str);
-						inner , check := value.(map[string]any);
-						if (check) {
-							for name , arr := range inner {
-								gallery.GalleryName[name] = &Element{
-									Name    : name,
-									Tier    : num,
-									Parents : Transform(arr.([]any)),
-								}
-							}
-						}
-					}
-				}
-			} else {
-				for name , arr := range raw {
-					gallery.GalleryName[name] = &Element{
-						Name    : name,
-						Tier    : -1,
-						Parents : Transform(arr.([]any)),
-					}
-				}
-			}
-			for base := range base_element {
-				if _ , check := gallery.GalleryName[base] ; !check {
-					gallery.GalleryName[base] = &Element{Name : base , Tier : 0 , Parents : nil};
-				} else {
-					gallery.GalleryName[base].Tier = 0
-				}
-			}
-			for name , element := range gallery.GalleryName {
-				if (element.Tier < 0) {
-					CalculateTier(name , gallery , map[string]bool{});
-				}
-			}
-			return gallery , nil;
-		}
-	}
+    file , err := os.Open(path);
+    if (err != nil) {
+        return nil , err;
+    } else {
+        defer file.Close();
+        raw := map[string]any{};
+        if err := json.NewDecoder(file).Decode(&raw) ; err != nil {
+            return nil , fmt.Errorf("decode JSON : %w" , err);
+        } else {
+            gallery := &Gallery{GalleryName : map[string]*Element{}};
+            check := false;
+            for key := range raw {
+                if (strings.HasPrefix(strings.ToLower(key), "tier")) {
+                    check = true;
+                    break;
+                }
+            }
+            if (check) {
+                for key , value := range raw {
+                    if (strings.HasPrefix(strings.ToLower(key) , "tier")) {
+                        str := strings.TrimSpace(strings.TrimPrefix(strings.ToLower(key) , "tier"));
+                        num , _ := strconv.Atoi(str);
+                        inner , check := value.(map[string]any);
+                        if (check) {
+                            for name , arr := range inner {
+                                var parents [][]string;
+                                if (arr != nil) {
+                                    parents = Transform(arr.([]any));
+                                }
+                                gallery.GalleryName[name] = &Element{
+                                    Name    : name,
+                                    Tier    : num,
+                                    Parents : parents,
+                                };
+                            }
+                        }
+                    }
+                }
+            } else {
+                for name , arr := range raw {
+                    var parents [][]string;
+                    if arr != nil {
+                        parents = Transform(arr.([]any));
+                    }
+                    gallery.GalleryName[name] = &Element{
+                        Name    : name,
+                        Tier    : -1,
+                        Parents : parents,
+                    };
+                }
+            }
+            for base := range base_element {
+                if _ , check := gallery.GalleryName[base] ; !check {
+                    gallery.GalleryName[base] = &Element{Name : base , Tier : 0 , Parents : nil};
+                } else {
+                    gallery.GalleryName[base].Tier = 0;
+                }
+            }
+            for name , element := range gallery.GalleryName {
+                if (element.Tier < 0) {
+                    CalculateTier(name , gallery , map[string]bool{});
+                }
+            }
+            return gallery , nil;
+        }
+    }
 }
 
 func StreamTree(root *RecipeNode , destination chan<- *RecipeNode , delay time.Duration) {

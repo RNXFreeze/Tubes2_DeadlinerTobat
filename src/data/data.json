@@ -1,4 +1,34 @@
 {
+  "tier 0": {
+    "Air": [
+      [
+        "Fire",
+        "Mist"
+      ]
+    ],
+    "Earth": null,
+    "Fire": [
+      [
+        "Fire",
+        "Alcohol"
+      ],
+      [
+        "Fire",
+        "Coal"
+      ]
+    ],
+    "Time": null,
+    "Water": [
+      [
+        "Heat",
+        "Ice"
+      ],
+      [
+        "Heat",
+        "Snow"
+      ]
+    ]
+  },
   "tier 1": {
     "Dust": [
       [
