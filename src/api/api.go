@@ -47,12 +47,15 @@ func main() {
 		}
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+		if maxRecipe == 0 || maxRecipe > 50 {
+			maxRecipe = 50
+		}
 		res := backend.BFS(gallery , target , maxRecipe);
 
 		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
-			Trees:        res.Trees, // sudah JSON-marshal-able karena ada tag di RecipeNode
+			Trees:        res.Trees,
 		})
 	})
 	r.GET("/api/dfs", func(c *gin.Context) {
@@ -63,10 +66,13 @@ func main() {
 		}
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+		if maxRecipe == 0 || maxRecipe > 50 {
+			maxRecipe = 50
+		}
 
 		res := backend.DFS(gallery , target , maxRecipe);
 
-		c.JSON(http.StatusOK, AlgorithmResponse{ // pake AlgorithmResponse aja biar simple
+		c.JSON(http.StatusOK, AlgorithmResponse{ 
 			Target:       target,
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees,
@@ -81,11 +87,12 @@ func main() {
 		}
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+		if maxRecipe == 0 || maxRecipe > 50 {
+			maxRecipe = 50
+		}
 
-		// panggil fungsi BDR dari backend
 		res := backend.BDR(gallery , target , maxRecipe);
 
-		// kembalikan dengan format yang sama seperti BFS/DFS
 		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
@@ -95,7 +102,7 @@ func main() {
 
 	r.GET("/api/elements", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"elements": gallery.GetAllNames(), // misal fungsi helper di backend
+			"elements": gallery.GetAllNames(),
 		})
 	})
 
