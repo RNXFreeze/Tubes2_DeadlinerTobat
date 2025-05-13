@@ -3,9 +3,9 @@ export default function RecipeToggle({recipeType, setRecipeType}) {
         <div className="flex justify-center">
             <div className="inline-flex rounded-lg shadow-sm bg-purple-300" role="group">
                 <button
-                    onClick={() => setRecipeType('shortest')}
+                    onClick={() => setRecipeType('single')}
                     className={`px-3 py-2 font-semibold rounded-l-lg ${
-                        recipeType === 'shortest' ? 'bg-purple-500' : 'hover:bg-purple-400'
+                        recipeType === 'single' ? 'bg-purple-500' : 'hover:bg-purple-400'
                     }`}
                 >
                     Single Recipe

@@ -1,74 +1,28 @@
 'use client';
 import Tree from 'react-d3-tree';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive}) {
+export default function TreeVisualizer({ target, algorithmType, maxRecipe, setNodeCount, enabled }) {
   const [treeData, setTreeData] = useState(null);
-  const incomingTreesRef = useRef([]);
-  const treeCountRef = useRef(0);
-  const seenSignatures = useRef(new Set());
-  
+
   useEffect(() => {
-    if (!target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
-    
+    if (!enabled || !target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
+
+    setNodeCount(0);
+
     const baseURL = 'http://localhost:8080/api';
     const algoPath = algorithmType.toLowerCase();
+    const url = `${baseURL}/${algoPath}?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`;
 
-    if (!isLive) {
-      // NON-LIVE MODE: fetch data statis dan gabungkan
-      fetch(`${baseURL}/${algoPath}?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`)
-        .then(res => res.json())
-        .then(data => {
-          setTreeData(combineTrees(data.trees, target));
-        })
-        .catch(err => console.error('Fetch error:', err));
-
-      return;
-    }
-
-    // LIVE MODE
-    incomingTreesRef.current = [];
-    treeCountRef.current = 0;
-    seenSignatures.current = new Set();
-
-    const es = new EventSource(
-      `${baseURL}/${algoPath}/stream?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`
-    );
-
-    es.onmessage = (e) => {
-      const newTree = JSON.parse(e.data);
-      console.log(`[${algorithmType}] SSE-node:`, newTree);
-
-      const sig = getSignature(newTree);
-      if (!seenSignatures.current.has(sig)) {
-        seenSignatures.current.add(sig);
-
-        if (
-          newTree.name === target &&
-          Array.isArray(newTree.children) &&
-          newTree.children.length === 2
-        ) {
-          treeCountRef.current += 1;
-        }
-      }
-
-      incomingTreesRef.current.push(newTree);
-      const combined = combineTrees(incomingTreesRef.current, target);
-      setTreeData(combined);
-
-      if (treeCountRef.current >= maxRecipe) {
-        es.close();
-        console.log('Stopped SSE because maxRecipe reached');
-      }
-    };
-
-    es.onerror = () => {
-      es.close();
-      console.warn(`[${algorithmType}] SSE closed`);
-    };
-
-    return () => es.close();
-  }, [target, maxRecipe, algorithmType, isLive]);
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const combined = combineTrees(data.trees, target);
+        setTreeData(combined);
+        setNodeCount(countNodes(combined));
+      })
+      .catch(err => console.error('Fetch error:', err));
+  }, [target, maxRecipe, algorithmType, setNodeCount]);
 
   return (
     <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
@@ -85,9 +39,7 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive
           separation={{ siblings: 0.6, nonSiblings: 0.8 }}
           renderCustomNodeElement={({ nodeDatum }) => {
             const isLeaf = !nodeDatum.children || nodeDatum.children.length === 0;
-            if (nodeDatum.name === '') {
-              return <g></g>;
-            }
+            if (nodeDatum.name === '') return <g></g>;
             return (
               <g>
                 <circle r={15} fill={isLeaf ? 'white' : 'purple'} stroke="purple" strokeWidth={2} />
@@ -115,15 +67,13 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive
   );
 }
 
-function combineTrees(trees, rootName = "Root") {
+function combineTrees(trees, rootName = 'Root') {
   if (!Array.isArray(trees) || trees.length === 0) return null;
 
   const recipePairs = [];
 
   for (const tree of trees) {
     if (!tree || !Array.isArray(tree.children)) continue;
-
-    // Bungkus masing-masing tree agar tidak tercampur di visual
     recipePairs.push({
       name: '',
       children: tree.children
@@ -138,17 +88,13 @@ function combineTrees(trees, rootName = "Root") {
   };
 }
 
-function getSignature(node) {
-  if (!node) return '';
-  if (!node.children || node.children.length === 0) {
-    return node.name;
+function countNodes(node) {
+  if (!node) return 0;
+  let count = 1;
+  if (node.children) {
+    for (const child of node.children) {
+      count += countNodes(child);
+    }
   }
-
-  // Ambil signature anak-anak
-  const childSigs = node.children.map(getSignature);
-
-  // Urutkan biar konsisten (misal "Water,Fire" sama dengan "Fire,Water")
-  childSigs.sort();
-
-  return `${node.name}(${childSigs.join(',')})`;
+  return count;
 }
