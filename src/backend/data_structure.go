@@ -165,7 +165,7 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 		visited[name] = false;
 		element.Tier = best;
 		return best;
-	}	
+	}
 }
 
 func LoadRecipeGallery(path string) (*Gallery , error) {

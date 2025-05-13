@@ -11,10 +11,47 @@
 /* Deskripsi  : F05 - Multithreading Optimization (Half Max CPU / Max CPU - 4)   */
 /* PIC F05    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend
+package backend;
 
-import "runtime"
+import (
+	"runtime";
+	"sync";
+)
+
+var (
+    taskChan chan func();
+    wg       sync.WaitGroup;
+    onceInit sync.Once;
+)
 
 func Multithreading() {
-	runtime.GOMAXPROCS(max(runtime.NumCPU() / 2 , runtime.NumCPU() - 4));
+	onceInit.Do(func() {
+		runtime.GOMAXPROCS(max(runtime.NumCPU() / 2 , runtime.NumCPU() - 4));
+		workers := runtime.NumCPU();
+		taskChan = make(chan func() , workers);
+		for i := 0 ; i < workers ; i++ {
+			wg.Add(1);
+			go func() {
+				defer wg.Done();
+				for task := range taskChan {
+					if (task != nil) {
+						task();
+					}
+				}
+			}();
+		}
+	});
+}
+
+func SubmitJob(job func()) {
+    if (taskChan == nil) {
+		Multithreading();
+	}
+    taskChan <- job;
+}
+
+func WaitJobs() {
+	close(taskChan);
+	wg.Wait();
+	taskChan = nil;
 }

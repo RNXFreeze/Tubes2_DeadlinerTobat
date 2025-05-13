@@ -99,7 +99,7 @@ func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery 
 				*max_recipe = value;
 				break;
 			}
-			fmt.Println("Input max recipe harus berupa bilangan bulat positif.");
+			fmt.Printf("Input output recipe harus berupa bilangan bulat non-negatif dalam rentang (0 - %d).\n" , *max_recipe);
 		}
 		mrp = *max_recipe;
 	}
@@ -168,13 +168,16 @@ func MainTerminal() {
 			atomic.StoreInt64(&counter , 0);
 			start := time.Now();
 			var res AlgorithmResult;
-			if (algorithm == "BFS") {
-				res = BFS(gallery , target , max_recipe);
-			} else if (algorithm == "DFS") {
-				res = DFS(gallery , target , max_recipe);
-			} else {
-				res = BDR(gallery , target , max_recipe);
-			}
+			SubmitJob(func() {
+				if (algorithm == "BFS") {
+					res = BFS(gallery , target , max_recipe);
+				} else if (algorithm == "DFS") {
+					res = DFS(gallery , target , max_recipe);
+				} else {
+					res = BDR(gallery , target , max_recipe);
+				}
+			});
+			WaitJobs();
 			DisplayResultTerminal(res , start , gallery , target , algorithm , &max_recipe);
 			fmt.Println("==============================================================");
 			var answer string;
