@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	backend.Multithreading();
+	backend.EnableMultithreading();
 	fmt.Println("!!! SELAMAT DATANG DI LITTLE ALCHEMY 2 SEARCHING ALGORITHM !!!");
 	fmt.Println("==============================================================");
 	fmt.Println("Oleh : Kelompok 21 - Deadliner Tobat");
@@ -34,4 +34,5 @@ func main() {
 	fmt.Println("13523050 - Mayla Yaffa Ludmilla");
 	fmt.Println("13523078 - Anella Utari Gunadi");
 	fmt.Println("==============================================================");
+	backend.DisableMultithreading();
 }

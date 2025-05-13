@@ -46,7 +46,7 @@ func main() {
 			return
 		}
 
-		backend.Multithreading()
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 		res := backend.BFS(gallery, target, maxRecipe)
 
@@ -55,6 +55,7 @@ func main() {
 			VisitedCount: res.VisitedCount,
 			Trees:        res.Trees, // sudah JSON-marshal-able karena ada tag di RecipeNode
 		})
+		backend.DisableMultithreading();
 	})
 	r.GET("/api/dfs", func(c *gin.Context) {
 		target := c.Query("target")
@@ -63,10 +64,11 @@ func main() {
 			return
 		}
 
-		backend.Multithreading()
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
 		res := backend.DFS(gallery, target, maxRecipe)
+		backend.DisableMultithreading();
 
 		c.JSON(http.StatusOK, AlgorithmResponse{ // pake AlgorithmResponse aja biar simple
 			Target:       target,
@@ -82,10 +84,11 @@ func main() {
 			return
 		}
 
-		backend.Multithreading()
+		backend.EnableMultithreading();
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
 		res := backend.BDR(gallery, target, maxRecipe)
+		backend.DisableMultithreading();
 
 		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,

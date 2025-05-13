@@ -170,6 +170,7 @@ func MainTerminal() {
 			atomic.StoreInt64(&counter , 0);
 			start := time.Now();
 			var res AlgorithmResult;
+			EnableMultithreading();
 			if (algorithm == "BFS") {
 				res = BFS(gallery , target , max_recipe);
 			} else if (algorithm == "DFS") {
@@ -177,6 +178,7 @@ func MainTerminal() {
 			} else {
 				res = BDR(gallery , target , max_recipe);
 			}
+			DisableMultithreading();
 			DisplayResultTerminal(res , start , gallery , target , algorithm , &max_recipe);
 			fmt.Println("==============================================================");
 			var answer string;
