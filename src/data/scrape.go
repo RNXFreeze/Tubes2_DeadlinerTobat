@@ -14,17 +14,63 @@
 package main
 
 import (
-	"os"
+	"encoding/json"
 	"fmt"
 	"log"
+	"net/http"
+	"os"
 	"strconv"
 	"strings"
-	"net/http"
-	"encoding/json"
+
 	"github.com/PuerkitoBio/goquery"
 )
 
+func getMythElements() []string {
+	url := "https://little-alchemy.fandom.com/wiki/Elements_(Myths_and_Monsters)"
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Println("HTTP request failed:", err)
+		return nil
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		log.Println("Status error:", resp.StatusCode, resp.Status)
+		return nil
+	}
+
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		log.Println("Error parsing HTML:", err)
+		return nil
+	}
+
+	var elements []string
+	doc.Find("table.article-table tbody tr").Each(func(_ int, row *goquery.Selection) {
+		row.Find("td").First().Find("a").Each(func(_ int, s *goquery.Selection) {
+			if s.Find("img").Length() == 0 {
+				name := strings.TrimSpace(s.Text())
+				if name != "" {
+					elements = append(elements, name)
+				}
+			}
+		})
+	})
+
+	return elements
+}
+
+func checkArray(elements []string, target string) bool {
+	for _, el := range elements {
+		if target == el {
+			return true
+		}
+	}
+	return false
+}
+
 func main() {
+	mythsElements := getMythElements()
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", "https://little-alchemy.fandom.com/wiki/Elements_(Little_Alchemy_2)", nil)
 	if err != nil {
@@ -46,7 +92,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// map[tier number]map[element][][]string
 	output := make(map[int]map[string][][]string)
 	currentTier := -1
 	totalElements := 0
@@ -80,6 +125,10 @@ func main() {
 
 		element := strings.TrimSpace(left.Find("a").Text())
 		if element == "" {
+			return
+		}
+
+		if !checkArray(mythsElements, element) {
 			return
 		}
 
