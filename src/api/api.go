@@ -8,10 +8,10 @@
 /* Tanggal    : Senin, 12 Mei 2025                                               */
 /* Tugas      : Tugas Besar 2 - Strategi Algoritma (IF2211-24)                   */
 /* File Path  : Tubes2_DeadlinerTobat/src/backend/stream.go                      */
-/* Deskripsi  : F00A - Main Program API (Connection Frontend & Backend)          */
-/* PIC F00A   : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
+/* Deskripsi  : F00 - Main Program API (Connection Frontend & Backend)           */
+/* PIC F00    : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
 
-package main
+package main;
 
 import (
 	"log"
@@ -47,7 +47,7 @@ func main() {
 		}
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
-		res := backend.BFS(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
+		res := backend.BFS(gallery , target , maxRecipe);
 
 		c.JSON(http.StatusOK, BFSResponse{
 			Target:       target,
@@ -64,7 +64,7 @@ func main() {
 
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
-		res := backend.DFS(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
+		res := backend.DFS(gallery , target , maxRecipe);
 
 		c.JSON(http.StatusOK, BFSResponse{ // pake BFSResponse aja biar simple
 			Target:       target,
@@ -83,7 +83,7 @@ func main() {
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
 		// panggil fungsi BDR dari backend
-		res := backend.BDR(gallery , target , backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : nil});
+		res := backend.BDR(gallery , target , maxRecipe);
 
 		// kembalikan dengan format yang sama seperti BFS/DFS
 		c.JSON(http.StatusOK, BFSResponse{

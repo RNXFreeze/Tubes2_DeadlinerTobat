@@ -11,12 +11,9 @@
 /* Deskripsi  : B01 - Bidirectional Algorithm (Enumeration - Meet In The Middle) */
 /* PIC B01    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend
+package backend;
 
-import (
-	"time";
-	"sync/atomic";
-)
+import "sync/atomic";
 
 func EnumerateTopBDR(gallery *Gallery , name string , mid_tier int , memory map[string][]*RecipeNode) []*RecipeNode {
     touch();
@@ -79,12 +76,11 @@ func EnumerateBotBDR(gallery *Gallery, name string, memory map[string][]*RecipeN
 	}
 }
 
-func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmResult {
+func BDR(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
     if (GetTier(gallery , target) == 0) {
         node := &RecipeNode{Name : target}
         return AlgorithmResult{Trees : []*RecipeNode{node} , VisitedCount : 1};
     } else {
-		max_recipe := option.MaxRecipes;
 		if (max_recipe == 0) {
 			max_recipe = int(^uint(0) >> 1);
 		}
@@ -146,14 +142,6 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 		}
 		if (len(res) > max_recipe) {
 			res = res[:max_recipe];
-		}
-		if (option.LiveChan != nil) {
-			go func() {
-				for _ , t := range res {
-					option.LiveChan <- t;
-					time.Sleep(150 * time.Millisecond);
-				}
-			}();
 		}
 		return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
 	}

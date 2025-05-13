@@ -65,18 +65,59 @@ func DisplayTreeTerminal(node *RecipeNode, gallery *Gallery , depth int , max_ti
     }
 }
 
-func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery , target string , algorithm string , max_recipe int) {
+func DisplayResultTerminal(res AlgorithmResult , t time.Time , gallery *Gallery , target string , algorithm string , max_recipe *int) {
 	ms := time.Since(t).Milliseconds();
 	fmt.Println();
+	fmt.Printf("Total Recipe : %d Recipe\n" , len(res.Trees));
+	fmt.Printf("Visited Node : %d Node\n" , res.VisitedCount);
+	fmt.Printf("Time Usage   : %d ms\n" , ms);
+	fmt.Println();
+	var answer string;
+	mrp := len(res.Trees);
+	for {
+		if (*max_recipe != 0 && *max_recipe <= len(res.Trees)) {
+			break;
+		} else {
+			fmt.Print("Apakah Anda yakin ingin melihat semua recipe? (Y/N) : ");
+			scanner := bufio.NewReader(os.Stdin);
+			input , _ := scanner.ReadString('\n');
+			answer = strings.ToLower(strings.TrimSpace(input));
+			if (answer != "y" && answer != "n") {
+				fmt.Println("Input tidak valid, silakan coba lagi.");
+			} else {
+				break;
+			}
+		}
+	}
+	if (answer == "n") {
+		*max_recipe = len(res.Trees);
+		for {
+			fmt.Printf("Output Recipe (0 - %d | Jika 0 Maka Tidak Ada Output) : " , *max_recipe);
+			scanner := bufio.NewReader(os.Stdin);
+			mrc , _ := scanner.ReadString('\n');
+			if value , err := strconv.Atoi(strings.TrimSpace(mrc)) ; err == nil && 0 <= value && value <= *max_recipe {
+				*max_recipe = value;
+				break;
+			}
+			fmt.Println("Input max recipe harus berupa bilangan bulat positif.");
+		}
+		mrp = *max_recipe;
+	}
+	fmt.Println("==============================================================");
+	fmt.Println();
 	for i , node := range res.Trees {
-        fmt.Printf("=== Recipe #%d ===\n" , i + 1);
-        DisplayTreeTerminal(node , gallery , 0 , GetTier(gallery , target));
-        fmt.Println();
+		if (i >= mrp) {
+			break;
+		} else {
+			fmt.Printf("=== Recipe #%d ===\n" , i + 1);
+			DisplayTreeTerminal(node , gallery , 0 , GetTier(gallery , target));
+			fmt.Println();
+		}
     }
 	fmt.Println("======= STATS & INPUT HISTORY =======");
 	fmt.Printf("Target Element              : %s\n" , target);
 	fmt.Printf("Algorithm (BFS/DFS/BDR)     : %s\n" , algorithm);
-	fmt.Printf("Max Recipe (0 = All Recipe) : %d\n" , max_recipe);
+	fmt.Printf("Max Recipe (0 = No Recipe)  : %d\n" , *max_recipe);
 	fmt.Println();
 	fmt.Printf("Total Recipe : %d Recipe\n" , len(res.Trees));
 	fmt.Printf("Visited Node : %d Node\n" , res.VisitedCount);
@@ -118,8 +159,8 @@ func MainTerminal() {
 			for {
 				fmt.Print("Max Recipe (0 = All Recipe) : ");
 				mrc , _ := input.ReadString('\n');
-				if v , err := strconv.Atoi(strings.TrimSpace(mrc)) ; err == nil && v >= 0 {
-					max_recipe = v;
+				if value , err := strconv.Atoi(strings.TrimSpace(mrc)) ; err == nil && value >= 0 {
+					max_recipe = value;
 					break;
 				}
 				fmt.Println("Input max recipe harus berupa bilangan bulat non-negatif.");
@@ -128,13 +169,13 @@ func MainTerminal() {
 			start := time.Now();
 			var res AlgorithmResult;
 			if (algorithm == "BFS") {
-				res = BFS(gallery , target , AlgorithmOption{MaxRecipes : max_recipe});
+				res = BFS(gallery , target , max_recipe);
 			} else if (algorithm == "DFS") {
-				res = DFS(gallery , target , AlgorithmOption{MaxRecipes : max_recipe});
+				res = DFS(gallery , target , max_recipe);
 			} else {
-				res = BDR(gallery , target , AlgorithmOption{MaxRecipes : max_recipe});
+				res = BDR(gallery , target , max_recipe);
 			}
-			DisplayResultTerminal(res , start , gallery , target , algorithm , max_recipe);
+			DisplayResultTerminal(res , start , gallery , target , algorithm , &max_recipe);
 			fmt.Println("==============================================================");
 			var answer string;
 			for {
@@ -154,8 +195,4 @@ func MainTerminal() {
 			}
 		}
 	}
-}
-
-func MainWebsite() {
-
 }
