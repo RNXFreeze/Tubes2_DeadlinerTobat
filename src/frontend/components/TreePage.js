@@ -41,7 +41,7 @@ export default function TreePage({
 
     const baseURL = 'http://localhost:8080/api';
     const algoPath = algorithmType.toLowerCase();
-    const effectiveMaxRecipe = recipeType === 'single' ? 1 : maxRecipe;
+    const effectiveMaxRecipe = recipeType === 'single'? 1 : maxRecipe === 0 ? 50 : Math.min(maxRecipe, 50); 
     const url = `${baseURL}/${algoPath}?target=${encodeURIComponent(searchElement)}&max_recipe=${effectiveMaxRecipe}`;
 
     try {
