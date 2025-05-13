@@ -11,15 +11,16 @@
 /* Deskripsi  : F00 - Main Program API (Connection Frontend & Backend)           */
 /* PIC F00    : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
 
-package main;
+package main
 
 import (
-	"log"
-	"strconv"
-	"net/http"
-	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/cors"
 	"Tubes2_DeadlinerTobat/src/backend"
+	"log"
+	"net/http"
+	"strconv"
+
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 type AlgorithmResponse struct {
@@ -46,8 +47,9 @@ func main() {
 			return
 		}
 
+		backend.Multithreading()
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
-		res := backend.BFS(gallery , target , maxRecipe);
+		res := backend.BFS(gallery, target, maxRecipe)
 
 		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
@@ -62,9 +64,10 @@ func main() {
 			return
 		}
 
+		backend.Multithreading()
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
-		res := backend.DFS(gallery , target , maxRecipe);
+		res := backend.DFS(gallery, target, maxRecipe)
 
 		c.JSON(http.StatusOK, AlgorithmResponse{ // pake AlgorithmResponse aja biar simple
 			Target:       target,
@@ -80,12 +83,11 @@ func main() {
 			return
 		}
 
+		backend.Multithreading()
 		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
 
-		// panggil fungsi BDR dari backend
-		res := backend.BDR(gallery , target , maxRecipe);
+		res := backend.BDR(gallery, target, maxRecipe)
 
-		// kembalikan dengan format yang sama seperti BFS/DFS
 		c.JSON(http.StatusOK, AlgorithmResponse{
 			Target:       target,
 			VisitedCount: res.VisitedCount,
@@ -95,7 +97,7 @@ func main() {
 
 	r.GET("/api/elements", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"elements": gallery.GetAllNames(), // misal fungsi helper di backend
+			"elements": gallery.GetAllNames(),
 		})
 	})
 
