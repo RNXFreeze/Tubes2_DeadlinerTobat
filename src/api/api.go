@@ -11,7 +11,7 @@
 /* Deskripsi  : F00 - Main Program API (Connection Frontend & Backend)           */
 /* PIC F00    : K01 - 13523050 - Mayla Yaffa Ludmilla                            */
 
-package main
+package main;
 
 import (
 	"fmt"

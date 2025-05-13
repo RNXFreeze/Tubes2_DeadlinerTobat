@@ -11,7 +11,7 @@
 /* Deskripsi  : B01 - Bidirectional Algorithm (Enumeration - Meet In The Middle) */
 /* PIC B01    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend
+package backend;
 
 import "sync/atomic";
 

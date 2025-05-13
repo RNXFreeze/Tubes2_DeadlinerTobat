@@ -11,7 +11,7 @@
 /* Deskripsi  : F03 - Breadth First Search Algorithm (BFS - Queue & Signature)   */
 /* PIC F03    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend
+package backend;
 
 import "sync/atomic";
 

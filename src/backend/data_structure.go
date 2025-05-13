@@ -11,7 +11,7 @@
 /* Deskripsi  : F07 - Data Structure (Node & Tree & Mapping)                     */
 /* PIC F07    : K01 - 13523021 - Muhammad Raihan Nazhim Oktana                   */
 
-package backend
+package backend;
 
 import (
 	"os"
