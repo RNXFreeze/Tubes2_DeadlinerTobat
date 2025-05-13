@@ -14,14 +14,14 @@
 package main
 
 import (
-	"encoding/json"
+	"os"
 	"fmt"
 	"log"
-	"net/http"
-	"os"
+	"sort"
 	"strconv"
 	"strings"
-
+	"net/http"
+	"encoding/json"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -163,19 +163,41 @@ func main() {
 		}
 	})
 
-	file, err := os.Create("data.json")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
+	 // write sorted JSON to data.json
+    file, err := os.Create("data.json")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
 
-	encoder := json.NewEncoder(file)
-	encoder.SetIndent("", "  ")
-	err = encoder.Encode(output)
-	if err != nil {
-		log.Fatal(err)
-	}
+    // collect and sort tier keys numerically
+    tiers := make([]string, 0, len(output))
+    for k := range output {
+        tiers = append(tiers, k)
+    }
+    sort.Slice(tiers, func(i, j int) bool {
+        ai, _ := strconv.Atoi(strings.TrimPrefix(tiers[i], "tier "))
+        aj, _ := strconv.Atoi(strings.TrimPrefix(tiers[j], "tier "))
+        return ai < aj
+    })
 
-	fmt.Printf("Scraping completed. Data saved to data.json\n")
-	fmt.Printf("Total elements with recipes: %d\n", totalElements)
+    // manually marshal per-tier in sorted order
+    file.WriteString("{\n")
+    for idx, tier := range tiers {
+        b, err := json.MarshalIndent(output[tier], "  ", "  ")
+        if err != nil {
+            log.Fatalf("failed to marshal tier %s: %v", tier, err)
+        }
+        // write "tier X": { ... }
+        file.WriteString(fmt.Sprintf("  %q: %s", tier, b))
+        if idx < len(tiers)-1 {
+            file.WriteString(",\n")
+        } else {
+            file.WriteString("\n")
+        }
+    }
+    file.WriteString("}\n")
+
+    fmt.Printf("Scraping completed. Data saved to data.json\n")
+    fmt.Printf("Total elements with recipes: %d\n", totalElements)
 }
