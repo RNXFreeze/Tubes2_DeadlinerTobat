@@ -122,7 +122,7 @@ func main() {
 		results := make(chan *backend.RecipeNode)
 		option := backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : results};
 		go func() {
-			backend.BFSStream(gallery, target, option)
+			backend.BFSStream(gallery, target, option.MaxRecipes , option.LiveChan)
 			close(results)
 		}()
 
