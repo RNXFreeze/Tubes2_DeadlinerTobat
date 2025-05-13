@@ -6,17 +6,13 @@ import Sidebar from '../components/Sidebar';
 import TreePage from '../components/TreePage';
 
 export default function Home() {
-  const [recipeType, setRecipeType] = useState('shortest');
+  const [recipeType, setRecipeType] = useState('single');
   const [algorithmType, setAlgorithm] = useState('BFS');
-  const [maxRecipe, setMaxRecipe] = useState(10);
+  const [maxRecipe, setMaxRecipe] = useState(1);
   const [searchElement, setSearchElement] = useState('');
   const [execTime, setExecTime] = useState(null);
   const [nodeCount, setNodeCount] = useState(null);
   const [treeData, setTreeData] = useState([]); 
-
-  // Dummy values
-  // const execTime = 1;
-  // const nodeCount = 1;
 
   return (
     <div className="min-h-screen bg-purple-100 flex flex-col">
@@ -34,6 +30,7 @@ export default function Home() {
         />
         <TreePage 
           algorithmType={algorithmType}
+          recipeType={recipeType}
           searchElement={searchElement}
           setSearchElement={setSearchElement}
           execTime={execTime}
