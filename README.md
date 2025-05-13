@@ -15,8 +15,7 @@ Dalam program ini, terdapat 3 algoritma pencarian yang digunakan, yaitu algoritm
 - Using BFS & DFS & Bidirectional (BDR) Algorithm
 - Interactive CLI Detail & Amazing Visual Website
 - Multithreading Program Optimization
-- Live Update Searching Tree Visualization
-- Containerize With Docker
+- Searching Tree Result Visualization
 - Deployed On The Internet
 
 ## Program Requirements
