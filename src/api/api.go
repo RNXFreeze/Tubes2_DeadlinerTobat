@@ -108,7 +108,6 @@ func main() {
 	r.GET("/api/elements", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"elements": gallery.GetAllNames(),
-			"elements": gallery.GetAllNames(),
 		})
 	})
 
