@@ -143,7 +143,7 @@ func BDR(gallery *Gallery, target string, max_recipe int) AlgorithmResult {
 						clone_map[leaf].Parents = clone_bot.Parents;
 						signature := SignatureTree(clone_top);
 						mutex.Lock();
-						if _ , check := signature_tree[signature]; !check {
+						if _ , check := signature_tree[signature] ; !check {
 							signature_tree[signature] = struct{}{};
 							local_res = append(local_res , clone_top);
 							if (len(local_res) >= max_recipe) {
