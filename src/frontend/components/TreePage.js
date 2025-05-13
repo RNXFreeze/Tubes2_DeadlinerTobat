@@ -71,7 +71,7 @@ export default function TreePage({
   return (
     <main className="flex-grow p-6 overflow-auto">
       <div className="mb-6 text-center items-center">
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-black text-3xl font-bold mb-4">
           Little Alchemy Recipe Finder
         </h2>
         <div className="flex justify-center">

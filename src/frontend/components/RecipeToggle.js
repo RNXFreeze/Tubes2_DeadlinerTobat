@@ -4,7 +4,7 @@ export default function RecipeToggle({recipeType, setRecipeType}) {
             <div className="inline-flex rounded-lg shadow-sm bg-purple-300" role="group">
                 <button
                     onClick={() => setRecipeType('single')}
-                    className={`px-3 py-2 font-semibold rounded-l-lg ${
+                    className={`text-black px-3 py-2 font-semibold rounded-l-lg ${
                         recipeType === 'single' ? 'bg-purple-500' : 'hover:bg-purple-400'
                     }`}
                 >
@@ -12,7 +12,7 @@ export default function RecipeToggle({recipeType, setRecipeType}) {
                 </button>
                 <button
                     onClick={() => setRecipeType('multiple')}
-                    className={`px-3 py-2 font-semibold rounded-r-lg ${
+                    className={`text-black px-3 py-2 font-semibold rounded-r-lg ${
                         recipeType === 'multiple' ? 'bg-purple-500' : 'hover:bg-purple-400'
                     }`}>
                     Multiple Recipes
