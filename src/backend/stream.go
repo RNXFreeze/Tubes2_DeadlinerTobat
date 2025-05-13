@@ -37,3 +37,37 @@ func BFSStream1(gallery *Gallery , target string , option AlgorithmOption) {
 		}
 	}
 }
+
+func DFSStream(gallery *Gallery , target string , option AlgorithmOption) {
+	visited := make(map[string]bool);
+	queue := []*RecipeNode{};
+	res := DFS(gallery , target , option);
+	queue = append(queue , res.Trees...);
+	out := option.LiveChan;
+	for (len(queue) > 0) {
+		cur := queue[0];
+		queue = queue[1:];
+		if (!visited[cur.Name]) {
+			visited[cur.Name] = true;
+			out <- cur;
+			queue = append(queue , cur.Parents...);
+		}
+	}
+}
+
+func BDRStream(gallery *Gallery , target string , option AlgorithmOption) {
+	visited := make(map[string]bool);
+	queue := []*RecipeNode{};
+	res := BDR(gallery , target , option);
+	queue = append(queue , res.Trees...);
+	out := option.LiveChan;
+	for (len(queue) > 0) {
+		cur := queue[0];
+		queue = queue[1:];
+		if (!visited[cur.Name]) {
+			visited[cur.Name] = true;
+			out <- cur;
+			queue = append(queue , cur.Parents...);
+		}
+	}
+}

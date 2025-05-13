@@ -13,7 +13,10 @@
 
 package backend
 
-import "sync/atomic"
+import (
+	"time";
+	"sync/atomic";
+)
 
 func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmResult {
 	max_recipe := option.MaxRecipes;
@@ -45,7 +48,7 @@ func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 		signature_tree := make(map[string]struct{});
 		root := &RecipeNode{Name : target};
 		queue = append(queue , PartialTree{tree : root , leaf : []*RecipeNode{root}});
-		for (len(queue) > 0 && len(res) < max_recipe) {
+		for (len(queue) > 0 /*&& len(res) < max_recipe*/) {
 			cur := queue[0];
 			exp := cur.leaf[0];
 			rst := cur.leaf[1:];
@@ -73,11 +76,20 @@ func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 					}
 					if (len(new_leaf) == 0) {
 						signature := SignatureTree(new_root)
-						if _ , check := signature_tree[signature]; !check {
-							signature_tree[signature] = struct{}{};
-							res = append(res , new_root);
-							if (len(res) >= max_recipe) {
-								break;
+						if _, check := signature_tree[signature]; !check {
+							signature_tree[signature] = struct{}{}
+							res = append(res, new_root)
+							if option.LiveChan != nil {
+								go func(recipes []*RecipeNode) {
+									for _, t := range recipes {
+										option.LiveChan <- t
+										time.Sleep(1500 * time.Millisecond)
+									}
+								}(res)
+							}
+							return AlgorithmResult{
+								Trees:        res,
+								VisitedCount: int(atomic.LoadInt64(&counter)),
 							}
 						}
 					} else {
@@ -93,6 +105,7 @@ func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			go func() {
 				for _ , t := range res {
 					option.LiveChan <- t;
+					time.Sleep(1500 * time.Millisecond);
 				}
 			}();
 		}

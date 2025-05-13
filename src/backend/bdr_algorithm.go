@@ -13,7 +13,10 @@
 
 package backend
 
-import "sync/atomic"
+import (
+	"time";
+	"sync/atomic";
+)
 
 func EnumerateTopBDR(gallery *Gallery , name string , mid_tier int , memory map[string][]*RecipeNode) []*RecipeNode {
     touch();
@@ -95,7 +98,7 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			Collecting = func(node *RecipeNode) {
 				if (len(node.Parents) == 0) {
 					if (GetTier(gallery , node.Name) >= mid_tier) {
-						grp[node.Name] = append(grp[node.Name] , nt)
+						grp[node.Name] = append(grp[node.Name] , nt);
 					}
 				} else {
 					for _ , nodes := range node.Parents {
@@ -113,7 +116,7 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			for _ , pt := range part {
 				for _ , bt := range trees_bot {
 					touch();
-					clone_top , clone_map := CloneTreeMap(pt)
+					clone_top , clone_map := CloneTreeMap(pt);
 					var leaf *RecipeNode;
 					var Finding func(*RecipeNode);
 					Finding = func(node *RecipeNode) {
@@ -148,6 +151,7 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			go func() {
 				for _ , t := range res {
 					option.LiveChan <- t;
+					time.Sleep(150 * time.Millisecond);
 				}
 			}();
 		}

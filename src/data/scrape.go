@@ -26,38 +26,45 @@ import (
 )
 
 func getMythElements() []string {
+	var myth []string
+	seen := make(map[string]struct{})
+
 	url := "https://little-alchemy.fandom.com/wiki/Elements_(Myths_and_Monsters)"
-	resp, err := http.Get(url)
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", url, nil)
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+	res, err := client.Do(req)
 	if err != nil {
-		log.Println("HTTP request failed:", err)
-		return nil
+		log.Println("Myth HTTP error:", err)
+		return myth
 	}
-	defer resp.Body.Close()
+	defer res.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		log.Println("Status error:", resp.StatusCode, resp.Status)
-		return nil
+	if res.StatusCode != http.StatusOK {
+		log.Println("Myth status error:", res.StatusCode, res.Status)
+		return myth
 	}
 
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
-		log.Println("Error parsing HTML:", err)
-		return nil
+		log.Println("Myth parse error:", err)
+		return myth
 	}
 
-	var elements []string
-	doc.Find("table.article-table tbody tr").Each(func(_ int, row *goquery.Selection) {
-		row.Find("td").First().Find("a").Each(func(_ int, s *goquery.Selection) {
-			if s.Find("img").Length() == 0 {
-				name := strings.TrimSpace(s.Text())
-				if name != "" {
-					elements = append(elements, name)
-				}
+	doc.Find("div.mw-parser-output table tr").Each(func(_ int, row *goquery.Selection) {
+		tdName := row.Find("td").Eq(0)
+		name := strings.TrimSpace(tdName.Text())
+		if name != "" {
+			if _, ok := seen[name]; !ok {
+				myth = append(myth, name)
+				seen[name] = struct{}{}
+				fmt.Printf("Found myth element: %s\n", name)
 			}
-		})
+		}
 	})
 
-	return elements
+	log.Printf("Myth elements scraped (unique): %d\n", len(myth))
+	return myth
 }
 
 func checkArray(elements []string, target string) bool {
@@ -71,6 +78,7 @@ func checkArray(elements []string, target string) bool {
 
 func main() {
 	mythsElements := getMythElements()
+	fmt.Println(mythsElements)
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", "https://little-alchemy.fandom.com/wiki/Elements_(Little_Alchemy_2)", nil)
 	if err != nil {
@@ -128,7 +136,7 @@ func main() {
 			return
 		}
 
-		if !checkArray(mythsElements, element) {
+		if checkArray(mythsElements, element) {
 			return
 		}
 
@@ -142,6 +150,9 @@ func main() {
 				}
 			})
 			if len(parts) == 2 {
+				if checkArray(mythsElements, parts[0]) || checkArray(mythsElements, parts[1]) {
+					return
+				}
 				recipes = append(recipes, parts)
 			}
 		})

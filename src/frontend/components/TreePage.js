@@ -97,7 +97,13 @@ export default function TreePage({
       </div>
 
       <div className="min-w-[800px] min-h-[500px] border rounded bg-white p-4">
-        <TreeVisualizer target={target} />
+        {target && (
+            <TreeVisualizer
+            target={target}
+            algorithmType={algorithmType}
+            maxRecipe={maxRecipe}
+            />
+        )}
       </div>
     </main>
   );
