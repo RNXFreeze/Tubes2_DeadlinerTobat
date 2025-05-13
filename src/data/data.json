@@ -1,5 +1,5 @@
 {
-  "tier 1": {
+  "1": {
     "Dust": [
       [
         "Earth",
@@ -181,7 +181,6125 @@
       ]
     ]
   },
-  "tier 2": {
+  "10": {
+    "Alpaca": [
+      [
+        "Sheep",
+        "Mountain"
+      ],
+      [
+        "Sheep",
+        "Mountain range"
+      ],
+      [
+        "Sheep",
+        "Mountain goat"
+      ]
+    ],
+    "Angler": [
+      [
+        "Human",
+        "Fishing rod"
+      ],
+      [
+        "Sailor",
+        "Fishing rod"
+      ]
+    ],
+    "Ant": [
+      [
+        "Grass",
+        "Animal"
+      ],
+      [
+        "Grass",
+        "Spider"
+      ]
+    ],
+    "Battery": [
+      [
+        "Container",
+        "Electricity"
+      ],
+      [
+        "Container",
+        "Energy"
+      ],
+      [
+        "Electricity",
+        "Mineral"
+      ],
+      [
+        "Electricity",
+        "Ore"
+      ]
+    ],
+    "Bee": [
+      [
+        "Animal",
+        "Flower"
+      ],
+      [
+        "Animal",
+        "Garden"
+      ]
+    ],
+    "Bicycle": [
+      [
+        "Wheel",
+        "Wheel"
+      ],
+      [
+        "Wheel",
+        "Chain"
+      ],
+      [
+        "Wheel",
+        "Machine"
+      ]
+    ],
+    "Big": [
+      [
+        "Universe",
+        "Philosophy"
+      ],
+      [
+        "Galaxy",
+        "Philosophy"
+      ],
+      [
+        "Galaxy cluster",
+        "Philosophy"
+      ],
+      [
+        "Solar system",
+        "Philosophy"
+      ],
+      [
+        "Sun",
+        "Philosophy"
+      ],
+      [
+        "Planet",
+        "Philosophy"
+      ]
+    ],
+    "Bonsai tree": [
+      [
+        "Tree",
+        "Pottery"
+      ],
+      [
+        "Tree",
+        "Scissors"
+      ],
+      [
+        "Tree",
+        "Wire"
+      ],
+      [
+        "Tree",
+        "Small"
+      ]
+    ],
+    "Cannon": [
+      [
+        "Gunpowder",
+        "Pirate ship"
+      ],
+      [
+        "Gunpowder",
+        "Castle"
+      ],
+      [
+        "Gun",
+        "Pirate ship"
+      ],
+      [
+        "Gun",
+        "Castle"
+      ]
+    ],
+    "Car": [
+      [
+        "Wheel",
+        "Metal"
+      ],
+      [
+        "Wheel",
+        "Steel"
+      ],
+      [
+        "Wheel",
+        "Bicycle"
+      ],
+      [
+        "Wheel",
+        "Motorcycle"
+      ],
+      [
+        "Bicycle",
+        "Bicycle"
+      ],
+      [
+        "Motorcycle",
+        "Motorcycle"
+      ],
+      [
+        "Motorcycle",
+        "Machine"
+      ],
+      [
+        "Wagon",
+        "Combustion engine"
+      ],
+      [
+        "Cart",
+        "Combustion engine"
+      ]
+    ],
+    "Cauldron": [
+      [
+        "Witch",
+        "Metal"
+      ],
+      [
+        "Witch",
+        "Steel"
+      ],
+      [
+        "Witch",
+        "Fireplace"
+      ],
+      [
+        "Witch",
+        "Campfire"
+      ],
+      [
+        "Pottery",
+        "Metal"
+      ],
+      [
+        "Pottery",
+        "Steel"
+      ]
+    ],
+    "Caviar": [
+      [
+        "Roe",
+        "Salt"
+      ],
+      [
+        "Roe",
+        "Cook"
+      ]
+    ],
+    "Chicken coop": [
+      [
+        "Chicken",
+        "House"
+      ],
+      [
+        "Chicken",
+        "Wall"
+      ],
+      [
+        "Chicken",
+        "Barn"
+      ],
+      [
+        "Chicken",
+        "Container"
+      ]
+    ],
+    "Chicken soup": [
+      [
+        "Chicken",
+        "Water"
+      ],
+      [
+        "Chicken",
+        "Liquid"
+      ],
+      [
+        "Chicken wing",
+        "Water"
+      ],
+      [
+        "Chicken wing",
+        "Liquid"
+      ]
+    ],
+    "Chicken wing": [
+      [
+        "Chicken",
+        "Bone"
+      ],
+      [
+        "Chicken",
+        "Bbq"
+      ]
+    ],
+    "Christmas tree": [
+      [
+        "Tree",
+        "Light bulb"
+      ],
+      [
+        "Tree",
+        "Star"
+      ],
+      [
+        "Tree",
+        "Candle"
+      ],
+      [
+        "Tree",
+        "Light"
+      ],
+      [
+        "Tree",
+        "Gift"
+      ]
+    ],
+    "Coconut": [
+      [
+        "Palm",
+        "Fruit"
+      ],
+      [
+        "Palm",
+        "Nuts"
+      ],
+      [
+        "Palm",
+        "Vegetable"
+      ],
+      [
+        "Palm",
+        "Meat"
+      ],
+      [
+        "Beach",
+        "Fruit"
+      ],
+      [
+        "Beach",
+        "Vegetable"
+      ]
+    ],
+    "Combustion engine": [
+      [
+        "Petroleum",
+        "Machine"
+      ],
+      [
+        "Petroleum",
+        "Wheel"
+      ],
+      [
+        "Petroleum",
+        "Steam engine"
+      ],
+      [
+        "Explosion",
+        "Machine"
+      ],
+      [
+        "Explosion",
+        "Steam engine"
+      ]
+    ],
+    "Computer mouse": [
+      [
+        "Computer",
+        "Mouse"
+      ],
+      [
+        "Computer",
+        "Animal"
+      ]
+    ],
+    "Container": [
+      [
+        "Philosophy",
+        "Safe"
+      ],
+      [
+        "Philosophy",
+        "Pottery"
+      ],
+      [
+        "Philosophy",
+        "House"
+      ],
+      [
+        "Philosophy",
+        "Box"
+      ],
+      [
+        "Philosophy",
+        "Bottle"
+      ],
+      [
+        "Philosophy",
+        "Bucket"
+      ]
+    ],
+    "Cook": [
+      [
+        "Human",
+        "Fruit"
+      ],
+      [
+        "Human",
+        "Vegetable"
+      ],
+      [
+        "Human",
+        "Campfire"
+      ],
+      [
+        "Human",
+        "Nuts"
+      ]
+    ],
+    "Coral": [
+      [
+        "Tree",
+        "Sea"
+      ],
+      [
+        "Tree",
+        "Ocean"
+      ],
+      [
+        "Fossil",
+        "Sea"
+      ],
+      [
+        "Fossil",
+        "Ocean"
+      ],
+      [
+        "Bone",
+        "Sea"
+      ],
+      [
+        "Bone",
+        "Ocean"
+      ]
+    ],
+    "Cyclist": [
+      [
+        "Human",
+        "Wheel"
+      ],
+      [
+        "Human",
+        "Bicycle"
+      ]
+    ],
+    "Diamond": [
+      [
+        "Coal",
+        "Pressure"
+      ]
+    ],
+    "Doctor": [
+      [
+        "Human",
+        "Hospital"
+      ],
+      [
+        "Human",
+        "Stethoscope"
+      ]
+    ],
+    "Doge": [
+      [
+        "Dog",
+        "Internet"
+      ],
+      [
+        "Dog",
+        "Computer"
+      ]
+    ],
+    "Doghouse": [
+      [
+        "Dog",
+        "House"
+      ],
+      [
+        "Dog",
+        "Wall"
+      ],
+      [
+        "Dog",
+        "Container"
+      ],
+      [
+        "Husky",
+        "House"
+      ],
+      [
+        "Husky",
+        "Wall"
+      ],
+      [
+        "Husky",
+        "Container"
+      ]
+    ],
+    "Drone": [
+      [
+        "Robot",
+        "Airplane"
+      ],
+      [
+        "Robot",
+        "Helicopter"
+      ],
+      [
+        "Robot",
+        "Paper airplane"
+      ],
+      [
+        "Robot",
+        "Seaplane"
+      ]
+    ],
+    "Dry ice": [
+      [
+        "Carbon dioxide",
+        "Cold"
+      ],
+      [
+        "Carbon dioxide",
+        "Ice"
+      ]
+    ],
+    "Duckling": [
+      [
+        "Egg",
+        "Duck"
+      ]
+    ],
+    "Engineer": [
+      [
+        "Human",
+        "Machine"
+      ],
+      [
+        "Human",
+        "Steam engine"
+      ]
+    ],
+    "Fairy tale": [
+      [
+        "Story",
+        "Monarch"
+      ],
+      [
+        "Story",
+        "Castle"
+      ],
+      [
+        "Story",
+        "Knight"
+      ],
+      [
+        "Story",
+        "Dragon"
+      ],
+      [
+        "Story",
+        "Unicorn"
+      ]
+    ],
+    "Faun": [
+      [
+        "Human",
+        "Goat"
+      ],
+      [
+        "Human",
+        "Mountain goat"
+      ],
+      [
+        "Legend",
+        "Goat"
+      ],
+      [
+        "Legend",
+        "Mountain goat"
+      ],
+      [
+        "Wizard",
+        "Goat"
+      ],
+      [
+        "Wizard",
+        "Mountain goat"
+      ],
+      [
+        "Magic",
+        "Goat"
+      ],
+      [
+        "Magic",
+        "Mountain goat"
+      ]
+    ],
+    "Fire extinguisher": [
+      [
+        "Carbon dioxide",
+        "Fire"
+      ],
+      [
+        "Carbon dioxide",
+        "Pressure"
+      ],
+      [
+        "Carbon dioxide",
+        "Metal"
+      ],
+      [
+        "Carbon dioxide",
+        "Steel"
+      ],
+      [
+        "Carbon dioxide",
+        "Boiler"
+      ]
+    ],
+    "Forest": [
+      [
+        "Tree",
+        "Tree"
+      ],
+      [
+        "Tree",
+        "Plant"
+      ],
+      [
+        "Tree",
+        "Land"
+      ],
+      [
+        "Tree",
+        "Container"
+      ]
+    ],
+    "Fox": [
+      [
+        "Chicken",
+        "Animal"
+      ],
+      [
+        "Chicken",
+        "Wolf"
+      ],
+      [
+        "Chicken",
+        "Dog"
+      ],
+      [
+        "Chicken coop",
+        "Animal"
+      ],
+      [
+        "Chicken coop",
+        "Wolf"
+      ],
+      [
+        "Chicken coop",
+        "Dog"
+      ]
+    ],
+    "Fruit": [
+      [
+        "Flower",
+        "Time"
+      ],
+      [
+        "Flower",
+        "Rain"
+      ],
+      [
+        "Flower",
+        "Water"
+      ],
+      [
+        "Flower",
+        "Tree"
+      ],
+      [
+        "Tree",
+        "Farmer"
+      ],
+      [
+        "Farmer",
+        "Orchard"
+      ]
+    ],
+    "Gardener": [
+      [
+        "Human",
+        "Garden"
+      ],
+      [
+        "Farmer",
+        "Garden"
+      ]
+    ],
+    "Gnome": [
+      [
+        "Garden",
+        "Statue"
+      ],
+      [
+        "Garden",
+        "Legend"
+      ],
+      [
+        "Garden",
+        "Story"
+      ],
+      [
+        "Garden",
+        "Fairy tale"
+      ]
+    ],
+    "Golem": [
+      [
+        "Clay",
+        "Story"
+      ],
+      [
+        "Clay",
+        "Legend"
+      ],
+      [
+        "Story",
+        "Statue"
+      ],
+      [
+        "Statue",
+        "Life"
+      ],
+      [
+        "Statue",
+        "Legend"
+      ]
+    ],
+    "Hail": [
+      [
+        "Ice",
+        "Rain"
+      ],
+      [
+        "Ice",
+        "Cloud"
+      ],
+      [
+        "Ice",
+        "Storm"
+      ],
+      [
+        "Ice",
+        "Wind"
+      ],
+      [
+        "Ice",
+        "Steam"
+      ],
+      [
+        "Ice",
+        "Sky"
+      ]
+    ],
+    "Harp": [
+      [
+        "Angel",
+        "Music"
+      ],
+      [
+        "Angel",
+        "Musician"
+      ],
+      [
+        "Angel",
+        "Wire"
+      ],
+      [
+        "Wire",
+        "Music"
+      ]
+    ],
+    "Hay": [
+      [
+        "Grass",
+        "Scythe"
+      ],
+      [
+        "Grass",
+        "Farmer"
+      ],
+      [
+        "Grass",
+        "Sun"
+      ],
+      [
+        "Grass",
+        "Grass"
+      ],
+      [
+        "Grass",
+        "Barn"
+      ],
+      [
+        "Grass",
+        "Farm"
+      ],
+      [
+        "Grass",
+        "Pitchfork"
+      ],
+      [
+        "Pitchfork",
+        "Barn"
+      ],
+      [
+        "Pitchfork",
+        "Farm"
+      ],
+      [
+        "Pitchfork",
+        "Farmer"
+      ]
+    ],
+    "Helicopter": [
+      [
+        "Airplane",
+        "Blade"
+      ],
+      [
+        "Airplane",
+        "Windmill"
+      ],
+      [
+        "Airplane",
+        "Wind turbine"
+      ],
+      [
+        "Seaplane",
+        "Blade"
+      ],
+      [
+        "Seaplane",
+        "Windmill"
+      ],
+      [
+        "Seaplane",
+        "Wind turbine"
+      ]
+    ],
+    "Husky": [
+      [
+        "Dog",
+        "Snow"
+      ],
+      [
+        "Dog",
+        "Ice"
+      ],
+      [
+        "Dog",
+        "Antarctica"
+      ],
+      [
+        "Dog",
+        "Arctic"
+      ],
+      [
+        "Dog",
+        "Blizzard"
+      ],
+      [
+        "Dog",
+        "Glacier"
+      ]
+    ],
+    "Internet": [
+      [
+        "Computer",
+        "Computer"
+      ],
+      [
+        "Computer",
+        "Wire"
+      ],
+      [
+        "Computer",
+        "Web"
+      ],
+      [
+        "Computer",
+        "Net"
+      ]
+    ],
+    "Jack-o'-lantern": [
+      [
+        "Pumpkin",
+        "Fire"
+      ],
+      [
+        "Pumpkin",
+        "Candle"
+      ],
+      [
+        "Pumpkin",
+        "Light"
+      ],
+      [
+        "Pumpkin",
+        "Night"
+      ],
+      [
+        "Pumpkin",
+        "Ghost"
+      ],
+      [
+        "Pumpkin",
+        "Skeleton"
+      ],
+      [
+        "Vegetable",
+        "Ghost"
+      ],
+      [
+        "Vegetable",
+        "Skeleton"
+      ],
+      [
+        "Vegetable",
+        "Night"
+      ]
+    ],
+    "Juice": [
+      [
+        "Fruit",
+        "Pressure"
+      ],
+      [
+        "Fruit",
+        "Earth"
+      ],
+      [
+        "Fruit",
+        "Stone"
+      ],
+      [
+        "Fruit",
+        "Rock"
+      ],
+      [
+        "Fruit",
+        "Explosion"
+      ],
+      [
+        "Fruit",
+        "Water"
+      ],
+      [
+        "Vegetable",
+        "Pressure"
+      ],
+      [
+        "Vegetable",
+        "Stone"
+      ],
+      [
+        "Vegetable",
+        "Rock"
+      ],
+      [
+        "Vegetable",
+        "Explosion"
+      ],
+      [
+        "Vegetable",
+        "Water"
+      ]
+    ],
+    "Kaiju": [
+      [
+        "Dinosaur",
+        "City"
+      ],
+      [
+        "Dinosaur",
+        "Skyscraper"
+      ],
+      [
+        "Dinosaur",
+        "Legend"
+      ],
+      [
+        "Dinosaur",
+        "Story"
+      ]
+    ],
+    "Lasso": [
+      [
+        "Rope",
+        "Cow"
+      ],
+      [
+        "Rope",
+        "Horse"
+      ],
+      [
+        "Rope",
+        "Pig"
+      ],
+      [
+        "Rope",
+        "Wild boar"
+      ],
+      [
+        "Rope",
+        "Sheep"
+      ],
+      [
+        "Rope",
+        "Goat"
+      ]
+    ],
+    "Lawn": [
+      [
+        "Grass",
+        "House"
+      ],
+      [
+        "Grass",
+        "Container"
+      ],
+      [
+        "Grass",
+        "Lawn mower"
+      ],
+      [
+        "Field",
+        "Lawn mower"
+      ]
+    ],
+    "Lawn mower": [
+      [
+        "Grass",
+        "Tool"
+      ],
+      [
+        "Grass",
+        "Machine"
+      ],
+      [
+        "Scythe",
+        "Electricity"
+      ],
+      [
+        "Scythe",
+        "Helicopter"
+      ],
+      [
+        "Scythe",
+        "Windmill"
+      ],
+      [
+        "Scythe",
+        "Tool"
+      ],
+      [
+        "Scythe",
+        "Machine"
+      ],
+      [
+        "Scythe",
+        "Motion"
+      ],
+      [
+        "Helicopter",
+        "Field"
+      ]
+    ],
+    "Leaf": [
+      [
+        "Tree",
+        "Wind"
+      ],
+      [
+        "Flower",
+        "Wind"
+      ],
+      [
+        "Orchard",
+        "Wind"
+      ],
+      [
+        "Forest",
+        "Wind"
+      ]
+    ],
+    "Legend": [
+      [
+        "Story",
+        "Time"
+      ],
+      [
+        "Story",
+        "Story"
+      ],
+      [
+        "Story",
+        "Big"
+      ],
+      [
+        "Story",
+        "Fairy tale"
+      ],
+      [
+        "Fairy tale",
+        "Time"
+      ],
+      [
+        "Fairy tale",
+        "Big"
+      ]
+    ],
+    "Lumberjack": [
+      [
+        "Human",
+        "Axe"
+      ],
+      [
+        "Human",
+        "Chainsaw"
+      ],
+      [
+        "Human",
+        "Wood"
+      ],
+      [
+        "Human",
+        "Tree"
+      ]
+    ],
+    "Manatee": [
+      [
+        "Cow",
+        "Sea"
+      ],
+      [
+        "Cow",
+        "Ocean"
+      ],
+      [
+        "Cow",
+        "Fish"
+      ],
+      [
+        "Cow",
+        "Lake"
+      ],
+      [
+        "Cow",
+        "River"
+      ]
+    ],
+    "Milk": [
+      [
+        "Cow",
+        "Farmer"
+      ],
+      [
+        "Cow",
+        "Tool"
+      ],
+      [
+        "Cow",
+        "Water"
+      ],
+      [
+        "Cow",
+        "Liquid"
+      ],
+      [
+        "Goat",
+        "Farmer"
+      ],
+      [
+        "Goat",
+        "Tool"
+      ],
+      [
+        "Goat",
+        "Water"
+      ],
+      [
+        "Goat",
+        "Liquid"
+      ]
+    ],
+    "Minotaur": [
+      [
+        "Human",
+        "Cow"
+      ],
+      [
+        "Cow",
+        "Werewolf"
+      ],
+      [
+        "Cow",
+        "Story"
+      ],
+      [
+        "Cow",
+        "Legend"
+      ]
+    ],
+    "Mold": [
+      [
+        "Bread",
+        "Time"
+      ],
+      [
+        "Bread",
+        "Bacteria"
+      ],
+      [
+        "Fruit",
+        "Time"
+      ],
+      [
+        "Fruit",
+        "Bacteria"
+      ],
+      [
+        "Vegetable",
+        "Time"
+      ],
+      [
+        "Vegetable",
+        "Bacteria"
+      ]
+    ],
+    "Monkey": [
+      [
+        "Animal",
+        "Tree"
+      ]
+    ],
+    "Mountain goat": [
+      [
+        "Goat",
+        "Mountain"
+      ],
+      [
+        "Goat",
+        "Mountain range"
+      ]
+    ],
+    "Narwhal": [
+      [
+        "Unicorn",
+        "Fish"
+      ],
+      [
+        "Unicorn",
+        "Sea"
+      ],
+      [
+        "Unicorn",
+        "Ocean"
+      ],
+      [
+        "Unicorn",
+        "Water"
+      ],
+      [
+        "Unicorn",
+        "Shark"
+      ],
+      [
+        "Unicorn",
+        "Swordfish"
+      ],
+      [
+        "Unicorn",
+        "Flying fish"
+      ]
+    ],
+    "Nessie": [
+      [
+        "Lake",
+        "Legend"
+      ],
+      [
+        "Lake",
+        "Story"
+      ],
+      [
+        "Dinosaur",
+        "Legend"
+      ],
+      [
+        "Dinosaur",
+        "Story"
+      ]
+    ],
+    "Net": [
+      [
+        "Angler",
+        "Rope"
+      ],
+      [
+        "Fishing rod",
+        "Rope"
+      ],
+      [
+        "Fish",
+        "Rope"
+      ],
+      [
+        "Swordfish",
+        "Rope"
+      ],
+      [
+        "Flying fish",
+        "Rope"
+      ]
+    ],
+    "Nuts": [
+      [
+        "Tree",
+        "Farmer"
+      ],
+      [
+        "Tree",
+        "Field"
+      ],
+      [
+        "Tree",
+        "Domestication"
+      ]
+    ],
+    "Oil": [
+      [
+        "Sunflower",
+        "Pressure"
+      ],
+      [
+        "Sunflower",
+        "Stone"
+      ],
+      [
+        "Sunflower",
+        "Wheel"
+      ],
+      [
+        "Sunflower",
+        "Windmill"
+      ]
+    ],
+    "Ore": [
+      [
+        "Hammer",
+        "Boulder"
+      ],
+      [
+        "Hammer",
+        "Earth"
+      ],
+      [
+        "Hammer",
+        "Rock"
+      ],
+      [
+        "Hammer",
+        "Stone"
+      ],
+      [
+        "Hammer",
+        "Hill"
+      ],
+      [
+        "Hammer",
+        "Mountain"
+      ]
+    ],
+    "Paleontologist": [
+      [
+        "Human",
+        "Dinosaur"
+      ],
+      [
+        "Human",
+        "Fossil"
+      ],
+      [
+        "Science",
+        "Dinosaur"
+      ],
+      [
+        "Science",
+        "Fossil"
+      ]
+    ],
+    "Palm": [
+      [
+        "Tree",
+        "Beach"
+      ],
+      [
+        "Tree",
+        "Island"
+      ],
+      [
+        "Tree",
+        "Sand"
+      ]
+    ],
+    "Parachute": [
+      [
+        "Pilot",
+        "Fabric"
+      ],
+      [
+        "Pilot",
+        "Umbrella"
+      ],
+      [
+        "Airplane",
+        "Fabric"
+      ],
+      [
+        "Airplane",
+        "Umbrella"
+      ],
+      [
+        "Umbrella",
+        "Sky"
+      ],
+      [
+        "Umbrella",
+        "Atmosphere"
+      ]
+    ],
+    "Parrot": [
+      [
+        "Bird",
+        "Pirate"
+      ],
+      [
+        "Bird",
+        "Pirate ship"
+      ],
+      [
+        "Pigeon",
+        "Pirate"
+      ],
+      [
+        "Pigeon",
+        "Pirate ship"
+      ]
+    ],
+    "Peat": [
+      [
+        "Swamp",
+        "Plant"
+      ],
+      [
+        "Swamp",
+        "Time"
+      ],
+      [
+        "Swamp",
+        "Pressure"
+      ],
+      [
+        "Time",
+        "Grass"
+      ]
+    ],
+    "Perfume": [
+      [
+        "Flower",
+        "Water"
+      ],
+      [
+        "Flower",
+        "Steam"
+      ],
+      [
+        "Flower",
+        "Alcohol"
+      ],
+      [
+        "Rose",
+        "Water"
+      ],
+      [
+        "Rose",
+        "Steam"
+      ],
+      [
+        "Rose",
+        "Alcohol"
+      ],
+      [
+        "Sunflower",
+        "Water"
+      ],
+      [
+        "Sunflower",
+        "Steam"
+      ],
+      [
+        "Sunflower",
+        "Alcohol"
+      ]
+    ],
+    "Petroleum": [
+      [
+        "Fossil",
+        "Pressure"
+      ],
+      [
+        "Fossil",
+        "Time"
+      ],
+      [
+        "Fossil",
+        "Liquid"
+      ],
+      [
+        "Fossil",
+        "Water"
+      ]
+    ],
+    "Pilot": [
+      [
+        "Human",
+        "Airplane"
+      ],
+      [
+        "Human",
+        "Seaplane"
+      ]
+    ],
+    "Pipe": [
+      [
+        "Tobacco",
+        "Wood"
+      ],
+      [
+        "Tobacco",
+        "Tool"
+      ]
+    ],
+    "Pirate ship": [
+      [
+        "Sailboat",
+        "Pirate"
+      ],
+      [
+        "Boat",
+        "Pirate"
+      ],
+      [
+        "Steam engine",
+        "Pirate"
+      ],
+      [
+        "Pirate",
+        "Container"
+      ],
+      [
+        "Pirate",
+        "House"
+      ]
+    ],
+    "Polar bear": [
+      [
+        "Animal",
+        "Ice"
+      ],
+      [
+        "Animal",
+        "Arctic"
+      ]
+    ],
+    "Potato": [
+      [
+        "Earth",
+        "Vegetable"
+      ]
+    ],
+    "Pterodactyl": [
+      [
+        "Dinosaur",
+        "Air"
+      ],
+      [
+        "Dinosaur",
+        "Sky"
+      ],
+      [
+        "Dinosaur",
+        "Bird"
+      ],
+      [
+        "Dinosaur",
+        "Eagle"
+      ],
+      [
+        "Dinosaur",
+        "Vulture"
+      ],
+      [
+        "Dinosaur",
+        "Airplane"
+      ]
+    ],
+    "Pumpkin": [
+      [
+        "Vegetable",
+        "Field"
+      ],
+      [
+        "Vegetable",
+        "Farmer"
+      ],
+      [
+        "Vegetable",
+        "Jack-o'-lantern"
+      ],
+      [
+        "Plant",
+        "Jack-o'-lantern"
+      ]
+    ],
+    "Quicksilver": [
+      [
+        "Metal",
+        "Liquid"
+      ]
+    ],
+    "Rabbit": [
+      [
+        "Animal",
+        "Carrot"
+      ],
+      [
+        "Rabbit",
+        "Rabbit"
+      ]
+    ],
+    "Rivulet": [
+      [
+        "Stream",
+        "Small"
+      ],
+      [
+        "Puddle",
+        "Motion"
+      ]
+    ],
+    "Sand castle": [
+      [
+        "Castle",
+        "Sand"
+      ],
+      [
+        "Castle",
+        "Beach"
+      ],
+      [
+        "Castle",
+        "Desert"
+      ],
+      [
+        "Castle",
+        "Dune"
+      ]
+    ],
+    "Sap": [
+      [
+        "Tree",
+        "Blade"
+      ]
+    ],
+    "Saturn": [
+      [
+        "Ring",
+        "Planet"
+      ],
+      [
+        "Jupiter",
+        "Small"
+      ]
+    ],
+    "Scalpel": [
+      [
+        "Blade",
+        "Doctor"
+      ],
+      [
+        "Blade",
+        "Hospital"
+      ],
+      [
+        "Blade",
+        "Ambulance"
+      ],
+      [
+        "Sword",
+        "Doctor"
+      ],
+      [
+        "Sword",
+        "Hospital"
+      ],
+      [
+        "Sword",
+        "Ambulance"
+      ]
+    ],
+    "Scythe": [
+      [
+        "Blade",
+        "Grass"
+      ],
+      [
+        "Blade",
+        "Wheat"
+      ],
+      [
+        "Sword",
+        "Grass"
+      ],
+      [
+        "Sword",
+        "Wheat"
+      ],
+      [
+        "Axe",
+        "Grass"
+      ],
+      [
+        "Axe",
+        "Wheat"
+      ]
+    ],
+    "Seal": [
+      [
+        "Dog",
+        "Sea"
+      ],
+      [
+        "Dog",
+        "Ocean"
+      ],
+      [
+        "Dog",
+        "Arctic"
+      ],
+      [
+        "Dog",
+        "Water"
+      ],
+      [
+        "Dog",
+        "Lake"
+      ]
+    ],
+    "Seaplane": [
+      [
+        "Airplane",
+        "Water"
+      ],
+      [
+        "Airplane",
+        "Sea"
+      ],
+      [
+        "Airplane",
+        "Ocean"
+      ],
+      [
+        "Airplane",
+        "Lake"
+      ]
+    ],
+    "Seed": [
+      [
+        "Pollen",
+        "Plant"
+      ],
+      [
+        "Pollen",
+        "Bee"
+      ],
+      [
+        "Time",
+        "Flower"
+      ]
+    ],
+    "Skateboard": [
+      [
+        "Wheel",
+        "Snowboard"
+      ],
+      [
+        "Wheel",
+        "Skier"
+      ],
+      [
+        "Wheel",
+        "Ski goggles"
+      ]
+    ],
+    "Small": [
+      [
+        "Philosophy",
+        "Bacteria"
+      ],
+      [
+        "Philosophy",
+        "Oxygen"
+      ],
+      [
+        "Philosophy",
+        "Carbon dioxide"
+      ],
+      [
+        "Philosophy",
+        "Ozone"
+      ],
+      [
+        "Philosophy",
+        "Pebble"
+      ],
+      [
+        "Philosophy",
+        "Rivulet"
+      ],
+      [
+        "Philosophy",
+        "Ant"
+      ],
+      [
+        "Philosophy",
+        "Spider"
+      ],
+      [
+        "Philosophy",
+        "Bee"
+      ],
+      [
+        "Philosophy",
+        "Scorpion"
+      ],
+      [
+        "Philosophy",
+        "Confetti"
+      ],
+      [
+        "Philosophy",
+        "Seahorse"
+      ]
+    ],
+    "Snowboarder": [
+      [
+        "Human",
+        "Snowboard"
+      ]
+    ],
+    "Soda": [
+      [
+        "Carbon dioxide",
+        "Water"
+      ],
+      [
+        "Carbon dioxide",
+        "Juice"
+      ],
+      [
+        "Carbon dioxide",
+        "Tea"
+      ]
+    ],
+    "Sphinx": [
+      [
+        "Statue",
+        "Lion"
+      ],
+      [
+        "Statue",
+        "Desert"
+      ],
+      [
+        "Statue",
+        "Pyramid"
+      ],
+      [
+        "Lion",
+        "Stone"
+      ]
+    ],
+    "Statue": [
+      [
+        "Stone",
+        "Hammer"
+      ],
+      [
+        "Boulder",
+        "Hammer"
+      ],
+      [
+        "Medusa",
+        "Human"
+      ],
+      [
+        "Medusa",
+        "Hacker"
+      ],
+      [
+        "Medusa",
+        "Engineer"
+      ],
+      [
+        "Medusa",
+        "Lumberjack"
+      ],
+      [
+        "Medusa",
+        "Pilot"
+      ],
+      [
+        "Medusa",
+        "Sailor"
+      ],
+      [
+        "Medusa",
+        "Farmer"
+      ],
+      [
+        "Medusa",
+        "Firefighter"
+      ],
+      [
+        "Medusa",
+        "Surfer"
+      ],
+      [
+        "Medusa",
+        "Astronaut"
+      ],
+      [
+        "Medusa",
+        "Butcher"
+      ],
+      [
+        "Medusa",
+        "Doctor"
+      ],
+      [
+        "Medusa",
+        "Baker"
+      ],
+      [
+        "Medusa",
+        "Drunk"
+      ],
+      [
+        "Medusa",
+        "Mirror"
+      ]
+    ],
+    "Steam engine": [
+      [
+        "Steam",
+        "Machine"
+      ],
+      [
+        "Steam",
+        "Wheel"
+      ],
+      [
+        "Boiler",
+        "Wheel"
+      ]
+    ],
+    "Steel": [
+      [
+        "Metal",
+        "Coal"
+      ],
+      [
+        "Metal",
+        "Charcoal"
+      ],
+      [
+        "Metal",
+        "Mineral"
+      ],
+      [
+        "Metal",
+        "Ash"
+      ]
+    ],
+    "Stream": [
+      [
+        "Pond",
+        "Motion"
+      ],
+      [
+        "Rivulet",
+        "Big"
+      ],
+      [
+        "River",
+        "Small"
+      ]
+    ],
+    "Sushi": [
+      [
+        "Fish",
+        "Seaweed"
+      ],
+      [
+        "Caviar",
+        "Seaweed"
+      ]
+    ],
+    "Swamp": [
+      [
+        "Mud",
+        "Grass"
+      ],
+      [
+        "Mud",
+        "Tree"
+      ],
+      [
+        "Tree",
+        "Lake"
+      ],
+      [
+        "Algae",
+        "Lake"
+      ],
+      [
+        "Algae",
+        "Pond"
+      ],
+      [
+        "Reed",
+        "Lake"
+      ],
+      [
+        "Reed",
+        "Pond"
+      ],
+      [
+        "Reed",
+        "Mud"
+      ]
+    ],
+    "The one ring": [
+      [
+        "Ring",
+        "Volcano"
+      ],
+      [
+        "Ring",
+        "Magic"
+      ]
+    ],
+    "Thread": [
+      [
+        "Cotton",
+        "Cotton"
+      ],
+      [
+        "Cotton",
+        "Tool"
+      ],
+      [
+        "Cotton",
+        "Wheel"
+      ],
+      [
+        "Cotton",
+        "Machine"
+      ]
+    ],
+    "Treehouse": [
+      [
+        "Tree",
+        "House"
+      ],
+      [
+        "Tree",
+        "Wood"
+      ]
+    ],
+    "Trojan horse": [
+      [
+        "Horse",
+        "Wood"
+      ],
+      [
+        "Horse",
+        "Machine"
+      ],
+      [
+        "Horse",
+        "Statue"
+      ]
+    ],
+    "Tunnel": [
+      [
+        "Engineer",
+        "Mountain"
+      ],
+      [
+        "Engineer",
+        "Mountain range"
+      ],
+      [
+        "Engineer",
+        "Hill"
+      ],
+      [
+        "Train",
+        "Mountain"
+      ],
+      [
+        "Train",
+        "Mountain range"
+      ],
+      [
+        "Train",
+        "Hill"
+      ],
+      [
+        "Cave",
+        "Mountain"
+      ],
+      [
+        "Cave",
+        "Mountain range"
+      ],
+      [
+        "Cave",
+        "Hill"
+      ]
+    ],
+    "Tyrannosaurus rex": [
+      [
+        "Dinosaur",
+        "Meat"
+      ],
+      [
+        "Dinosaur",
+        "Blood"
+      ],
+      [
+        "Dinosaur",
+        "Monarch"
+      ]
+    ],
+    "Vase": [
+      [
+        "Pottery",
+        "Plant"
+      ],
+      [
+        "Pottery",
+        "Flower"
+      ],
+      [
+        "Pottery",
+        "Rose"
+      ],
+      [
+        "Container",
+        "Flower"
+      ],
+      [
+        "Container",
+        "Rose"
+      ],
+      [
+        "Bottle",
+        "Plant"
+      ],
+      [
+        "Bottle",
+        "Flower"
+      ],
+      [
+        "Bottle",
+        "Rose"
+      ]
+    ],
+    "Water lily": [
+      [
+        "Flower",
+        "Pond"
+      ],
+      [
+        "Flower",
+        "Puddle"
+      ],
+      [
+        "Flower",
+        "Lake"
+      ],
+      [
+        "Flower",
+        "Stream"
+      ]
+    ],
+    "Wheat": [
+      [
+        "Grass",
+        "Farmer"
+      ],
+      [
+        "Grass",
+        "Domestication"
+      ],
+      [
+        "Grass",
+        "Field"
+      ]
+    ],
+    "Wood": [
+      [
+        "Tree",
+        "Tool"
+      ],
+      [
+        "Tree",
+        "Axe"
+      ],
+      [
+        "Tree",
+        "Chainsaw"
+      ],
+      [
+        "Tree",
+        "Sword"
+      ],
+      [
+        "Tree",
+        "Lumberjack"
+      ],
+      [
+        "Forest",
+        "Tool"
+      ],
+      [
+        "Forest",
+        "Axe"
+      ],
+      [
+        "Forest",
+        "Chainsaw"
+      ],
+      [
+        "Forest",
+        "Sword"
+      ],
+      [
+        "Forest",
+        "Lumberjack"
+      ]
+    ],
+    "Woodpecker": [
+      [
+        "Bird",
+        "Wood"
+      ],
+      [
+        "Bird",
+        "Tree"
+      ],
+      [
+        "Bird",
+        "Forest"
+      ]
+    ],
+    "Wool": [
+      [
+        "Sheep",
+        "Tool"
+      ],
+      [
+        "Sheep",
+        "Scissors"
+      ],
+      [
+        "Sheep",
+        "Blade"
+      ]
+    ],
+    "Yeti": [
+      [
+        "Mountain",
+        "Story"
+      ],
+      [
+        "Mountain",
+        "Legend"
+      ],
+      [
+        "Mountain range",
+        "Story"
+      ],
+      [
+        "Mountain range",
+        "Legend"
+      ],
+      [
+        "Glacier",
+        "Story"
+      ],
+      [
+        "Glacier",
+        "Legend"
+      ],
+      [
+        "Antarctica",
+        "Story"
+      ],
+      [
+        "Antarctica",
+        "Legend"
+      ]
+    ],
+    "Zoo": [
+      [
+        "Animal",
+        "Container"
+      ],
+      [
+        "Animal",
+        "Cage"
+      ]
+    ]
+  },
+  "11": {
+    "Alcohol": [
+      [
+        "Time",
+        "Juice"
+      ],
+      [
+        "Wheat",
+        "Fruit"
+      ],
+      [
+        "Wheat",
+        "Juice"
+      ],
+      [
+        "Fruit",
+        "Sun"
+      ]
+    ],
+    "Ambulance": [
+      [
+        "Car",
+        "Hospital"
+      ],
+      [
+        "Car",
+        "Doctor"
+      ]
+    ],
+    "Ant farm": [
+      [
+        "Farm",
+        "Ant"
+      ],
+      [
+        "Ant",
+        "Jar"
+      ],
+      [
+        "Ant",
+        "Glass"
+      ],
+      [
+        "Anthill",
+        "Farm"
+      ],
+      [
+        "Anthill",
+        "Jar"
+      ]
+    ],
+    "Anthill": [
+      [
+        "Ant",
+        "House"
+      ],
+      [
+        "Ant",
+        "Container"
+      ],
+      [
+        "Ant",
+        "Hill"
+      ],
+      [
+        "Ant",
+        "Earth"
+      ],
+      [
+        "Ant",
+        "Land"
+      ],
+      [
+        "Ant",
+        "Soil"
+      ]
+    ],
+    "Arrow": [
+      [
+        "Wood",
+        "Bullet"
+      ],
+      [
+        "Wood",
+        "Bow"
+      ]
+    ],
+    "Aviary": [
+      [
+        "Big",
+        "Birdcage"
+      ]
+    ],
+    "Axe": [
+      [
+        "Wood",
+        "Blade"
+      ],
+      [
+        "Wood",
+        "Tool"
+      ],
+      [
+        "Wood",
+        "Stone"
+      ],
+      [
+        "Tool",
+        "Lumberjack"
+      ]
+    ],
+    "Banana": [
+      [
+        "Fruit",
+        "Monkey"
+      ]
+    ],
+    "Beehive": [
+      [
+        "House",
+        "Bee"
+      ],
+      [
+        "Tree",
+        "Bee"
+      ],
+      [
+        "Forest",
+        "Bee"
+      ],
+      [
+        "Wall",
+        "Bee"
+      ],
+      [
+        "Wood",
+        "Bee"
+      ],
+      [
+        "Container",
+        "Bee"
+      ]
+    ],
+    "Beekeeper": [
+      [
+        "Human",
+        "Beehive"
+      ],
+      [
+        "Human",
+        "Bee"
+      ],
+      [
+        "Farmer",
+        "Beehive"
+      ],
+      [
+        "Farmer",
+        "Bee"
+      ]
+    ],
+    "Blood bag": [
+      [
+        "Blood",
+        "Container"
+      ],
+      [
+        "Blood",
+        "Sack"
+      ],
+      [
+        "Blood",
+        "Bottle"
+      ]
+    ],
+    "Boat": [
+      [
+        "Wood",
+        "Water"
+      ],
+      [
+        "Wood",
+        "Sea"
+      ],
+      [
+        "Wood",
+        "Ocean"
+      ],
+      [
+        "Wood",
+        "Lake"
+      ],
+      [
+        "Wood",
+        "River"
+      ]
+    ],
+    "Book": [
+      [
+        "Newspaper",
+        "Newspaper"
+      ],
+      [
+        "Paper",
+        "Legend"
+      ],
+      [
+        "Paper",
+        "Wood"
+      ],
+      [
+        "Container",
+        "Story"
+      ],
+      [
+        "Container",
+        "Fairy tale"
+      ],
+      [
+        "Container",
+        "Legend"
+      ],
+      [
+        "Container",
+        "Idea"
+      ]
+    ],
+    "Bottle": [
+      [
+        "Container",
+        "Milk"
+      ],
+      [
+        "Container",
+        "Water"
+      ],
+      [
+        "Container",
+        "Coconut milk"
+      ],
+      [
+        "Container",
+        "Juice"
+      ],
+      [
+        "Container",
+        "Oil"
+      ],
+      [
+        "Container",
+        "Alcohol"
+      ],
+      [
+        "Container",
+        "Wine"
+      ],
+      [
+        "Container",
+        "Beer"
+      ],
+      [
+        "Container",
+        "Chocolate milk"
+      ],
+      [
+        "Container",
+        "Soda"
+      ],
+      [
+        "Container",
+        "Perfume"
+      ],
+      [
+        "Container",
+        "Liquid"
+      ]
+    ],
+    "Boulder": [
+      [
+        "Big",
+        "Rock"
+      ],
+      [
+        "Big",
+        "Stone"
+      ],
+      [
+        "Small",
+        "Hill"
+      ],
+      [
+        "Rock",
+        "Stone"
+      ],
+      [
+        "Rock",
+        "Rock"
+      ],
+      [
+        "Rock",
+        "Earth"
+      ]
+    ],
+    "Bow": [
+      [
+        "Wood",
+        "Rope"
+      ],
+      [
+        "Wood",
+        "Wire"
+      ]
+    ],
+    "Broom": [
+      [
+        "Wood",
+        "Hay"
+      ]
+    ],
+    "Bucket": [
+      [
+        "Container",
+        "Wood"
+      ],
+      [
+        "Container",
+        "Yogurt"
+      ],
+      [
+        "Container",
+        "Paint"
+      ],
+      [
+        "Bottle",
+        "River"
+      ],
+      [
+        "Bottle",
+        "Paint"
+      ],
+      [
+        "Chicken wing",
+        "Container"
+      ],
+      [
+        "Chicken wing",
+        "Box"
+      ]
+    ],
+    "Bus": [
+      [
+        "Car",
+        "Car"
+      ],
+      [
+        "Car",
+        "Train"
+      ],
+      [
+        "Car",
+        "City"
+      ],
+      [
+        "Car",
+        "Big"
+      ]
+    ],
+    "Butter": [
+      [
+        "Milk",
+        "Pressure"
+      ],
+      [
+        "Milk",
+        "Energy"
+      ],
+      [
+        "Milk",
+        "Motion"
+      ],
+      [
+        "Milk",
+        "Tool"
+      ]
+    ],
+    "Butterfly net": [
+      [
+        "Butterfly",
+        "Net"
+      ],
+      [
+        "Bee",
+        "Net"
+      ]
+    ],
+    "Campfire": [
+      [
+        "Fire",
+        "Wood"
+      ]
+    ],
+    "Cart": [
+      [
+        "Wheel",
+        "Wood"
+      ]
+    ],
+    "Cashmere": [
+      [
+        "Mountain goat",
+        "Thread"
+      ],
+      [
+        "Mountain goat",
+        "Fabric"
+      ],
+      [
+        "Mountain goat",
+        "Tool"
+      ],
+      [
+        "Mountain goat",
+        "Scissors"
+      ],
+      [
+        "Mountain goat",
+        "Wool"
+      ]
+    ],
+    "Cereal": [
+      [
+        "Wheat",
+        "Milk"
+      ],
+      [
+        "Wheat",
+        "Chocolate milk"
+      ],
+      [
+        "Wheat",
+        "Coconut milk"
+      ]
+    ],
+    "Chainsaw": [
+      [
+        "Axe",
+        "Machine"
+      ],
+      [
+        "Axe",
+        "Electricity"
+      ],
+      [
+        "Axe",
+        "Motion"
+      ],
+      [
+        "Lumberjack",
+        "Machine"
+      ],
+      [
+        "Lumberjack",
+        "Electricity"
+      ]
+    ],
+    "Cheese": [
+      [
+        "Milk",
+        "Tool"
+      ],
+      [
+        "Milk",
+        "Time"
+      ],
+      [
+        "Milk",
+        "Cook"
+      ],
+      [
+        "Milk",
+        "Bacteria"
+      ]
+    ],
+    "Christmas stocking": [
+      [
+        "Fireplace",
+        "Wool"
+      ],
+      [
+        "Christmas tree",
+        "Wool"
+      ],
+      [
+        "Reindeer",
+        "Wool"
+      ],
+      [
+        "Santa",
+        "Wool"
+      ]
+    ],
+    "Closet": [
+      [
+        "Container",
+        "Broom"
+      ],
+      [
+        "Container",
+        "Toolbox"
+      ],
+      [
+        "Container",
+        "Umbrella"
+      ],
+      [
+        "Container",
+        "Robot vacuum"
+      ],
+      [
+        "Container",
+        "Vacuum cleaner"
+      ]
+    ],
+    "Coconut milk": [
+      [
+        "Coconut",
+        "Milk"
+      ],
+      [
+        "Coconut",
+        "Tool"
+      ],
+      [
+        "Coconut",
+        "Hammer"
+      ],
+      [
+        "Coconut",
+        "Sword"
+      ],
+      [
+        "Coconut",
+        "Blade"
+      ],
+      [
+        "Coconut",
+        "Axe"
+      ]
+    ],
+    "Coffin": [
+      [
+        "Wood",
+        "Corpse"
+      ],
+      [
+        "Container",
+        "Corpse"
+      ],
+      [
+        "Container",
+        "Vampire"
+      ]
+    ],
+    "Cutting board": [
+      [
+        "Wood",
+        "Cook"
+      ]
+    ],
+    "Drum": [
+      [
+        "Wood",
+        "Leather"
+      ],
+      [
+        "Wood",
+        "Fabric"
+      ],
+      [
+        "Wood",
+        "Music"
+      ]
+    ],
+    "Electric car": [
+      [
+        "Electricity",
+        "Car"
+      ],
+      [
+        "Electricity",
+        "Wagon"
+      ],
+      [
+        "Car",
+        "Wind turbine"
+      ],
+      [
+        "Wagon",
+        "Wind turbine"
+      ],
+      [
+        "Solar cell",
+        "Car"
+      ],
+      [
+        "Solar cell",
+        "Wagon"
+      ]
+    ],
+    "Fabric": [
+      [
+        "Thread",
+        "Machine"
+      ],
+      [
+        "Thread",
+        "Tool"
+      ],
+      [
+        "Thread",
+        "Wheel"
+      ]
+    ],
+    "Fireplace": [
+      [
+        "Campfire",
+        "House"
+      ],
+      [
+        "Campfire",
+        "Brick"
+      ],
+      [
+        "Campfire",
+        "Wall"
+      ],
+      [
+        "Campfire",
+        "Container"
+      ],
+      [
+        "Wood",
+        "Container"
+      ]
+    ],
+    "Firetruck": [
+      [
+        "Firefighter",
+        "Car"
+      ],
+      [
+        "Firefighter",
+        "Wagon"
+      ],
+      [
+        "Fire",
+        "Car"
+      ],
+      [
+        "Fire",
+        "Wagon"
+      ],
+      [
+        "Fire extinguisher",
+        "Car"
+      ],
+      [
+        "Fire extinguisher",
+        "Wagon"
+      ]
+    ],
+    "Flour": [
+      [
+        "Wheat",
+        "Wheat"
+      ],
+      [
+        "Wheat",
+        "Stone"
+      ],
+      [
+        "Wheat",
+        "Windmill"
+      ],
+      [
+        "Wheat",
+        "Wheel"
+      ],
+      [
+        "Wheat",
+        "Rock"
+      ]
+    ],
+    "Flute": [
+      [
+        "Wood",
+        "Wind"
+      ],
+      [
+        "Wood",
+        "Air"
+      ]
+    ],
+    "Fountain": [
+      [
+        "Statue",
+        "Water"
+      ],
+      [
+        "Statue",
+        "Stream"
+      ]
+    ],
+    "French fries": [
+      [
+        "Oil",
+        "Vegetable"
+      ],
+      [
+        "Oil",
+        "Potato"
+      ],
+      [
+        "Fire",
+        "Potato"
+      ]
+    ],
+    "Fruit tree": [
+      [
+        "Fruit",
+        "Tree"
+      ],
+      [
+        "Fruit",
+        "Plant"
+      ],
+      [
+        "Fruit",
+        "Wood"
+      ]
+    ],
+    "Garage": [
+      [
+        "Car",
+        "House"
+      ],
+      [
+        "Car",
+        "Container"
+      ],
+      [
+        "Car",
+        "Wall"
+      ],
+      [
+        "Car",
+        "Barn"
+      ],
+      [
+        "Ambulance",
+        "House"
+      ],
+      [
+        "Ambulance",
+        "Container"
+      ],
+      [
+        "Ambulance",
+        "Wall"
+      ],
+      [
+        "Ambulance",
+        "Barn"
+      ],
+      [
+        "Motorcycle",
+        "House"
+      ],
+      [
+        "Motorcycle",
+        "Container"
+      ],
+      [
+        "Motorcycle",
+        "Wall"
+      ],
+      [
+        "Motorcycle",
+        "Barn"
+      ],
+      [
+        "Bus",
+        "House"
+      ],
+      [
+        "Bus",
+        "Container"
+      ],
+      [
+        "Bus",
+        "Wall"
+      ],
+      [
+        "Bus",
+        "Barn"
+      ],
+      [
+        "Sleigh",
+        "House"
+      ],
+      [
+        "Sleigh",
+        "Container"
+      ],
+      [
+        "Sleigh",
+        "Wall"
+      ],
+      [
+        "Sleigh",
+        "Barn"
+      ],
+      [
+        "Electric car",
+        "House"
+      ],
+      [
+        "Electric car",
+        "Container"
+      ],
+      [
+        "Electric car",
+        "Wall"
+      ],
+      [
+        "Electric car",
+        "Barn"
+      ],
+      [
+        "Snowmobile",
+        "House"
+      ],
+      [
+        "Snowmobile",
+        "Container"
+      ],
+      [
+        "Snowmobile",
+        "Wall"
+      ],
+      [
+        "Snowmobile",
+        "Barn"
+      ],
+      [
+        "Tractor",
+        "House"
+      ],
+      [
+        "Tractor",
+        "Container"
+      ],
+      [
+        "Tractor",
+        "Wall"
+      ],
+      [
+        "Tractor",
+        "Barn"
+      ],
+      [
+        "Rv",
+        "House"
+      ],
+      [
+        "Rv",
+        "Container"
+      ],
+      [
+        "Rv",
+        "Wall"
+      ],
+      [
+        "Rv",
+        "Barn"
+      ],
+      [
+        "Ice cream truck",
+        "House"
+      ],
+      [
+        "Ice cream truck",
+        "Container"
+      ],
+      [
+        "Ice cream truck",
+        "Wall"
+      ],
+      [
+        "Ice cream truck",
+        "Barn"
+      ]
+    ],
+    "Grim reaper": [
+      [
+        "Human",
+        "Scythe"
+      ],
+      [
+        "Corpse",
+        "Scythe"
+      ],
+      [
+        "Zombie",
+        "Scythe"
+      ],
+      [
+        "Death",
+        "Scythe"
+      ],
+      [
+        "Boat",
+        "Scythe"
+      ],
+      [
+        "River",
+        "Scythe"
+      ]
+    ],
+    "Gust": [
+      [
+        "Wind",
+        "Small"
+      ],
+      [
+        "Air",
+        "Small"
+      ]
+    ],
+    "Hay bale": [
+      [
+        "Hay",
+        "Hay"
+      ],
+      [
+        "Hay",
+        "Barn"
+      ],
+      [
+        "Hay",
+        "Tractor"
+      ],
+      [
+        "Hay",
+        "Machine"
+      ]
+    ],
+    "Hill": [
+      [
+        "Big",
+        "Boulder"
+      ],
+      [
+        "Earth",
+        "Boulder"
+      ],
+      [
+        "Stone",
+        "Boulder"
+      ],
+      [
+        "Boulder",
+        "Boulder"
+      ],
+      [
+        "Mountain",
+        "Small"
+      ]
+    ],
+    "Honey": [
+      [
+        "Bee",
+        "Flower"
+      ],
+      [
+        "Bee",
+        "Beehive"
+      ],
+      [
+        "Bee",
+        "Time"
+      ],
+      [
+        "Bee",
+        "Bee"
+      ],
+      [
+        "Beehive",
+        "Beekeeper"
+      ]
+    ],
+    "Ice cream": [
+      [
+        "Milk",
+        "Cold"
+      ],
+      [
+        "Milk",
+        "Ice"
+      ],
+      [
+        "Milk",
+        "Snow"
+      ]
+    ],
+    "Ice sculpture": [
+      [
+        "Ice",
+        "Statue"
+      ]
+    ],
+    "Jam": [
+      [
+        "Juice",
+        "Sugar"
+      ],
+      [
+        "Juice",
+        "Fruit"
+      ],
+      [
+        "Juice",
+        "Machine"
+      ],
+      [
+        "Fruit",
+        "Machine"
+      ],
+      [
+        "Fruit",
+        "Heat"
+      ]
+    ],
+    "Knife": [
+      [
+        "Blade",
+        "Cook"
+      ],
+      [
+        "Sword",
+        "Cook"
+      ]
+    ],
+    "Laptop": [
+      [
+        "Computer",
+        "Small"
+      ]
+    ],
+    "Little alchemy (element)": [
+      [
+        "Small",
+        "Alchemist"
+      ]
+    ],
+    "Log cabin": [
+      [
+        "Wood",
+        "House"
+      ]
+    ],
+    "Maple syrup": [
+      [
+        "Sap",
+        "Heat"
+      ],
+      [
+        "Sap",
+        "Sugar"
+      ]
+    ],
+    "Mayonnaise": [
+      [
+        "Egg",
+        "Oil"
+      ]
+    ],
+    "Moon rover": [
+      [
+        "Moon",
+        "Car"
+      ],
+      [
+        "Moon",
+        "Electric car"
+      ]
+    ],
+    "Motorcycle": [
+      [
+        "Bicycle",
+        "Machine"
+      ],
+      [
+        "Bicycle",
+        "Metal"
+      ],
+      [
+        "Bicycle",
+        "Steel"
+      ],
+      [
+        "Bicycle",
+        "Steam engine"
+      ],
+      [
+        "Bicycle",
+        "Combustion engine"
+      ]
+    ],
+    "Needle": [
+      [
+        "Thread",
+        "Metal"
+      ],
+      [
+        "Thread",
+        "Steel"
+      ],
+      [
+        "Thread",
+        "Tool"
+      ]
+    ],
+    "Paper": [
+      [
+        "Wood",
+        "Pressure"
+      ],
+      [
+        "Wood",
+        "Water"
+      ],
+      [
+        "Wood",
+        "Blender"
+      ],
+      [
+        "Wood",
+        "Machine"
+      ]
+    ],
+    "Peanut butter": [
+      [
+        "Nuts",
+        "Butter"
+      ],
+      [
+        "Nuts",
+        "Pressure"
+      ]
+    ],
+    "Pebble": [
+      [
+        "Small",
+        "Earth"
+      ],
+      [
+        "Small",
+        "Stone"
+      ],
+      [
+        "Small",
+        "Rock"
+      ]
+    ],
+    "Pencil": [
+      [
+        "Wood",
+        "Coal"
+      ],
+      [
+        "Wood",
+        "Charcoal"
+      ]
+    ],
+    "Penicillin": [
+      [
+        "Mold",
+        "Doctor"
+      ],
+      [
+        "Mold",
+        "Science"
+      ],
+      [
+        "Mold",
+        "Idea"
+      ],
+      [
+        "Mold",
+        "Hospital"
+      ]
+    ],
+    "Pinocchio": [
+      [
+        "Wood",
+        "Life"
+      ],
+      [
+        "Wood",
+        "Story"
+      ],
+      [
+        "Golem",
+        "Story"
+      ]
+    ],
+    "Pitchfork": [
+      [
+        "Hay",
+        "Tool"
+      ],
+      [
+        "Hay",
+        "Metal"
+      ],
+      [
+        "Hay",
+        "Steel"
+      ]
+    ],
+    "Popsicle": [
+      [
+        "Juice",
+        "Ice"
+      ],
+      [
+        "Juice",
+        "Cold"
+      ],
+      [
+        "Juice",
+        "Snow"
+      ],
+      [
+        "Juice",
+        "Wood"
+      ]
+    ],
+    "Quicksand": [
+      [
+        "Sand",
+        "Swamp"
+      ]
+    ],
+    "Rainforest": [
+      [
+        "Rain",
+        "Forest"
+      ]
+    ],
+    "Rat": [
+      [
+        "Animal",
+        "Pirate ship"
+      ],
+      [
+        "Animal",
+        "Sailboat"
+      ],
+      [
+        "Mouse",
+        "Pirate ship"
+      ],
+      [
+        "Mouse",
+        "Sailboat"
+      ],
+      [
+        "Mouse",
+        "City"
+      ],
+      [
+        "Mouse",
+        "Skyscraper"
+      ],
+      [
+        "Mouse",
+        "Village"
+      ],
+      [
+        "Mouse",
+        "Big"
+      ]
+    ],
+    "Reindeer": [
+      [
+        "Animal",
+        "Santa"
+      ],
+      [
+        "Livestock",
+        "Santa"
+      ],
+      [
+        "Animal",
+        "Christmas tree"
+      ],
+      [
+        "Livestock",
+        "Christmas tree"
+      ],
+      [
+        "Animal",
+        "Christmas stocking"
+      ]
+    ],
+    "Restaurant": [
+      [
+        "House",
+        "Cook"
+      ]
+    ],
+    "Roller coaster": [
+      [
+        "Park",
+        "Train"
+      ],
+      [
+        "Park",
+        "Car"
+      ],
+      [
+        "Park",
+        "Cart"
+      ],
+      [
+        "Park",
+        "Wagon"
+      ]
+    ],
+    "Rv": [
+      [
+        "House",
+        "Car"
+      ],
+      [
+        "House",
+        "Bus"
+      ]
+    ],
+    "Sack": [
+      [
+        "Container",
+        "Flour"
+      ],
+      [
+        "Container",
+        "Salt"
+      ],
+      [
+        "Container",
+        "Letter"
+      ]
+    ],
+    "Santa": [
+      [
+        "Christmas tree",
+        "Human"
+      ],
+      [
+        "Christmas tree",
+        "Legend"
+      ],
+      [
+        "Christmas tree",
+        "Story"
+      ],
+      [
+        "Christmas stocking",
+        "Human"
+      ],
+      [
+        "Christmas stocking",
+        "Legend"
+      ],
+      [
+        "Christmas stocking",
+        "Story"
+      ]
+    ],
+    "Scarecrow": [
+      [
+        "Hay",
+        "Human"
+      ],
+      [
+        "Hay",
+        "Statue"
+      ],
+      [
+        "Hay",
+        "Golem"
+      ],
+      [
+        "Hay",
+        "Sack"
+      ],
+      [
+        "Farm",
+        "Statue"
+      ],
+      [
+        "Barn",
+        "Statue"
+      ],
+      [
+        "Pumpkin",
+        "Sack"
+      ],
+      [
+        "Jack-o'-lantern",
+        "Sack"
+      ]
+    ],
+    "Scuba tank": [
+      [
+        "Container",
+        "Air"
+      ],
+      [
+        "Container",
+        "Atmosphere"
+      ],
+      [
+        "Container",
+        "Oxygen"
+      ]
+    ],
+    "Sewing machine": [
+      [
+        "Needle",
+        "Machine"
+      ],
+      [
+        "Needle",
+        "Electricity"
+      ],
+      [
+        "Needle",
+        "Robot"
+      ],
+      [
+        "Thread",
+        "Machine"
+      ],
+      [
+        "Thread",
+        "Electricity"
+      ],
+      [
+        "Thread",
+        "Robot"
+      ]
+    ],
+    "Shovel": [
+      [
+        "Tool",
+        "Gardener"
+      ]
+    ],
+    "Silo": [
+      [
+        "Wheat",
+        "Container"
+      ],
+      [
+        "Wheat",
+        "House"
+      ],
+      [
+        "Wheat",
+        "Barn"
+      ],
+      [
+        "Wheat",
+        "Wall"
+      ],
+      [
+        "Wheat",
+        "Farm"
+      ],
+      [
+        "Wheat",
+        "Safe"
+      ],
+      [
+        "Wheat",
+        "Bank"
+      ]
+    ],
+    "Smoothie": [
+      [
+        "Fruit",
+        "Blender"
+      ],
+      [
+        "Fruit",
+        "Ice"
+      ],
+      [
+        "Fruit",
+        "Cold"
+      ]
+    ],
+    "Snowmobile": [
+      [
+        "Snow",
+        "Motorcycle"
+      ],
+      [
+        "Snow",
+        "Car"
+      ],
+      [
+        "Glacier",
+        "Motorcycle"
+      ],
+      [
+        "Glacier",
+        "Car"
+      ],
+      [
+        "Ice",
+        "Motorcycle"
+      ],
+      [
+        "Ice",
+        "Car"
+      ]
+    ],
+    "Soap": [
+      [
+        "Oil",
+        "Ash"
+      ],
+      [
+        "Oil",
+        "Wax"
+      ],
+      [
+        "Oil",
+        "Clay"
+      ],
+      [
+        "Wax",
+        "Ash"
+      ],
+      [
+        "Wax",
+        "Clay"
+      ]
+    ],
+    "Spider": [
+      [
+        "Animal",
+        "Thread"
+      ],
+      [
+        "Animal",
+        "Web"
+      ],
+      [
+        "Animal",
+        "Net"
+      ]
+    ],
+    "Squirrel": [
+      [
+        "Mouse",
+        "Tree"
+      ],
+      [
+        "Mouse",
+        "Plant"
+      ],
+      [
+        "Mouse",
+        "Nuts"
+      ],
+      [
+        "Animal",
+        "Nuts"
+      ]
+    ],
+    "Steamboat": [
+      [
+        "Steam engine",
+        "Boat"
+      ],
+      [
+        "Steam engine",
+        "Sailboat"
+      ],
+      [
+        "Steam engine",
+        "Pirate ship"
+      ],
+      [
+        "Steam engine",
+        "Ocean"
+      ],
+      [
+        "Steam engine",
+        "Sea"
+      ]
+    ],
+    "Steel wool": [
+      [
+        "Wool",
+        "Steel"
+      ],
+      [
+        "Wool",
+        "Metal"
+      ],
+      [
+        "Wool",
+        "Wire"
+      ]
+    ],
+    "Sugar": [
+      [
+        "Fruit",
+        "Fire"
+      ],
+      [
+        "Fruit",
+        "Energy"
+      ],
+      [
+        "Juice",
+        "Fire"
+      ],
+      [
+        "Juice",
+        "Energy"
+      ],
+      [
+        "Alcohol",
+        "Fire"
+      ],
+      [
+        "Alcohol",
+        "Energy"
+      ],
+      [
+        "Beer",
+        "Fire"
+      ],
+      [
+        "Beer",
+        "Energy"
+      ],
+      [
+        "Wine",
+        "Fire"
+      ],
+      [
+        "Wine",
+        "Energy"
+      ]
+    ],
+    "Sweater": [
+      [
+        "Wool",
+        "Tool"
+      ],
+      [
+        "Wool",
+        "Human"
+      ]
+    ],
+    "Tailor": [
+      [
+        "Human",
+        "Sewing machine"
+      ],
+      [
+        "Human",
+        "Needle"
+      ],
+      [
+        "Human",
+        "Thread"
+      ]
+    ],
+    "Tank": [
+      [
+        "Car",
+        "Armor"
+      ],
+      [
+        "Car",
+        "Gun"
+      ],
+      [
+        "Car",
+        "Metal"
+      ],
+      [
+        "Car",
+        "Steel"
+      ]
+    ],
+    "Tea": [
+      [
+        "Leaf",
+        "Water"
+      ],
+      [
+        "Leaf",
+        "Human"
+      ],
+      [
+        "Leaf",
+        "Heat"
+      ]
+    ],
+    "Thermometer": [
+      [
+        "Quicksilver",
+        "Glass"
+      ],
+      [
+        "Quicksilver",
+        "Tool"
+      ],
+      [
+        "Quicksilver",
+        "Engineer"
+      ]
+    ],
+    "Titanic": [
+      [
+        "Boat",
+        "Iceberg"
+      ],
+      [
+        "Steamboat",
+        "Iceberg"
+      ],
+      [
+        "Iceberg",
+        "Legend"
+      ],
+      [
+        "Steamboat",
+        "Legend"
+      ]
+    ],
+    "Tractor": [
+      [
+        "Car",
+        "Farmer"
+      ],
+      [
+        "Car",
+        "Field"
+      ],
+      [
+        "Car",
+        "Cow"
+      ],
+      [
+        "Wagon",
+        "Farmer"
+      ],
+      [
+        "Wagon",
+        "Field"
+      ],
+      [
+        "Wagon",
+        "Cow"
+      ]
+    ],
+    "Train": [
+      [
+        "Steam engine",
+        "Metal"
+      ],
+      [
+        "Steam engine",
+        "Steel"
+      ],
+      [
+        "Steam engine",
+        "Wheel"
+      ],
+      [
+        "Steam engine",
+        "Wagon"
+      ]
+    ],
+    "Vault": [
+      [
+        "Safe",
+        "Big"
+      ]
+    ],
+    "Water pipe": [
+      [
+        "Water",
+        "Pipe"
+      ]
+    ],
+    "Witch": [
+      [
+        "Broom",
+        "Wizard"
+      ],
+      [
+        "Broom",
+        "Human"
+      ],
+      [
+        "Broom",
+        "Legend"
+      ],
+      [
+        "Broom",
+        "Story"
+      ],
+      [
+        "Broom",
+        "Magic"
+      ],
+      [
+        "Broom",
+        "Cauldron"
+      ],
+      [
+        "Cauldron",
+        "Story"
+      ],
+      [
+        "Cauldron",
+        "Legend"
+      ]
+    ],
+    "Yogurt": [
+      [
+        "Bacteria",
+        "Milk"
+      ],
+      [
+        "Bacteria",
+        "Ice cream"
+      ]
+    ]
+  },
+  "12": {
+    "Apron": [
+      [
+        "Fabric",
+        "Cook"
+      ],
+      [
+        "Fabric",
+        "Baker"
+      ]
+    ],
+    "Armor": [
+      [
+        "Metal",
+        "Fabric"
+      ],
+      [
+        "Steel",
+        "Fabric"
+      ]
+    ],
+    "Bandage": [
+      [
+        "Fabric",
+        "Blood"
+      ],
+      [
+        "Fabric",
+        "Sword"
+      ],
+      [
+        "Fabric",
+        "Blade"
+      ]
+    ],
+    "Batter": [
+      [
+        "Milk",
+        "Flour"
+      ],
+      [
+        "Coconut milk",
+        "Flour"
+      ]
+    ],
+    "Bbq": [
+      [
+        "Campfire",
+        "Metal"
+      ],
+      [
+        "Campfire",
+        "Steel"
+      ],
+      [
+        "Campfire",
+        "Garden"
+      ],
+      [
+        "Campfire",
+        "House"
+      ],
+      [
+        "Campfire",
+        "Meat"
+      ]
+    ],
+    "Beer": [
+      [
+        "Alcohol",
+        "Wheat"
+      ]
+    ],
+    "Box": [
+      [
+        "Container",
+        "Pizza"
+      ],
+      [
+        "Container",
+        "Pencil"
+      ],
+      [
+        "Container",
+        "Cereal"
+      ],
+      [
+        "Container",
+        "Cookie"
+      ],
+      [
+        "Container",
+        "Donut"
+      ],
+      [
+        "Container",
+        "Cake"
+      ],
+      [
+        "Container",
+        "Crayon"
+      ]
+    ],
+    "Candy cane": [
+      [
+        "Sugar",
+        "Christmas tree"
+      ],
+      [
+        "Sugar",
+        "Christmas stocking"
+      ],
+      [
+        "Sugar",
+        "Santa"
+      ],
+      [
+        "Sugar",
+        "Reindeer"
+      ]
+    ],
+    "Canvas": [
+      [
+        "Fabric",
+        "Paint"
+      ]
+    ],
+    "Caramel": [
+      [
+        "Sugar",
+        "Heat"
+      ]
+    ],
+    "Chocolate": [
+      [
+        "Sugar",
+        "Milk"
+      ],
+      [
+        "Sugar",
+        "Oil"
+      ],
+      [
+        "Sugar",
+        "Coconut milk"
+      ],
+      [
+        "Sugar",
+        "Seed"
+      ]
+    ],
+    "Cigarette": [
+      [
+        "Tobacco",
+        "Paper"
+      ]
+    ],
+    "Confetti": [
+      [
+        "Paper",
+        "Scissors"
+      ],
+      [
+        "Paper",
+        "Blade"
+      ]
+    ],
+    "Cookbook": [
+      [
+        "Recipe",
+        "Recipe"
+      ],
+      [
+        "Book",
+        "Cook"
+      ]
+    ],
+    "Cotton candy": [
+      [
+        "Sugar",
+        "Air"
+      ],
+      [
+        "Sugar",
+        "Thread"
+      ],
+      [
+        "Sugar",
+        "Cloud"
+      ]
+    ],
+    "Crayon": [
+      [
+        "Rainbow",
+        "Pencil"
+      ],
+      [
+        "Rainbow",
+        "Wax"
+      ],
+      [
+        "Double rainbow!",
+        "Pencil"
+      ],
+      [
+        "Double rainbow!",
+        "Wax"
+      ],
+      [
+        "Pencil",
+        "Paint"
+      ],
+      [
+        "Wax",
+        "Paint"
+      ]
+    ],
+    "Cup": [
+      [
+        "Container",
+        "Smoothie"
+      ],
+      [
+        "Container",
+        "Tea"
+      ],
+      [
+        "Container",
+        "Milk shake"
+      ],
+      [
+        "Bottle",
+        "Smoothie"
+      ],
+      [
+        "Bottle",
+        "Tea"
+      ],
+      [
+        "Bottle",
+        "Milk shake"
+      ]
+    ],
+    "Diver": [
+      [
+        "Scuba tank",
+        "Human"
+      ],
+      [
+        "Scuba tank",
+        "Swimmer"
+      ],
+      [
+        "Scuba tank",
+        "Sea"
+      ],
+      [
+        "Scuba tank",
+        "Ocean"
+      ],
+      [
+        "Scuba tank",
+        "Lake"
+      ]
+    ],
+    "Dough": [
+      [
+        "Flour",
+        "Water"
+      ],
+      [
+        "Flour",
+        "Puddle"
+      ],
+      [
+        "Flour",
+        "Rain"
+      ]
+    ],
+    "Drunk": [
+      [
+        "Human",
+        "Alcohol"
+      ],
+      [
+        "Human",
+        "Beer"
+      ],
+      [
+        "Human",
+        "Wine"
+      ]
+    ],
+    "Excavator": [
+      [
+        "Shovel",
+        "Big"
+      ],
+      [
+        "Shovel",
+        "Car"
+      ]
+    ],
+    "Flying squirrel": [
+      [
+        "Squirrel",
+        "Bird"
+      ],
+      [
+        "Squirrel",
+        "Hummingbird"
+      ],
+      [
+        "Squirrel",
+        "Seagull"
+      ],
+      [
+        "Squirrel",
+        "Pigeon"
+      ],
+      [
+        "Squirrel",
+        "Air"
+      ],
+      [
+        "Squirrel",
+        "Airplane"
+      ],
+      [
+        "Squirrel",
+        "Seaplane"
+      ],
+      [
+        "Squirrel",
+        "Helicopter"
+      ]
+    ],
+    "Fork": [
+      [
+        "Pitchfork",
+        "Small"
+      ]
+    ],
+    "Frozen yogurt": [
+      [
+        "Yogurt",
+        "Cold"
+      ],
+      [
+        "Yogurt",
+        "Ice"
+      ]
+    ],
+    "Gift": [
+      [
+        "Christmas tree",
+        "Santa"
+      ],
+      [
+        "Christmas tree",
+        "Wrapping paper"
+      ],
+      [
+        "Santa",
+        "Christmas stocking"
+      ],
+      [
+        "Santa",
+        "Chimney"
+      ],
+      [
+        "Santa",
+        "Fireplace"
+      ],
+      [
+        "Santa",
+        "Cookie"
+      ],
+      [
+        "Santa",
+        "Milk"
+      ],
+      [
+        "Santa",
+        "Wrapping paper"
+      ],
+      [
+        "Christmas stocking",
+        "Wrapping paper"
+      ],
+      [
+        "Fireplace",
+        "Wrapping paper"
+      ]
+    ],
+    "Hamburger": [
+      [
+        "Meat",
+        "Bread"
+      ],
+      [
+        "Meat",
+        "Cheese"
+      ]
+    ],
+    "Hamster": [
+      [
+        "Mouse",
+        "Wheel"
+      ],
+      [
+        "Mouse",
+        "Domestication"
+      ],
+      [
+        "Rat",
+        "Wheel"
+      ],
+      [
+        "Rat",
+        "Domestication"
+      ]
+    ],
+    "Hedgehog": [
+      [
+        "Animal",
+        "Needle"
+      ],
+      [
+        "Mouse",
+        "Needle"
+      ],
+      [
+        "Rat",
+        "Needle"
+      ]
+    ],
+    "Ice cream truck": [
+      [
+        "Ice cream",
+        "Car"
+      ],
+      [
+        "Ice cream",
+        "Bus"
+      ],
+      [
+        "Ice cream",
+        "Wagon"
+      ]
+    ],
+    "Iced tea": [
+      [
+        "Tea",
+        "Ice"
+      ],
+      [
+        "Tea",
+        "Cold"
+      ]
+    ],
+    "Jar": [
+      [
+        "Jam",
+        "Container"
+      ],
+      [
+        "Jam",
+        "Bottle"
+      ],
+      [
+        "Jam",
+        "Glass"
+      ],
+      [
+        "Jam",
+        "Bucket"
+      ]
+    ],
+    "Kite": [
+      [
+        "Paper",
+        "Wind"
+      ],
+      [
+        "Paper",
+        "Sky"
+      ],
+      [
+        "Paper",
+        "Air"
+      ]
+    ],
+    "Letter": [
+      [
+        "Paper",
+        "Pencil"
+      ]
+    ],
+    "Library": [
+      [
+        "Book",
+        "Container"
+      ],
+      [
+        "Book",
+        "House"
+      ]
+    ],
+    "Map": [
+      [
+        "Paper",
+        "Land"
+      ],
+      [
+        "Paper",
+        "Hill"
+      ],
+      [
+        "Paper",
+        "Mountain"
+      ],
+      [
+        "Paper",
+        "Mountain range"
+      ],
+      [
+        "Paper",
+        "Continent"
+      ],
+      [
+        "Paper",
+        "Ocean"
+      ],
+      [
+        "Paper",
+        "Sea"
+      ],
+      [
+        "Paper",
+        "Lake"
+      ],
+      [
+        "Paper",
+        "River"
+      ],
+      [
+        "Paper",
+        "City"
+      ],
+      [
+        "Paper",
+        "Village"
+      ]
+    ],
+    "Marshmallows": [
+      [
+        "Sugar",
+        "Campfire"
+      ]
+    ],
+    "Milk shake": [
+      [
+        "Ice cream",
+        "Milk"
+      ],
+      [
+        "Ice cream",
+        "Yogurt"
+      ],
+      [
+        "Ice cream",
+        "Water"
+      ]
+    ],
+    "Money": [
+      [
+        "Paper",
+        "Gold"
+      ],
+      [
+        "Paper",
+        "Diamond"
+      ],
+      [
+        "Paper",
+        "Bank"
+      ]
+    ],
+    "Mouse": [
+      [
+        "Animal",
+        "Cheese"
+      ],
+      [
+        "Cheese",
+        "Barn"
+      ],
+      [
+        "Cheese",
+        "House"
+      ],
+      [
+        "Cheese",
+        "Farm"
+      ],
+      [
+        "Cheese",
+        "Wall"
+      ]
+    ],
+    "Mousetrap": [
+      [
+        "Cheese",
+        "Wood"
+      ],
+      [
+        "Cheese",
+        "Metal"
+      ],
+      [
+        "Cheese",
+        "Steel"
+      ],
+      [
+        "Mouse",
+        "Blade"
+      ]
+    ],
+    "Musician": [
+      [
+        "Human",
+        "Flute"
+      ],
+      [
+        "Human",
+        "Music"
+      ],
+      [
+        "Human",
+        "Sheet music"
+      ],
+      [
+        "Human",
+        "Drum"
+      ],
+      [
+        "Human",
+        "Pan flute"
+      ]
+    ],
+    "Newspaper": [
+      [
+        "Paper",
+        "Paper"
+      ],
+      [
+        "Paper",
+        "Story"
+      ],
+      [
+        "Letter",
+        "Letter"
+      ]
+    ],
+    "Orchard": [
+      [
+        "Fruit tree",
+        "Fruit tree"
+      ],
+      [
+        "Fruit tree",
+        "Field"
+      ],
+      [
+        "Fruit tree",
+        "Tree"
+      ],
+      [
+        "Fruit tree",
+        "Farmer"
+      ],
+      [
+        "Fruit tree",
+        "Farm"
+      ],
+      [
+        "Fruit tree",
+        "Forest"
+      ],
+      [
+        "Fruit tree",
+        "Container"
+      ]
+    ],
+    "Origami": [
+      [
+        "Paper",
+        "Bird"
+      ],
+      [
+        "Paper",
+        "Animal"
+      ],
+      [
+        "Paper",
+        "Eagle"
+      ],
+      [
+        "Paper",
+        "Seagull"
+      ],
+      [
+        "Paper",
+        "Owl"
+      ],
+      [
+        "Paper",
+        "Pigeon"
+      ],
+      [
+        "Paper",
+        "Cow"
+      ],
+      [
+        "Paper",
+        "Horse"
+      ],
+      [
+        "Paper",
+        "Dog"
+      ],
+      [
+        "Paper",
+        "Cat"
+      ],
+      [
+        "Paper",
+        "Lion"
+      ],
+      [
+        "Paper",
+        "Hummingbird"
+      ],
+      [
+        "Paper",
+        "Chicken"
+      ],
+      [
+        "Paper",
+        "Penguin"
+      ],
+      [
+        "Paper",
+        "Duck"
+      ],
+      [
+        "Paper",
+        "Vulture"
+      ]
+    ],
+    "Pan flute": [
+      [
+        "Flute",
+        "Flute"
+      ]
+    ],
+    "Paper airplane": [
+      [
+        "Airplane",
+        "Paper"
+      ]
+    ],
+    "Pasta": [
+      [
+        "Flour",
+        "Egg"
+      ]
+    ],
+    "Pencil sharpener": [
+      [
+        "Pencil",
+        "Blade"
+      ],
+      [
+        "Pencil",
+        "Blender"
+      ],
+      [
+        "Pencil",
+        "Sword"
+      ]
+    ],
+    "Pizza": [
+      [
+        "Cheese",
+        "Dough"
+      ],
+      [
+        "Cheese",
+        "Bread"
+      ],
+      [
+        "Cheese",
+        "Wheel"
+      ]
+    ],
+    "Printer": [
+      [
+        "Computer",
+        "Paper"
+      ],
+      [
+        "Computer",
+        "Newspaper"
+      ]
+    ],
+    "Recipe": [
+      [
+        "Paper",
+        "Flour"
+      ],
+      [
+        "Paper",
+        "Meat"
+      ],
+      [
+        "Paper",
+        "Baker"
+      ],
+      [
+        "Paper",
+        "Bakery"
+      ],
+      [
+        "Paper",
+        "Vegetable"
+      ],
+      [
+        "Paper",
+        "Fruit"
+      ],
+      [
+        "Paper",
+        "Cook"
+      ],
+      [
+        "Newspaper",
+        "Flour"
+      ],
+      [
+        "Newspaper",
+        "Meat"
+      ],
+      [
+        "Newspaper",
+        "Baker"
+      ],
+      [
+        "Newspaper",
+        "Bakery"
+      ],
+      [
+        "Newspaper",
+        "Vegetable"
+      ],
+      [
+        "Newspaper",
+        "Fruit"
+      ]
+    ],
+    "Robot vacuum": [
+      [
+        "Robot",
+        "Vacuum cleaner"
+      ],
+      [
+        "Robot",
+        "Broom"
+      ],
+      [
+        "Computer",
+        "Vacuum cleaner"
+      ],
+      [
+        "Computer",
+        "Broom"
+      ]
+    ],
+    "Rock": [
+      [
+        "Pebble",
+        "Pebble"
+      ],
+      [
+        "Pebble",
+        "Big"
+      ],
+      [
+        "Boulder",
+        "Small"
+      ]
+    ],
+    "Ruler": [
+      [
+        "Wood",
+        "Pencil"
+      ]
+    ],
+    "Sailboat": [
+      [
+        "Boat",
+        "Wind"
+      ],
+      [
+        "Boat",
+        "Fabric"
+      ],
+      [
+        "Steamboat",
+        "Wind"
+      ],
+      [
+        "Steamboat",
+        "Fabric"
+      ]
+    ],
+    "Sandpaper": [
+      [
+        "Sand",
+        "Paper"
+      ],
+      [
+        "Sand",
+        "Fabric"
+      ]
+    ],
+    "Sleigh": [
+      [
+        "Cart",
+        "Snow"
+      ],
+      [
+        "Cart",
+        "Ice"
+      ],
+      [
+        "Cart",
+        "Arctic"
+      ],
+      [
+        "Cart",
+        "Antarctica"
+      ],
+      [
+        "Wagon",
+        "Snow"
+      ],
+      [
+        "Wagon",
+        "Ice"
+      ],
+      [
+        "Wagon",
+        "Arctic"
+      ],
+      [
+        "Wagon",
+        "Antarctica"
+      ]
+    ],
+    "Smoke signal": [
+      [
+        "Fabric",
+        "Campfire"
+      ],
+      [
+        "Fabric",
+        "Smoke"
+      ],
+      [
+        "Smoke",
+        "Letter"
+      ]
+    ],
+    "Spoon": [
+      [
+        "Shovel",
+        "Small"
+      ]
+    ],
+    "Sprinkles": [
+      [
+        "Sugar",
+        "Confetti"
+      ],
+      [
+        "Sugar",
+        "Paint"
+      ],
+      [
+        "Sugar",
+        "Rainbow"
+      ],
+      [
+        "Sugar",
+        "Double rainbow!"
+      ]
+    ],
+    "Syringe": [
+      [
+        "Doctor",
+        "Needle"
+      ],
+      [
+        "Tool",
+        "Needle"
+      ]
+    ],
+    "Tablet": [
+      [
+        "Laptop",
+        "Small"
+      ]
+    ],
+    "Tent": [
+      [
+        "Fabric",
+        "Wood"
+      ],
+      [
+        "Fabric",
+        "House"
+      ],
+      [
+        "Fabric",
+        "Village"
+      ],
+      [
+        "Fabric",
+        "Wall"
+      ]
+    ],
+    "Trainyard": [
+      [
+        "Train",
+        "Container"
+      ],
+      [
+        "Train",
+        "House"
+      ],
+      [
+        "Train",
+        "Wall"
+      ],
+      [
+        "Train",
+        "Garage"
+      ]
+    ],
+    "Vacuum cleaner": [
+      [
+        "Broom",
+        "Electricity"
+      ],
+      [
+        "Broom",
+        "Machine"
+      ]
+    ],
+    "Vine": [
+      [
+        "Rainforest",
+        "Rope"
+      ],
+      [
+        "Rainforest",
+        "Thread"
+      ],
+      [
+        "Rainforest",
+        "Wire"
+      ]
+    ],
+    "Wagon": [
+      [
+        "Cart",
+        "Horse"
+      ],
+      [
+        "Cart",
+        "Fabric"
+      ],
+      [
+        "Cart",
+        "House"
+      ],
+      [
+        "Cart",
+        "Wall"
+      ],
+      [
+        "Cart",
+        "Cow"
+      ]
+    ],
+    "Wax": [
+      [
+        "Beehive",
+        "Bee"
+      ],
+      [
+        "Beehive",
+        "Wall"
+      ],
+      [
+        "Beehive",
+        "Blade"
+      ],
+      [
+        "Beehive",
+        "Sword"
+      ],
+      [
+        "Beehive",
+        "Tool"
+      ],
+      [
+        "Beehive",
+        "Beekeeper"
+      ]
+    ],
+    "Web": [
+      [
+        "Spider",
+        "Thread"
+      ],
+      [
+        "Spider",
+        "Cotton"
+      ],
+      [
+        "Spider",
+        "Fabric"
+      ],
+      [
+        "Spider",
+        "Net"
+      ]
+    ],
+    "Wine": [
+      [
+        "Alcohol",
+        "Fruit"
+      ],
+      [
+        "Alcohol",
+        "Juice"
+      ]
+    ],
+    "Wrapping paper": [
+      [
+        "Paper",
+        "Gift"
+      ],
+      [
+        "Paper",
+        "Christmas tree"
+      ],
+      [
+        "Paper",
+        "Christmas stocking"
+      ],
+      [
+        "Paper",
+        "Santa"
+      ]
+    ],
+    "Writer": [
+      [
+        "Human",
+        "Book"
+      ],
+      [
+        "Human",
+        "Pencil"
+      ]
+    ]
+  },
+  "13": {
+    "Armadillo": [
+      [
+        "Armor",
+        "Animal"
+      ],
+      [
+        "Armor",
+        "Dog"
+      ],
+      [
+        "Armor",
+        "Cat"
+      ]
+    ],
+    "Baker": [
+      [
+        "Human",
+        "Bakery"
+      ],
+      [
+        "Human",
+        "Bread"
+      ],
+      [
+        "Human",
+        "Banana bread"
+      ],
+      [
+        "Human",
+        "Pizza"
+      ],
+      [
+        "Human",
+        "Toast"
+      ],
+      [
+        "Human",
+        "Batter"
+      ],
+      [
+        "Human",
+        "Pie"
+      ],
+      [
+        "Human",
+        "Donut"
+      ],
+      [
+        "Human",
+        "Cookie"
+      ],
+      [
+        "Human",
+        "Cookie dough"
+      ],
+      [
+        "Human",
+        "Dough"
+      ]
+    ],
+    "Banana bread": [
+      [
+        "Bread",
+        "Banana"
+      ],
+      [
+        "Dough",
+        "Banana"
+      ]
+    ],
+    "Barrel": [
+      [
+        "Wine",
+        "Container"
+      ],
+      [
+        "Wine",
+        "Wood"
+      ]
+    ],
+    "Bat": [
+      [
+        "Mouse",
+        "Sky"
+      ],
+      [
+        "Mouse",
+        "Air"
+      ],
+      [
+        "Mouse",
+        "Bird"
+      ],
+      [
+        "Mouse",
+        "Hummingbird"
+      ],
+      [
+        "Mouse",
+        "Atmosphere"
+      ]
+    ],
+    "Bread": [
+      [
+        "Dough",
+        "Fire"
+      ],
+      [
+        "Dough",
+        "Energy"
+      ]
+    ],
+    "Bulletproof vest": [
+      [
+        "Bullet",
+        "Armor"
+      ],
+      [
+        "Gun",
+        "Armor"
+      ]
+    ],
+    "Candle": [
+      [
+        "Wax",
+        "Thread"
+      ],
+      [
+        "Wax",
+        "Fire"
+      ],
+      [
+        "Wax",
+        "Light"
+      ],
+      [
+        "Wax",
+        "Flashlight"
+      ],
+      [
+        "Wax",
+        "Lamp"
+      ]
+    ],
+    "Cheeseburger": [
+      [
+        "Cheese",
+        "Hamburger"
+      ],
+      [
+        "Cheese",
+        "Sandwich"
+      ]
+    ],
+    "Chocolate milk": [
+      [
+        "Chocolate",
+        "Milk"
+      ],
+      [
+        "Chocolate",
+        "Coconut milk"
+      ]
+    ],
+    "Circus": [
+      [
+        "Tent",
+        "Big"
+      ],
+      [
+        "Tent",
+        "Animal"
+      ]
+    ],
+    "Cookie cutter": [
+      [
+        "Blade",
+        "Dough"
+      ],
+      [
+        "Blade",
+        "Cookie dough"
+      ]
+    ],
+    "Cookie dough": [
+      [
+        "Dough",
+        "Cookie"
+      ],
+      [
+        "Dough",
+        "Sugar"
+      ],
+      [
+        "Dough",
+        "Chocolate"
+      ]
+    ],
+    "Donut": [
+      [
+        "Dough",
+        "Oil"
+      ],
+      [
+        "Dough",
+        "Wheel"
+      ],
+      [
+        "Cookie dough",
+        "Oil"
+      ],
+      [
+        "Cookie dough",
+        "Wheel"
+      ]
+    ],
+    "Email": [
+      [
+        "Letter",
+        "Computer"
+      ],
+      [
+        "Letter",
+        "Computer mouse"
+      ],
+      [
+        "Letter",
+        "Internet"
+      ],
+      [
+        "Letter",
+        "Electricity"
+      ]
+    ],
+    "Gingerbread house": [
+      [
+        "House",
+        "Gingerbread man"
+      ],
+      [
+        "House",
+        "Dough"
+      ],
+      [
+        "House",
+        "Cookie dough"
+      ],
+      [
+        "House",
+        "Cookie"
+      ],
+      [
+        "House",
+        "Donut"
+      ],
+      [
+        "House",
+        "Cake"
+      ]
+    ],
+    "Gingerbread man": [
+      [
+        "Dough",
+        "Life"
+      ],
+      [
+        "Dough",
+        "Magic"
+      ],
+      [
+        "Dough",
+        "Story"
+      ],
+      [
+        "Cookie",
+        "Life"
+      ],
+      [
+        "Cookie",
+        "Magic"
+      ],
+      [
+        "Cookie",
+        "Story"
+      ],
+      [
+        "Cookie dough",
+        "Life"
+      ],
+      [
+        "Cookie dough",
+        "Magic"
+      ],
+      [
+        "Cookie dough",
+        "Story"
+      ]
+    ],
+    "Hot chocolate": [
+      [
+        "Chocolate milk",
+        "Heat"
+      ],
+      [
+        "Chocolate",
+        "Heat"
+      ]
+    ],
+    "Librarian": [
+      [
+        "Human",
+        "Library"
+      ]
+    ],
+    "Mac and cheese": [
+      [
+        "Cheese",
+        "Pasta"
+      ]
+    ],
+    "Mail truck": [
+      [
+        "Car",
+        "Letter"
+      ],
+      [
+        "Car",
+        "Mailman"
+      ],
+      [
+        "Car",
+        "Post office"
+      ]
+    ],
+    "Mailbox": [
+      [
+        "Letter",
+        "Box"
+      ],
+      [
+        "Letter",
+        "Metal"
+      ],
+      [
+        "Letter",
+        "Steel"
+      ],
+      [
+        "Letter",
+        "Wood"
+      ],
+      [
+        "Mailman",
+        "Box"
+      ],
+      [
+        "Mailman",
+        "Metal"
+      ],
+      [
+        "Mailman",
+        "Steel"
+      ],
+      [
+        "Mailman",
+        "Wood"
+      ]
+    ],
+    "Mailman": [
+      [
+        "Human",
+        "Letter"
+      ],
+      [
+        "Human",
+        "Newspaper"
+      ],
+      [
+        "Letter",
+        "Mailbox"
+      ]
+    ],
+    "Music": [
+      [
+        "Musician",
+        "Flute"
+      ],
+      [
+        "Musician",
+        "Sheet music"
+      ],
+      [
+        "Musician",
+        "Drum"
+      ],
+      [
+        "Musician",
+        "Pan flute"
+      ]
+    ],
+    "Painting": [
+      [
+        "Canvas",
+        "Paint"
+      ],
+      [
+        "Canvas",
+        "Painter"
+      ]
+    ],
+    "Paper cup": [
+      [
+        "Cup",
+        "Paper"
+      ]
+    ],
+    "Paraglider": [
+      [
+        "Kite",
+        "Big"
+      ]
+    ],
+    "Pie": [
+      [
+        "Dough",
+        "Fruit"
+      ],
+      [
+        "Cookie dough",
+        "Fruit"
+      ],
+      [
+        "Dough",
+        "Meat"
+      ],
+      [
+        "Fruit",
+        "Baker"
+      ],
+      [
+        "Fruit",
+        "Bakery"
+      ]
+    ],
+    "Post office": [
+      [
+        "Mailman",
+        "House"
+      ],
+      [
+        "Mailman",
+        "Wall"
+      ],
+      [
+        "Mailman",
+        "Container"
+      ],
+      [
+        "Mailman",
+        "Letter"
+      ],
+      [
+        "Letter",
+        "Letter"
+      ],
+      [
+        "Letter",
+        "House"
+      ],
+      [
+        "Letter",
+        "Wall"
+      ]
+    ],
+    "Smartphone": [
+      [
+        "Small",
+        "Tablet"
+      ]
+    ],
+    "Spaghetti": [
+      [
+        "Pasta",
+        "Thread"
+      ],
+      [
+        "Pasta",
+        "Wire"
+      ],
+      [
+        "Pasta",
+        "Rope"
+      ]
+    ],
+    "String phone": [
+      [
+        "Paper cup",
+        "Wire"
+      ],
+      [
+        "Paper cup",
+        "Thread"
+      ],
+      [
+        "Cup",
+        "Wire"
+      ],
+      [
+        "Cup",
+        "Thread"
+      ]
+    ],
+    "Treasure map": [
+      [
+        "Map",
+        "Pirate"
+      ],
+      [
+        "Map",
+        "Pirate ship"
+      ],
+      [
+        "Map",
+        "Treasure"
+      ],
+      [
+        "Map",
+        "Island"
+      ]
+    ],
+    "Vinegar": [
+      [
+        "Wine",
+        "Time"
+      ],
+      [
+        "Wine",
+        "Air"
+      ],
+      [
+        "Wine",
+        "Oxygen"
+      ]
+    ]
+  },
+  "14": {
+    "Bakery": [
+      [
+        "House",
+        "Bread"
+      ],
+      [
+        "House",
+        "Baker"
+      ],
+      [
+        "House",
+        "Donut"
+      ],
+      [
+        "House",
+        "Cake"
+      ],
+      [
+        "City",
+        "Bread"
+      ],
+      [
+        "City",
+        "Baker"
+      ],
+      [
+        "City",
+        "Donut"
+      ],
+      [
+        "City",
+        "Cake"
+      ],
+      [
+        "Village",
+        "Bread"
+      ],
+      [
+        "Village",
+        "Baker"
+      ],
+      [
+        "Village",
+        "Donut"
+      ],
+      [
+        "Village",
+        "Cake"
+      ],
+      [
+        "Baker",
+        "Container"
+      ]
+    ],
+    "Cake": [
+      [
+        "Dough",
+        "Candle"
+      ],
+      [
+        "Donut",
+        "Candle"
+      ],
+      [
+        "Bread",
+        "Sugar"
+      ]
+    ],
+    "Cookie": [
+      [
+        "Cookie dough",
+        "Heat"
+      ],
+      [
+        "Cookie dough",
+        "Fire"
+      ],
+      [
+        "Cookie dough",
+        "Baker"
+      ],
+      [
+        "Cookie dough",
+        "Cookie cutter"
+      ],
+      [
+        "Dough",
+        "Cookie cutter"
+      ]
+    ],
+    "Fortune cookie": [
+      [
+        "Paper",
+        "Cookie"
+      ],
+      [
+        "Paper",
+        "Cookie dough"
+      ],
+      [
+        "Paper",
+        "Gingerbread man"
+      ]
+    ],
+    "Sandwich": [
+      [
+        "Bread",
+        "Meat"
+      ],
+      [
+        "Bread",
+        "Bacon"
+      ],
+      [
+        "Bread",
+        "Ham"
+      ],
+      [
+        "Bread",
+        "Cheese"
+      ],
+      [
+        "Bread",
+        "Vegetable"
+      ]
+    ],
+    "Sheet music": [
+      [
+        "Music",
+        "Paper"
+      ],
+      [
+        "Music",
+        "Book"
+      ]
+    ],
+    "Toast": [
+      [
+        "Sandwich",
+        "Fire"
+      ],
+      [
+        "Bread",
+        "Fire"
+      ]
+    ],
+    "Treasure": [
+      [
+        "Treasure map",
+        "Pirate"
+      ],
+      [
+        "Treasure map",
+        "Pirate ship"
+      ],
+      [
+        "Treasure map",
+        "Island"
+      ],
+      [
+        "Treasure map",
+        "Sailor"
+      ]
+    ]
+  },
+  "15": {
+    "Grilled cheese": [
+      [
+        "Cheese",
+        "Toast"
+      ]
+    ],
+    "Picnic": [
+      [
+        "Sandwich",
+        "Grass"
+      ],
+      [
+        "Sandwich",
+        "Beach"
+      ],
+      [
+        "Sandwich",
+        "Lawn"
+      ],
+      [
+        "Sandwich",
+        "Garden"
+      ],
+      [
+        "Sandwich",
+        "Fabric"
+      ]
+    ]
+  },
+  "2": {
     "Brick": [
       [
         "Mud",
@@ -417,7 +6535,7 @@
       ]
     ]
   },
-  "tier 3": {
+  "3": {
     "Chimney": [
       [
         "House",
@@ -707,7 +6825,7 @@
       ]
     ]
   },
-  "tier 4": {
+  "4": {
     "Atmosphere": [
       [
         "Air",
@@ -1020,18 +7138,6 @@
       [
         "Steel",
         "Alchemist"
-      ],
-      [
-        "Metal",
-        "Philosopher's stone"
-      ],
-      [
-        "Steel",
-        "Philosopher's stone"
-      ],
-      [
-        "Quicksilver",
-        "Philosopher's stone"
       ]
     ],
     "Grenade": [
@@ -1407,7 +7513,7 @@
       ]
     ]
   },
-  "tier 5": {
+  "5": {
     "Aquarium": [
       [
         "Glass",
@@ -1872,14 +7978,6 @@
       [
         "Volcano",
         "Ocean"
-      ],
-      [
-        "Maui's fishhook",
-        "Ocean"
-      ],
-      [
-        "Maui's fishhook",
-        "Sea"
       ]
     ],
     "Katana": [
@@ -2072,10 +8170,6 @@
       [
         "Mummy",
         "Container"
-      ],
-      [
-        "Container",
-        "Book of the dead"
       ]
     ],
     "Rainbow": [
@@ -2497,7 +8591,7 @@
       ]
     ]
   },
-  "tier 6": {
+  "6": {
     "Acid rain": [
       [
         "Rain",
@@ -2572,10 +8666,6 @@
         "Goat"
       ],
       [
-        "House",
-        "Babe the blue ox"
-      ],
-      [
         "Container",
         "Livestock"
       ],
@@ -2606,10 +8696,6 @@
       [
         "Container",
         "Goat"
-      ],
-      [
-        "Container",
-        "Babe the blue ox"
       ]
     ],
     "Bayonet": [
@@ -2990,10 +9076,6 @@
         "Gas"
       ],
       [
-        "Planet",
-        "Zeus"
-      ],
-      [
         "Saturn",
         "Big"
       ]
@@ -3098,14 +9180,6 @@
       [
         "Land",
         "Storm"
-      ],
-      [
-        "Zeus",
-        "Tool"
-      ],
-      [
-        "Cyclops",
-        "Tool"
       ]
     ],
     "Meteor": [
@@ -3467,7 +9541,7 @@
       ]
     ]
   },
-  "tier 7": {
+  "7": {
     "Alien": [
       [
         "Life",
@@ -3934,10 +10008,6 @@
       [
         "Galaxy cluster",
         "Container"
-      ],
-      [
-        "Primordial soup",
-        "Cosmic egg"
       ]
     ],
     "Wind turbine": [
@@ -3981,7 +10051,7 @@
       ]
     ]
   },
-  "tier 8": {
+  "8": {
     "Alarm clock": [
       [
         "Clock",
@@ -4394,14 +10464,6 @@
       [
         "Human",
         "Arrow"
-      ],
-      [
-        "Jiangshi",
-        "Mirror"
-      ],
-      [
-        "Jiangshi",
-        "Peach of immortality"
       ]
     ],
     "Crystal ball": [
@@ -5168,14 +11230,6 @@
       [
         "Human",
         "Human"
-      ],
-      [
-        "Cupid",
-        "Bow"
-      ],
-      [
-        "Cupid",
-        "Arrow"
       ]
     ],
     "Meat": [
@@ -5392,14 +11446,6 @@
       [
         "Corpse",
         "Fabric"
-      ],
-      [
-        "Corpse",
-        "Book of the dead"
-      ],
-      [
-        "Human",
-        "Book of the dead"
       ]
     ],
     "Organic matter": [
@@ -6013,7 +12059,7 @@
       ]
     ]
   },
-  "tier 9": {
+  "9": {
     "Airplane": [
       [
         "Bird",
@@ -6208,22 +12254,6 @@
       [
         "Human",
         "Light"
-      ],
-      [
-        "Human",
-        "Heaven"
-      ],
-      [
-        "Human",
-        "Good"
-      ],
-      [
-        "Good",
-        "Demon"
-      ],
-      [
-        "Good",
-        "Deity"
       ]
     ],
     "Arctic": [
@@ -6280,14 +12310,6 @@
       [
         "Vampire",
         "Dawn"
-      ],
-      [
-        "Vampire",
-        "Holy grail"
-      ],
-      [
-        "Vampire",
-        "Holy water"
       ]
     ],
     "Bacon": [
@@ -6536,22 +12558,6 @@
       [
         "Monarch",
         "Wall"
-      ],
-      [
-        "Paladin",
-        "Stone"
-      ],
-      [
-        "Paladin",
-        "Wall"
-      ],
-      [
-        "Paladin",
-        "House"
-      ],
-      [
-        "Paladin",
-        "Container"
       ]
     ],
     "Catnip": [
@@ -6566,10 +12572,6 @@
       [
         "Cat",
         "Flower"
-      ],
-      [
-        "Baast",
-        "Plant"
       ]
     ],
     "Cave": [
@@ -6946,10 +12948,6 @@
       [
         "Lizard",
         "Legend"
-      ],
-      [
-        "Dinosaur",
-        "Monster"
       ]
     ],
     "Duck": [
@@ -7278,14 +13276,6 @@
       [
         "Zombie",
         "Lightning"
-      ],
-      [
-        "Monster",
-        "Story"
-      ],
-      [
-        "Monster",
-        "Corpse"
       ]
     ],
     "Fridge": [
@@ -7392,10 +13382,6 @@
         "Legend"
       ],
       [
-        "Graveyard",
-        "Curse"
-      ],
-      [
         "Grave",
         "Night"
       ],
@@ -7406,10 +13392,6 @@
       [
         "Grave",
         "Legend"
-      ],
-      [
-        "Grave",
-        "Curse"
       ],
       [
         "Gravestone",
@@ -8028,10 +14010,6 @@
       [
         "Fish",
         "Swimmer"
-      ],
-      [
-        "Fish",
-        "Selkie"
       ],
       [
         "Swimmer",
@@ -9206,10 +15184,6 @@
       [
         "Human",
         "Werewolf"
-      ],
-      [
-        "Wolf",
-        "Monster"
       ]
     ],
     "Wheel": [
@@ -9278,6280 +15252,6 @@
       [
         "Human",
         "Zombie"
-      ],
-      [
-        "Corpse",
-        "Necromancer"
-      ]
-    ]
-  },
-  "tier 10": {
-    "Alpaca": [
-      [
-        "Sheep",
-        "Mountain"
-      ],
-      [
-        "Sheep",
-        "Mountain range"
-      ],
-      [
-        "Sheep",
-        "Mountain goat"
-      ]
-    ],
-    "Angler": [
-      [
-        "Human",
-        "Fishing rod"
-      ],
-      [
-        "Sailor",
-        "Fishing rod"
-      ]
-    ],
-    "Ant": [
-      [
-        "Grass",
-        "Animal"
-      ],
-      [
-        "Grass",
-        "Spider"
-      ]
-    ],
-    "Battery": [
-      [
-        "Container",
-        "Electricity"
-      ],
-      [
-        "Container",
-        "Energy"
-      ],
-      [
-        "Electricity",
-        "Mineral"
-      ],
-      [
-        "Electricity",
-        "Ore"
-      ]
-    ],
-    "Bee": [
-      [
-        "Animal",
-        "Flower"
-      ],
-      [
-        "Animal",
-        "Garden"
-      ]
-    ],
-    "Bicycle": [
-      [
-        "Wheel",
-        "Wheel"
-      ],
-      [
-        "Wheel",
-        "Chain"
-      ],
-      [
-        "Wheel",
-        "Machine"
-      ]
-    ],
-    "Big": [
-      [
-        "Universe",
-        "Philosophy"
-      ],
-      [
-        "Galaxy",
-        "Philosophy"
-      ],
-      [
-        "Galaxy cluster",
-        "Philosophy"
-      ],
-      [
-        "Solar system",
-        "Philosophy"
-      ],
-      [
-        "Sun",
-        "Philosophy"
-      ],
-      [
-        "Planet",
-        "Philosophy"
-      ]
-    ],
-    "Bonsai tree": [
-      [
-        "Tree",
-        "Pottery"
-      ],
-      [
-        "Tree",
-        "Scissors"
-      ],
-      [
-        "Tree",
-        "Wire"
-      ],
-      [
-        "Tree",
-        "Small"
-      ]
-    ],
-    "Cannon": [
-      [
-        "Gunpowder",
-        "Pirate ship"
-      ],
-      [
-        "Gunpowder",
-        "Castle"
-      ],
-      [
-        "Gun",
-        "Pirate ship"
-      ],
-      [
-        "Gun",
-        "Castle"
-      ]
-    ],
-    "Car": [
-      [
-        "Wheel",
-        "Metal"
-      ],
-      [
-        "Wheel",
-        "Steel"
-      ],
-      [
-        "Wheel",
-        "Bicycle"
-      ],
-      [
-        "Wheel",
-        "Motorcycle"
-      ],
-      [
-        "Bicycle",
-        "Bicycle"
-      ],
-      [
-        "Motorcycle",
-        "Motorcycle"
-      ],
-      [
-        "Motorcycle",
-        "Machine"
-      ],
-      [
-        "Wagon",
-        "Combustion engine"
-      ],
-      [
-        "Cart",
-        "Combustion engine"
-      ]
-    ],
-    "Cauldron": [
-      [
-        "Witch",
-        "Metal"
-      ],
-      [
-        "Witch",
-        "Steel"
-      ],
-      [
-        "Witch",
-        "Fireplace"
-      ],
-      [
-        "Witch",
-        "Campfire"
-      ],
-      [
-        "Pottery",
-        "Metal"
-      ],
-      [
-        "Pottery",
-        "Steel"
-      ]
-    ],
-    "Caviar": [
-      [
-        "Roe",
-        "Salt"
-      ],
-      [
-        "Roe",
-        "Cook"
-      ]
-    ],
-    "Chicken coop": [
-      [
-        "Chicken",
-        "House"
-      ],
-      [
-        "Chicken",
-        "Wall"
-      ],
-      [
-        "Chicken",
-        "Barn"
-      ],
-      [
-        "Chicken",
-        "Container"
-      ],
-      [
-        "Cockatrice",
-        "House"
-      ],
-      [
-        "Cockatrice",
-        "Barn"
-      ],
-      [
-        "Cockatrice",
-        "Container"
-      ]
-    ],
-    "Chicken soup": [
-      [
-        "Chicken",
-        "Water"
-      ],
-      [
-        "Chicken",
-        "Liquid"
-      ],
-      [
-        "Chicken wing",
-        "Water"
-      ],
-      [
-        "Chicken wing",
-        "Liquid"
-      ]
-    ],
-    "Chicken wing": [
-      [
-        "Chicken",
-        "Bone"
-      ],
-      [
-        "Chicken",
-        "Bbq"
-      ]
-    ],
-    "Christmas tree": [
-      [
-        "Tree",
-        "Light bulb"
-      ],
-      [
-        "Tree",
-        "Star"
-      ],
-      [
-        "Tree",
-        "Candle"
-      ],
-      [
-        "Tree",
-        "Light"
-      ],
-      [
-        "Tree",
-        "Gift"
-      ]
-    ],
-    "Coconut": [
-      [
-        "Palm",
-        "Fruit"
-      ],
-      [
-        "Palm",
-        "Nuts"
-      ],
-      [
-        "Palm",
-        "Vegetable"
-      ],
-      [
-        "Palm",
-        "Meat"
-      ],
-      [
-        "Beach",
-        "Fruit"
-      ],
-      [
-        "Beach",
-        "Vegetable"
-      ]
-    ],
-    "Combustion engine": [
-      [
-        "Petroleum",
-        "Machine"
-      ],
-      [
-        "Petroleum",
-        "Wheel"
-      ],
-      [
-        "Petroleum",
-        "Steam engine"
-      ],
-      [
-        "Explosion",
-        "Machine"
-      ],
-      [
-        "Explosion",
-        "Steam engine"
-      ]
-    ],
-    "Computer mouse": [
-      [
-        "Computer",
-        "Mouse"
-      ],
-      [
-        "Computer",
-        "Animal"
-      ]
-    ],
-    "Container": [
-      [
-        "Philosophy",
-        "Safe"
-      ],
-      [
-        "Philosophy",
-        "Pottery"
-      ],
-      [
-        "Philosophy",
-        "House"
-      ],
-      [
-        "Philosophy",
-        "Box"
-      ],
-      [
-        "Philosophy",
-        "Bottle"
-      ],
-      [
-        "Philosophy",
-        "Bucket"
-      ]
-    ],
-    "Cook": [
-      [
-        "Human",
-        "Fruit"
-      ],
-      [
-        "Human",
-        "Vegetable"
-      ],
-      [
-        "Human",
-        "Campfire"
-      ],
-      [
-        "Human",
-        "Nuts"
-      ]
-    ],
-    "Coral": [
-      [
-        "Tree",
-        "Sea"
-      ],
-      [
-        "Tree",
-        "Ocean"
-      ],
-      [
-        "Fossil",
-        "Sea"
-      ],
-      [
-        "Fossil",
-        "Ocean"
-      ],
-      [
-        "Bone",
-        "Sea"
-      ],
-      [
-        "Bone",
-        "Ocean"
-      ]
-    ],
-    "Cyclist": [
-      [
-        "Human",
-        "Wheel"
-      ],
-      [
-        "Human",
-        "Bicycle"
-      ]
-    ],
-    "Diamond": [
-      [
-        "Coal",
-        "Pressure"
-      ]
-    ],
-    "Doctor": [
-      [
-        "Human",
-        "Hospital"
-      ],
-      [
-        "Human",
-        "Stethoscope"
-      ]
-    ],
-    "Doge": [
-      [
-        "Dog",
-        "Internet"
-      ],
-      [
-        "Dog",
-        "Computer"
-      ]
-    ],
-    "Doghouse": [
-      [
-        "Dog",
-        "House"
-      ],
-      [
-        "Dog",
-        "Wall"
-      ],
-      [
-        "Dog",
-        "Container"
-      ],
-      [
-        "Husky",
-        "House"
-      ],
-      [
-        "Husky",
-        "Wall"
-      ],
-      [
-        "Husky",
-        "Container"
-      ]
-    ],
-    "Drone": [
-      [
-        "Robot",
-        "Airplane"
-      ],
-      [
-        "Robot",
-        "Helicopter"
-      ],
-      [
-        "Robot",
-        "Paper airplane"
-      ],
-      [
-        "Robot",
-        "Seaplane"
-      ]
-    ],
-    "Dry ice": [
-      [
-        "Carbon dioxide",
-        "Cold"
-      ],
-      [
-        "Carbon dioxide",
-        "Ice"
-      ]
-    ],
-    "Duckling": [
-      [
-        "Egg",
-        "Duck"
-      ]
-    ],
-    "Engineer": [
-      [
-        "Human",
-        "Machine"
-      ],
-      [
-        "Human",
-        "Steam engine"
-      ]
-    ],
-    "Fairy tale": [
-      [
-        "Story",
-        "Monarch"
-      ],
-      [
-        "Story",
-        "Castle"
-      ],
-      [
-        "Story",
-        "Knight"
-      ],
-      [
-        "Story",
-        "Dragon"
-      ],
-      [
-        "Story",
-        "Unicorn"
-      ],
-      [
-        "Story",
-        "Faerie"
-      ],
-      [
-        "Story",
-        "Elf"
-      ]
-    ],
-    "Faun": [
-      [
-        "Human",
-        "Goat"
-      ],
-      [
-        "Human",
-        "Mountain goat"
-      ],
-      [
-        "Legend",
-        "Goat"
-      ],
-      [
-        "Legend",
-        "Mountain goat"
-      ],
-      [
-        "Wizard",
-        "Goat"
-      ],
-      [
-        "Wizard",
-        "Mountain goat"
-      ],
-      [
-        "Magic",
-        "Goat"
-      ],
-      [
-        "Magic",
-        "Mountain goat"
-      ]
-    ],
-    "Fire extinguisher": [
-      [
-        "Carbon dioxide",
-        "Fire"
-      ],
-      [
-        "Carbon dioxide",
-        "Pressure"
-      ],
-      [
-        "Carbon dioxide",
-        "Metal"
-      ],
-      [
-        "Carbon dioxide",
-        "Steel"
-      ],
-      [
-        "Carbon dioxide",
-        "Boiler"
-      ]
-    ],
-    "Forest": [
-      [
-        "Tree",
-        "Tree"
-      ],
-      [
-        "Tree",
-        "Plant"
-      ],
-      [
-        "Tree",
-        "Land"
-      ],
-      [
-        "Tree",
-        "Container"
-      ]
-    ],
-    "Fox": [
-      [
-        "Chicken",
-        "Animal"
-      ],
-      [
-        "Chicken",
-        "Wolf"
-      ],
-      [
-        "Chicken",
-        "Dog"
-      ],
-      [
-        "Chicken coop",
-        "Animal"
-      ],
-      [
-        "Chicken coop",
-        "Wolf"
-      ],
-      [
-        "Chicken coop",
-        "Dog"
-      ]
-    ],
-    "Fruit": [
-      [
-        "Flower",
-        "Time"
-      ],
-      [
-        "Flower",
-        "Rain"
-      ],
-      [
-        "Flower",
-        "Water"
-      ],
-      [
-        "Flower",
-        "Tree"
-      ],
-      [
-        "Tree",
-        "Farmer"
-      ],
-      [
-        "Farmer",
-        "Orchard"
-      ]
-    ],
-    "Gardener": [
-      [
-        "Human",
-        "Garden"
-      ],
-      [
-        "Farmer",
-        "Garden"
-      ]
-    ],
-    "Gnome": [
-      [
-        "Garden",
-        "Statue"
-      ],
-      [
-        "Garden",
-        "Legend"
-      ],
-      [
-        "Garden",
-        "Story"
-      ],
-      [
-        "Garden",
-        "Fairy tale"
-      ]
-    ],
-    "Golem": [
-      [
-        "Clay",
-        "Story"
-      ],
-      [
-        "Clay",
-        "Legend"
-      ],
-      [
-        "Story",
-        "Statue"
-      ],
-      [
-        "Statue",
-        "Life"
-      ],
-      [
-        "Statue",
-        "Legend"
-      ]
-    ],
-    "Hail": [
-      [
-        "Ice",
-        "Rain"
-      ],
-      [
-        "Ice",
-        "Cloud"
-      ],
-      [
-        "Ice",
-        "Storm"
-      ],
-      [
-        "Ice",
-        "Wind"
-      ],
-      [
-        "Ice",
-        "Steam"
-      ],
-      [
-        "Ice",
-        "Sky"
-      ]
-    ],
-    "Harp": [
-      [
-        "Angel",
-        "Music"
-      ],
-      [
-        "Angel",
-        "Musician"
-      ],
-      [
-        "Angel",
-        "Wire"
-      ],
-      [
-        "Wire",
-        "Music"
-      ]
-    ],
-    "Hay": [
-      [
-        "Grass",
-        "Scythe"
-      ],
-      [
-        "Grass",
-        "Farmer"
-      ],
-      [
-        "Grass",
-        "Sun"
-      ],
-      [
-        "Grass",
-        "Grass"
-      ],
-      [
-        "Grass",
-        "Barn"
-      ],
-      [
-        "Grass",
-        "Farm"
-      ],
-      [
-        "Grass",
-        "Pitchfork"
-      ],
-      [
-        "Pitchfork",
-        "Barn"
-      ],
-      [
-        "Pitchfork",
-        "Farm"
-      ],
-      [
-        "Pitchfork",
-        "Farmer"
-      ]
-    ],
-    "Helicopter": [
-      [
-        "Airplane",
-        "Blade"
-      ],
-      [
-        "Airplane",
-        "Windmill"
-      ],
-      [
-        "Airplane",
-        "Wind turbine"
-      ],
-      [
-        "Seaplane",
-        "Blade"
-      ],
-      [
-        "Seaplane",
-        "Windmill"
-      ],
-      [
-        "Seaplane",
-        "Wind turbine"
-      ]
-    ],
-    "Husky": [
-      [
-        "Dog",
-        "Snow"
-      ],
-      [
-        "Dog",
-        "Ice"
-      ],
-      [
-        "Dog",
-        "Antarctica"
-      ],
-      [
-        "Dog",
-        "Arctic"
-      ],
-      [
-        "Dog",
-        "Blizzard"
-      ],
-      [
-        "Dog",
-        "Glacier"
-      ]
-    ],
-    "Internet": [
-      [
-        "Computer",
-        "Computer"
-      ],
-      [
-        "Computer",
-        "Wire"
-      ],
-      [
-        "Computer",
-        "Web"
-      ],
-      [
-        "Computer",
-        "Net"
-      ]
-    ],
-    "Jack-o'-lantern": [
-      [
-        "Pumpkin",
-        "Fire"
-      ],
-      [
-        "Pumpkin",
-        "Candle"
-      ],
-      [
-        "Pumpkin",
-        "Light"
-      ],
-      [
-        "Pumpkin",
-        "Night"
-      ],
-      [
-        "Pumpkin",
-        "Ghost"
-      ],
-      [
-        "Pumpkin",
-        "Skeleton"
-      ],
-      [
-        "Vegetable",
-        "Ghost"
-      ],
-      [
-        "Vegetable",
-        "Skeleton"
-      ],
-      [
-        "Vegetable",
-        "Night"
-      ]
-    ],
-    "Juice": [
-      [
-        "Fruit",
-        "Pressure"
-      ],
-      [
-        "Fruit",
-        "Earth"
-      ],
-      [
-        "Fruit",
-        "Stone"
-      ],
-      [
-        "Fruit",
-        "Rock"
-      ],
-      [
-        "Fruit",
-        "Explosion"
-      ],
-      [
-        "Fruit",
-        "Water"
-      ],
-      [
-        "Vegetable",
-        "Pressure"
-      ],
-      [
-        "Vegetable",
-        "Stone"
-      ],
-      [
-        "Vegetable",
-        "Rock"
-      ],
-      [
-        "Vegetable",
-        "Explosion"
-      ],
-      [
-        "Vegetable",
-        "Water"
-      ]
-    ],
-    "Kaiju": [
-      [
-        "Dinosaur",
-        "City"
-      ],
-      [
-        "Dinosaur",
-        "Skyscraper"
-      ],
-      [
-        "Dinosaur",
-        "Legend"
-      ],
-      [
-        "Dinosaur",
-        "Story"
-      ],
-      [
-        "Monster",
-        "City"
-      ],
-      [
-        "Monster",
-        "Skyscraper"
-      ]
-    ],
-    "Lasso": [
-      [
-        "Rope",
-        "Cow"
-      ],
-      [
-        "Rope",
-        "Horse"
-      ],
-      [
-        "Rope",
-        "Pig"
-      ],
-      [
-        "Rope",
-        "Wild boar"
-      ],
-      [
-        "Rope",
-        "Sheep"
-      ],
-      [
-        "Rope",
-        "Goat"
-      ]
-    ],
-    "Lawn": [
-      [
-        "Grass",
-        "House"
-      ],
-      [
-        "Grass",
-        "Container"
-      ],
-      [
-        "Grass",
-        "Lawn mower"
-      ],
-      [
-        "Field",
-        "Lawn mower"
-      ]
-    ],
-    "Lawn mower": [
-      [
-        "Grass",
-        "Tool"
-      ],
-      [
-        "Grass",
-        "Machine"
-      ],
-      [
-        "Scythe",
-        "Electricity"
-      ],
-      [
-        "Scythe",
-        "Helicopter"
-      ],
-      [
-        "Scythe",
-        "Windmill"
-      ],
-      [
-        "Scythe",
-        "Tool"
-      ],
-      [
-        "Scythe",
-        "Machine"
-      ],
-      [
-        "Scythe",
-        "Motion"
-      ],
-      [
-        "Helicopter",
-        "Field"
-      ]
-    ],
-    "Leaf": [
-      [
-        "Tree",
-        "Wind"
-      ],
-      [
-        "Flower",
-        "Wind"
-      ],
-      [
-        "Orchard",
-        "Wind"
-      ],
-      [
-        "Forest",
-        "Wind"
-      ]
-    ],
-    "Legend": [
-      [
-        "Story",
-        "Time"
-      ],
-      [
-        "Story",
-        "Story"
-      ],
-      [
-        "Story",
-        "Big"
-      ],
-      [
-        "Story",
-        "Fairy tale"
-      ],
-      [
-        "Fairy tale",
-        "Time"
-      ],
-      [
-        "Fairy tale",
-        "Big"
-      ]
-    ],
-    "Lumberjack": [
-      [
-        "Human",
-        "Axe"
-      ],
-      [
-        "Human",
-        "Chainsaw"
-      ],
-      [
-        "Human",
-        "Wood"
-      ],
-      [
-        "Human",
-        "Tree"
-      ]
-    ],
-    "Manatee": [
-      [
-        "Cow",
-        "Sea"
-      ],
-      [
-        "Cow",
-        "Ocean"
-      ],
-      [
-        "Cow",
-        "Fish"
-      ],
-      [
-        "Cow",
-        "Lake"
-      ],
-      [
-        "Cow",
-        "River"
-      ]
-    ],
-    "Milk": [
-      [
-        "Cow",
-        "Farmer"
-      ],
-      [
-        "Cow",
-        "Tool"
-      ],
-      [
-        "Cow",
-        "Water"
-      ],
-      [
-        "Cow",
-        "Liquid"
-      ],
-      [
-        "Goat",
-        "Farmer"
-      ],
-      [
-        "Goat",
-        "Tool"
-      ],
-      [
-        "Goat",
-        "Water"
-      ],
-      [
-        "Goat",
-        "Liquid"
-      ]
-    ],
-    "Minotaur": [
-      [
-        "Human",
-        "Cow"
-      ],
-      [
-        "Cow",
-        "Werewolf"
-      ],
-      [
-        "Cow",
-        "Story"
-      ],
-      [
-        "Cow",
-        "Legend"
-      ],
-      [
-        "Cow",
-        "Monster"
-      ]
-    ],
-    "Mold": [
-      [
-        "Bread",
-        "Time"
-      ],
-      [
-        "Bread",
-        "Bacteria"
-      ],
-      [
-        "Fruit",
-        "Time"
-      ],
-      [
-        "Fruit",
-        "Bacteria"
-      ],
-      [
-        "Vegetable",
-        "Time"
-      ],
-      [
-        "Vegetable",
-        "Bacteria"
-      ]
-    ],
-    "Monkey": [
-      [
-        "Animal",
-        "Tree"
-      ]
-    ],
-    "Mountain goat": [
-      [
-        "Goat",
-        "Mountain"
-      ],
-      [
-        "Goat",
-        "Mountain range"
-      ]
-    ],
-    "Narwhal": [
-      [
-        "Unicorn",
-        "Fish"
-      ],
-      [
-        "Unicorn",
-        "Sea"
-      ],
-      [
-        "Unicorn",
-        "Ocean"
-      ],
-      [
-        "Unicorn",
-        "Water"
-      ],
-      [
-        "Unicorn",
-        "Shark"
-      ],
-      [
-        "Unicorn",
-        "Swordfish"
-      ],
-      [
-        "Unicorn",
-        "Flying fish"
-      ]
-    ],
-    "Nessie": [
-      [
-        "Lake",
-        "Legend"
-      ],
-      [
-        "Lake",
-        "Story"
-      ],
-      [
-        "Dinosaur",
-        "Legend"
-      ],
-      [
-        "Dinosaur",
-        "Story"
-      ]
-    ],
-    "Net": [
-      [
-        "Angler",
-        "Rope"
-      ],
-      [
-        "Fishing rod",
-        "Rope"
-      ],
-      [
-        "Fish",
-        "Rope"
-      ],
-      [
-        "Swordfish",
-        "Rope"
-      ],
-      [
-        "Flying fish",
-        "Rope"
-      ]
-    ],
-    "Nuts": [
-      [
-        "Tree",
-        "Farmer"
-      ],
-      [
-        "Tree",
-        "Field"
-      ],
-      [
-        "Tree",
-        "Domestication"
-      ]
-    ],
-    "Oil": [
-      [
-        "Sunflower",
-        "Pressure"
-      ],
-      [
-        "Sunflower",
-        "Stone"
-      ],
-      [
-        "Sunflower",
-        "Wheel"
-      ],
-      [
-        "Sunflower",
-        "Windmill"
-      ]
-    ],
-    "Ore": [
-      [
-        "Hammer",
-        "Boulder"
-      ],
-      [
-        "Hammer",
-        "Earth"
-      ],
-      [
-        "Hammer",
-        "Rock"
-      ],
-      [
-        "Hammer",
-        "Stone"
-      ],
-      [
-        "Hammer",
-        "Hill"
-      ],
-      [
-        "Hammer",
-        "Mountain"
-      ]
-    ],
-    "Paleontologist": [
-      [
-        "Human",
-        "Dinosaur"
-      ],
-      [
-        "Human",
-        "Fossil"
-      ],
-      [
-        "Science",
-        "Dinosaur"
-      ],
-      [
-        "Science",
-        "Fossil"
-      ]
-    ],
-    "Palm": [
-      [
-        "Tree",
-        "Beach"
-      ],
-      [
-        "Tree",
-        "Island"
-      ],
-      [
-        "Tree",
-        "Sand"
-      ]
-    ],
-    "Parachute": [
-      [
-        "Pilot",
-        "Fabric"
-      ],
-      [
-        "Pilot",
-        "Umbrella"
-      ],
-      [
-        "Airplane",
-        "Fabric"
-      ],
-      [
-        "Airplane",
-        "Umbrella"
-      ],
-      [
-        "Umbrella",
-        "Sky"
-      ],
-      [
-        "Umbrella",
-        "Atmosphere"
-      ]
-    ],
-    "Parrot": [
-      [
-        "Bird",
-        "Pirate"
-      ],
-      [
-        "Bird",
-        "Pirate ship"
-      ],
-      [
-        "Pigeon",
-        "Pirate"
-      ],
-      [
-        "Pigeon",
-        "Pirate ship"
-      ]
-    ],
-    "Peat": [
-      [
-        "Swamp",
-        "Plant"
-      ],
-      [
-        "Swamp",
-        "Time"
-      ],
-      [
-        "Swamp",
-        "Pressure"
-      ],
-      [
-        "Time",
-        "Grass"
-      ]
-    ],
-    "Perfume": [
-      [
-        "Flower",
-        "Water"
-      ],
-      [
-        "Flower",
-        "Steam"
-      ],
-      [
-        "Flower",
-        "Alcohol"
-      ],
-      [
-        "Rose",
-        "Water"
-      ],
-      [
-        "Rose",
-        "Steam"
-      ],
-      [
-        "Rose",
-        "Alcohol"
-      ],
-      [
-        "Sunflower",
-        "Water"
-      ],
-      [
-        "Sunflower",
-        "Steam"
-      ],
-      [
-        "Sunflower",
-        "Alcohol"
-      ]
-    ],
-    "Petroleum": [
-      [
-        "Fossil",
-        "Pressure"
-      ],
-      [
-        "Fossil",
-        "Time"
-      ],
-      [
-        "Fossil",
-        "Liquid"
-      ],
-      [
-        "Fossil",
-        "Water"
-      ]
-    ],
-    "Pilot": [
-      [
-        "Human",
-        "Airplane"
-      ],
-      [
-        "Human",
-        "Seaplane"
-      ]
-    ],
-    "Pipe": [
-      [
-        "Tobacco",
-        "Wood"
-      ],
-      [
-        "Tobacco",
-        "Tool"
-      ]
-    ],
-    "Pirate ship": [
-      [
-        "Sailboat",
-        "Pirate"
-      ],
-      [
-        "Boat",
-        "Pirate"
-      ],
-      [
-        "Steam engine",
-        "Pirate"
-      ],
-      [
-        "Pirate",
-        "Container"
-      ],
-      [
-        "Pirate",
-        "House"
-      ]
-    ],
-    "Polar bear": [
-      [
-        "Animal",
-        "Ice"
-      ],
-      [
-        "Animal",
-        "Arctic"
-      ]
-    ],
-    "Potato": [
-      [
-        "Earth",
-        "Vegetable"
-      ]
-    ],
-    "Pterodactyl": [
-      [
-        "Dinosaur",
-        "Air"
-      ],
-      [
-        "Dinosaur",
-        "Sky"
-      ],
-      [
-        "Dinosaur",
-        "Bird"
-      ],
-      [
-        "Dinosaur",
-        "Eagle"
-      ],
-      [
-        "Dinosaur",
-        "Vulture"
-      ],
-      [
-        "Dinosaur",
-        "Airplane"
-      ]
-    ],
-    "Pumpkin": [
-      [
-        "Vegetable",
-        "Field"
-      ],
-      [
-        "Vegetable",
-        "Farmer"
-      ],
-      [
-        "Vegetable",
-        "Jack-o'-lantern"
-      ],
-      [
-        "Plant",
-        "Jack-o'-lantern"
-      ]
-    ],
-    "Quicksilver": [
-      [
-        "Metal",
-        "Liquid"
-      ]
-    ],
-    "Rabbit": [
-      [
-        "Animal",
-        "Carrot"
-      ],
-      [
-        "Rabbit",
-        "Rabbit"
-      ]
-    ],
-    "Rivulet": [
-      [
-        "Stream",
-        "Small"
-      ],
-      [
-        "Puddle",
-        "Motion"
-      ]
-    ],
-    "Sand castle": [
-      [
-        "Castle",
-        "Sand"
-      ],
-      [
-        "Castle",
-        "Beach"
-      ],
-      [
-        "Castle",
-        "Desert"
-      ],
-      [
-        "Castle",
-        "Dune"
-      ]
-    ],
-    "Sap": [
-      [
-        "Tree",
-        "Blade"
-      ]
-    ],
-    "Saturn": [
-      [
-        "Ring",
-        "Planet"
-      ],
-      [
-        "Jupiter",
-        "Small"
-      ]
-    ],
-    "Scalpel": [
-      [
-        "Blade",
-        "Doctor"
-      ],
-      [
-        "Blade",
-        "Hospital"
-      ],
-      [
-        "Blade",
-        "Ambulance"
-      ],
-      [
-        "Sword",
-        "Doctor"
-      ],
-      [
-        "Sword",
-        "Hospital"
-      ],
-      [
-        "Sword",
-        "Ambulance"
-      ]
-    ],
-    "Scythe": [
-      [
-        "Blade",
-        "Grass"
-      ],
-      [
-        "Blade",
-        "Wheat"
-      ],
-      [
-        "Sword",
-        "Grass"
-      ],
-      [
-        "Sword",
-        "Wheat"
-      ],
-      [
-        "Axe",
-        "Grass"
-      ],
-      [
-        "Axe",
-        "Wheat"
-      ]
-    ],
-    "Seal": [
-      [
-        "Dog",
-        "Sea"
-      ],
-      [
-        "Dog",
-        "Ocean"
-      ],
-      [
-        "Dog",
-        "Arctic"
-      ],
-      [
-        "Dog",
-        "Water"
-      ],
-      [
-        "Dog",
-        "Lake"
-      ]
-    ],
-    "Seaplane": [
-      [
-        "Airplane",
-        "Water"
-      ],
-      [
-        "Airplane",
-        "Sea"
-      ],
-      [
-        "Airplane",
-        "Ocean"
-      ],
-      [
-        "Airplane",
-        "Lake"
-      ]
-    ],
-    "Seed": [
-      [
-        "Pollen",
-        "Plant"
-      ],
-      [
-        "Pollen",
-        "Bee"
-      ],
-      [
-        "Time",
-        "Flower"
-      ]
-    ],
-    "Skateboard": [
-      [
-        "Wheel",
-        "Snowboard"
-      ],
-      [
-        "Wheel",
-        "Skier"
-      ],
-      [
-        "Wheel",
-        "Ski goggles"
-      ]
-    ],
-    "Small": [
-      [
-        "Philosophy",
-        "Bacteria"
-      ],
-      [
-        "Philosophy",
-        "Oxygen"
-      ],
-      [
-        "Philosophy",
-        "Carbon dioxide"
-      ],
-      [
-        "Philosophy",
-        "Ozone"
-      ],
-      [
-        "Philosophy",
-        "Pebble"
-      ],
-      [
-        "Philosophy",
-        "Rivulet"
-      ],
-      [
-        "Philosophy",
-        "Ant"
-      ],
-      [
-        "Philosophy",
-        "Spider"
-      ],
-      [
-        "Philosophy",
-        "Bee"
-      ],
-      [
-        "Philosophy",
-        "Scorpion"
-      ],
-      [
-        "Philosophy",
-        "Confetti"
-      ],
-      [
-        "Philosophy",
-        "Seahorse"
-      ]
-    ],
-    "Snowboarder": [
-      [
-        "Human",
-        "Snowboard"
-      ]
-    ],
-    "Soda": [
-      [
-        "Carbon dioxide",
-        "Water"
-      ],
-      [
-        "Carbon dioxide",
-        "Juice"
-      ],
-      [
-        "Carbon dioxide",
-        "Tea"
-      ]
-    ],
-    "Sphinx": [
-      [
-        "Statue",
-        "Lion"
-      ],
-      [
-        "Statue",
-        "Desert"
-      ],
-      [
-        "Statue",
-        "Pyramid"
-      ],
-      [
-        "Lion",
-        "Stone"
-      ]
-    ],
-    "Statue": [
-      [
-        "Stone",
-        "Hammer"
-      ],
-      [
-        "Boulder",
-        "Hammer"
-      ],
-      [
-        "Medusa",
-        "Human"
-      ],
-      [
-        "Medusa",
-        "Hacker"
-      ],
-      [
-        "Medusa",
-        "Engineer"
-      ],
-      [
-        "Medusa",
-        "Lumberjack"
-      ],
-      [
-        "Medusa",
-        "Pilot"
-      ],
-      [
-        "Medusa",
-        "Sailor"
-      ],
-      [
-        "Medusa",
-        "Farmer"
-      ],
-      [
-        "Medusa",
-        "Firefighter"
-      ],
-      [
-        "Medusa",
-        "Surfer"
-      ],
-      [
-        "Medusa",
-        "Astronaut"
-      ],
-      [
-        "Medusa",
-        "Butcher"
-      ],
-      [
-        "Medusa",
-        "Doctor"
-      ],
-      [
-        "Medusa",
-        "Baker"
-      ],
-      [
-        "Medusa",
-        "Drunk"
-      ],
-      [
-        "Medusa",
-        "Mirror"
-      ],
-      [
-        "Troll",
-        "Sun"
-      ],
-      [
-        "Troll",
-        "Dawn"
-      ],
-      [
-        "Cockatrice",
-        "Human"
-      ],
-      [
-        "Cockatrice",
-        "Hacker"
-      ],
-      [
-        "Cockatrice",
-        "Engineer"
-      ],
-      [
-        "Cockatrice",
-        "Lumberjack"
-      ],
-      [
-        "Cockatrice",
-        "Pilot"
-      ],
-      [
-        "Cockatrice",
-        "Sailor"
-      ],
-      [
-        "Cockatrice",
-        "Farmer"
-      ],
-      [
-        "Cockatrice",
-        "Firefighter"
-      ],
-      [
-        "Cockatrice",
-        "Surfer"
-      ],
-      [
-        "Cockatrice",
-        "Astronaut"
-      ],
-      [
-        "Cockatrice",
-        "Butcher"
-      ],
-      [
-        "Cockatrice",
-        "Doctor"
-      ],
-      [
-        "Cockatrice",
-        "Baker"
-      ],
-      [
-        "Cockatrice",
-        "Drunk"
-      ],
-      [
-        "Cockatrice",
-        "Mirror"
-      ]
-    ],
-    "Steam engine": [
-      [
-        "Steam",
-        "Machine"
-      ],
-      [
-        "Steam",
-        "Wheel"
-      ],
-      [
-        "Boiler",
-        "Wheel"
-      ]
-    ],
-    "Steel": [
-      [
-        "Metal",
-        "Coal"
-      ],
-      [
-        "Metal",
-        "Charcoal"
-      ],
-      [
-        "Metal",
-        "Mineral"
-      ],
-      [
-        "Metal",
-        "Ash"
-      ]
-    ],
-    "Stream": [
-      [
-        "Pond",
-        "Motion"
-      ],
-      [
-        "Rivulet",
-        "Big"
-      ],
-      [
-        "River",
-        "Small"
-      ]
-    ],
-    "Sushi": [
-      [
-        "Fish",
-        "Seaweed"
-      ],
-      [
-        "Caviar",
-        "Seaweed"
-      ]
-    ],
-    "Swamp": [
-      [
-        "Mud",
-        "Grass"
-      ],
-      [
-        "Mud",
-        "Tree"
-      ],
-      [
-        "Tree",
-        "Lake"
-      ],
-      [
-        "Algae",
-        "Lake"
-      ],
-      [
-        "Algae",
-        "Pond"
-      ],
-      [
-        "Reed",
-        "Lake"
-      ],
-      [
-        "Reed",
-        "Pond"
-      ],
-      [
-        "Reed",
-        "Mud"
-      ]
-    ],
-    "The one ring": [
-      [
-        "Ring",
-        "Volcano"
-      ],
-      [
-        "Ring",
-        "Magic"
-      ]
-    ],
-    "Thread": [
-      [
-        "Cotton",
-        "Cotton"
-      ],
-      [
-        "Cotton",
-        "Tool"
-      ],
-      [
-        "Cotton",
-        "Wheel"
-      ],
-      [
-        "Cotton",
-        "Machine"
-      ]
-    ],
-    "Treehouse": [
-      [
-        "Tree",
-        "House"
-      ],
-      [
-        "Tree",
-        "Wood"
-      ]
-    ],
-    "Trojan horse": [
-      [
-        "Horse",
-        "Wood"
-      ],
-      [
-        "Horse",
-        "Machine"
-      ],
-      [
-        "Horse",
-        "Statue"
-      ]
-    ],
-    "Tunnel": [
-      [
-        "Engineer",
-        "Mountain"
-      ],
-      [
-        "Engineer",
-        "Mountain range"
-      ],
-      [
-        "Engineer",
-        "Hill"
-      ],
-      [
-        "Train",
-        "Mountain"
-      ],
-      [
-        "Train",
-        "Mountain range"
-      ],
-      [
-        "Train",
-        "Hill"
-      ],
-      [
-        "Cave",
-        "Mountain"
-      ],
-      [
-        "Cave",
-        "Mountain range"
-      ],
-      [
-        "Cave",
-        "Hill"
-      ]
-    ],
-    "Tyrannosaurus rex": [
-      [
-        "Dinosaur",
-        "Meat"
-      ],
-      [
-        "Dinosaur",
-        "Blood"
-      ],
-      [
-        "Dinosaur",
-        "Monarch"
-      ]
-    ],
-    "Vase": [
-      [
-        "Pottery",
-        "Plant"
-      ],
-      [
-        "Pottery",
-        "Flower"
-      ],
-      [
-        "Pottery",
-        "Rose"
-      ],
-      [
-        "Container",
-        "Flower"
-      ],
-      [
-        "Container",
-        "Rose"
-      ],
-      [
-        "Bottle",
-        "Plant"
-      ],
-      [
-        "Bottle",
-        "Flower"
-      ],
-      [
-        "Bottle",
-        "Rose"
-      ]
-    ],
-    "Water lily": [
-      [
-        "Flower",
-        "Pond"
-      ],
-      [
-        "Flower",
-        "Puddle"
-      ],
-      [
-        "Flower",
-        "Lake"
-      ],
-      [
-        "Flower",
-        "Stream"
-      ]
-    ],
-    "Wheat": [
-      [
-        "Grass",
-        "Farmer"
-      ],
-      [
-        "Grass",
-        "Domestication"
-      ],
-      [
-        "Grass",
-        "Field"
-      ]
-    ],
-    "Wood": [
-      [
-        "Tree",
-        "Tool"
-      ],
-      [
-        "Tree",
-        "Axe"
-      ],
-      [
-        "Tree",
-        "Chainsaw"
-      ],
-      [
-        "Tree",
-        "Sword"
-      ],
-      [
-        "Tree",
-        "Lumberjack"
-      ],
-      [
-        "Forest",
-        "Tool"
-      ],
-      [
-        "Forest",
-        "Axe"
-      ],
-      [
-        "Forest",
-        "Chainsaw"
-      ],
-      [
-        "Forest",
-        "Sword"
-      ],
-      [
-        "Forest",
-        "Lumberjack"
-      ],
-      [
-        "Tree",
-        "Paul bunyan"
-      ],
-      [
-        "Forest",
-        "Paul bunyan"
-      ]
-    ],
-    "Woodpecker": [
-      [
-        "Bird",
-        "Wood"
-      ],
-      [
-        "Bird",
-        "Tree"
-      ],
-      [
-        "Bird",
-        "Forest"
-      ]
-    ],
-    "Wool": [
-      [
-        "Sheep",
-        "Tool"
-      ],
-      [
-        "Sheep",
-        "Scissors"
-      ],
-      [
-        "Sheep",
-        "Blade"
-      ]
-    ],
-    "Yeti": [
-      [
-        "Mountain",
-        "Story"
-      ],
-      [
-        "Mountain",
-        "Legend"
-      ],
-      [
-        "Mountain range",
-        "Story"
-      ],
-      [
-        "Mountain range",
-        "Legend"
-      ],
-      [
-        "Glacier",
-        "Story"
-      ],
-      [
-        "Glacier",
-        "Legend"
-      ],
-      [
-        "Antarctica",
-        "Story"
-      ],
-      [
-        "Antarctica",
-        "Legend"
-      ],
-      [
-        "Monster",
-        "Mountain"
-      ],
-      [
-        "Monster",
-        "Mountain range"
-      ],
-      [
-        "Monster",
-        "Glacier"
-      ],
-      [
-        "Monster",
-        "Antarctica"
-      ]
-    ],
-    "Zoo": [
-      [
-        "Animal",
-        "Container"
-      ],
-      [
-        "Animal",
-        "Cage"
-      ]
-    ]
-  },
-  "tier 11": {
-    "Alcohol": [
-      [
-        "Time",
-        "Juice"
-      ],
-      [
-        "Wheat",
-        "Fruit"
-      ],
-      [
-        "Wheat",
-        "Juice"
-      ],
-      [
-        "Fruit",
-        "Sun"
-      ]
-    ],
-    "Ambulance": [
-      [
-        "Car",
-        "Hospital"
-      ],
-      [
-        "Car",
-        "Doctor"
-      ]
-    ],
-    "Ant farm": [
-      [
-        "Farm",
-        "Ant"
-      ],
-      [
-        "Ant",
-        "Jar"
-      ],
-      [
-        "Ant",
-        "Glass"
-      ],
-      [
-        "Anthill",
-        "Farm"
-      ],
-      [
-        "Anthill",
-        "Jar"
-      ]
-    ],
-    "Anthill": [
-      [
-        "Ant",
-        "House"
-      ],
-      [
-        "Ant",
-        "Container"
-      ],
-      [
-        "Ant",
-        "Hill"
-      ],
-      [
-        "Ant",
-        "Earth"
-      ],
-      [
-        "Ant",
-        "Land"
-      ],
-      [
-        "Ant",
-        "Soil"
-      ]
-    ],
-    "Arrow": [
-      [
-        "Wood",
-        "Bullet"
-      ],
-      [
-        "Wood",
-        "Bow"
-      ]
-    ],
-    "Aviary": [
-      [
-        "Big",
-        "Birdcage"
-      ]
-    ],
-    "Axe": [
-      [
-        "Wood",
-        "Blade"
-      ],
-      [
-        "Wood",
-        "Tool"
-      ],
-      [
-        "Wood",
-        "Stone"
-      ],
-      [
-        "Tool",
-        "Lumberjack"
-      ],
-      [
-        "Tool",
-        "Paul bunyan"
-      ]
-    ],
-    "Banana": [
-      [
-        "Fruit",
-        "Monkey"
-      ]
-    ],
-    "Beehive": [
-      [
-        "House",
-        "Bee"
-      ],
-      [
-        "Tree",
-        "Bee"
-      ],
-      [
-        "Forest",
-        "Bee"
-      ],
-      [
-        "Wall",
-        "Bee"
-      ],
-      [
-        "Wood",
-        "Bee"
-      ],
-      [
-        "Container",
-        "Bee"
-      ]
-    ],
-    "Beekeeper": [
-      [
-        "Human",
-        "Beehive"
-      ],
-      [
-        "Human",
-        "Bee"
-      ],
-      [
-        "Farmer",
-        "Beehive"
-      ],
-      [
-        "Farmer",
-        "Bee"
-      ]
-    ],
-    "Blood bag": [
-      [
-        "Blood",
-        "Container"
-      ],
-      [
-        "Blood",
-        "Sack"
-      ],
-      [
-        "Blood",
-        "Bottle"
-      ]
-    ],
-    "Boat": [
-      [
-        "Wood",
-        "Water"
-      ],
-      [
-        "Wood",
-        "Sea"
-      ],
-      [
-        "Wood",
-        "Ocean"
-      ],
-      [
-        "Wood",
-        "Lake"
-      ],
-      [
-        "Wood",
-        "River"
-      ]
-    ],
-    "Book": [
-      [
-        "Newspaper",
-        "Newspaper"
-      ],
-      [
-        "Paper",
-        "Legend"
-      ],
-      [
-        "Paper",
-        "Wood"
-      ],
-      [
-        "Container",
-        "Story"
-      ],
-      [
-        "Container",
-        "Fairy tale"
-      ],
-      [
-        "Container",
-        "Legend"
-      ],
-      [
-        "Container",
-        "Idea"
-      ]
-    ],
-    "Bottle": [
-      [
-        "Container",
-        "Milk"
-      ],
-      [
-        "Container",
-        "Water"
-      ],
-      [
-        "Container",
-        "Coconut milk"
-      ],
-      [
-        "Container",
-        "Juice"
-      ],
-      [
-        "Container",
-        "Oil"
-      ],
-      [
-        "Container",
-        "Alcohol"
-      ],
-      [
-        "Container",
-        "Wine"
-      ],
-      [
-        "Container",
-        "Beer"
-      ],
-      [
-        "Container",
-        "Chocolate milk"
-      ],
-      [
-        "Container",
-        "Soda"
-      ],
-      [
-        "Container",
-        "Perfume"
-      ],
-      [
-        "Container",
-        "Liquid"
-      ]
-    ],
-    "Boulder": [
-      [
-        "Big",
-        "Rock"
-      ],
-      [
-        "Big",
-        "Stone"
-      ],
-      [
-        "Small",
-        "Hill"
-      ],
-      [
-        "Rock",
-        "Stone"
-      ],
-      [
-        "Rock",
-        "Rock"
-      ],
-      [
-        "Rock",
-        "Earth"
-      ]
-    ],
-    "Bow": [
-      [
-        "Wood",
-        "Rope"
-      ],
-      [
-        "Wood",
-        "Wire"
-      ],
-      [
-        "Tool",
-        "Elf"
-      ],
-      [
-        "Tool",
-        "Cupid"
-      ]
-    ],
-    "Broom": [
-      [
-        "Wood",
-        "Hay"
-      ],
-      [
-        "Tool",
-        "Baba yaga"
-      ]
-    ],
-    "Bucket": [
-      [
-        "Container",
-        "Wood"
-      ],
-      [
-        "Container",
-        "Yogurt"
-      ],
-      [
-        "Container",
-        "Paint"
-      ],
-      [
-        "Bottle",
-        "River"
-      ],
-      [
-        "Bottle",
-        "Paint"
-      ],
-      [
-        "Chicken wing",
-        "Container"
-      ],
-      [
-        "Chicken wing",
-        "Box"
-      ]
-    ],
-    "Bus": [
-      [
-        "Car",
-        "Car"
-      ],
-      [
-        "Car",
-        "Train"
-      ],
-      [
-        "Car",
-        "City"
-      ],
-      [
-        "Car",
-        "Big"
-      ]
-    ],
-    "Butter": [
-      [
-        "Milk",
-        "Pressure"
-      ],
-      [
-        "Milk",
-        "Energy"
-      ],
-      [
-        "Milk",
-        "Motion"
-      ],
-      [
-        "Milk",
-        "Tool"
-      ]
-    ],
-    "Butterfly net": [
-      [
-        "Butterfly",
-        "Net"
-      ],
-      [
-        "Bee",
-        "Net"
-      ]
-    ],
-    "Campfire": [
-      [
-        "Fire",
-        "Wood"
-      ]
-    ],
-    "Cart": [
-      [
-        "Wheel",
-        "Wood"
-      ]
-    ],
-    "Cashmere": [
-      [
-        "Mountain goat",
-        "Thread"
-      ],
-      [
-        "Mountain goat",
-        "Fabric"
-      ],
-      [
-        "Mountain goat",
-        "Tool"
-      ],
-      [
-        "Mountain goat",
-        "Scissors"
-      ],
-      [
-        "Mountain goat",
-        "Wool"
-      ]
-    ],
-    "Cereal": [
-      [
-        "Wheat",
-        "Milk"
-      ],
-      [
-        "Wheat",
-        "Chocolate milk"
-      ],
-      [
-        "Wheat",
-        "Coconut milk"
-      ]
-    ],
-    "Chainsaw": [
-      [
-        "Axe",
-        "Machine"
-      ],
-      [
-        "Axe",
-        "Electricity"
-      ],
-      [
-        "Axe",
-        "Motion"
-      ],
-      [
-        "Lumberjack",
-        "Machine"
-      ],
-      [
-        "Lumberjack",
-        "Electricity"
-      ]
-    ],
-    "Cheese": [
-      [
-        "Milk",
-        "Tool"
-      ],
-      [
-        "Milk",
-        "Time"
-      ],
-      [
-        "Milk",
-        "Cook"
-      ],
-      [
-        "Milk",
-        "Bacteria"
-      ]
-    ],
-    "Christmas stocking": [
-      [
-        "Fireplace",
-        "Wool"
-      ],
-      [
-        "Christmas tree",
-        "Wool"
-      ],
-      [
-        "Reindeer",
-        "Wool"
-      ],
-      [
-        "Santa",
-        "Wool"
-      ]
-    ],
-    "Closet": [
-      [
-        "Container",
-        "Broom"
-      ],
-      [
-        "Container",
-        "Toolbox"
-      ],
-      [
-        "Container",
-        "Umbrella"
-      ],
-      [
-        "Container",
-        "Robot vacuum"
-      ],
-      [
-        "Container",
-        "Vacuum cleaner"
-      ]
-    ],
-    "Coconut milk": [
-      [
-        "Coconut",
-        "Milk"
-      ],
-      [
-        "Coconut",
-        "Tool"
-      ],
-      [
-        "Coconut",
-        "Hammer"
-      ],
-      [
-        "Coconut",
-        "Sword"
-      ],
-      [
-        "Coconut",
-        "Blade"
-      ],
-      [
-        "Coconut",
-        "Axe"
-      ]
-    ],
-    "Coffin": [
-      [
-        "Wood",
-        "Corpse"
-      ],
-      [
-        "Container",
-        "Corpse"
-      ],
-      [
-        "Container",
-        "Vampire"
-      ]
-    ],
-    "Cutting board": [
-      [
-        "Wood",
-        "Cook"
-      ]
-    ],
-    "Drum": [
-      [
-        "Wood",
-        "Leather"
-      ],
-      [
-        "Wood",
-        "Fabric"
-      ],
-      [
-        "Wood",
-        "Music"
-      ]
-    ],
-    "Electric car": [
-      [
-        "Electricity",
-        "Car"
-      ],
-      [
-        "Electricity",
-        "Wagon"
-      ],
-      [
-        "Car",
-        "Wind turbine"
-      ],
-      [
-        "Wagon",
-        "Wind turbine"
-      ],
-      [
-        "Solar cell",
-        "Car"
-      ],
-      [
-        "Solar cell",
-        "Wagon"
-      ]
-    ],
-    "Fabric": [
-      [
-        "Thread",
-        "Machine"
-      ],
-      [
-        "Thread",
-        "Tool"
-      ],
-      [
-        "Thread",
-        "Wheel"
-      ]
-    ],
-    "Fireplace": [
-      [
-        "Campfire",
-        "House"
-      ],
-      [
-        "Campfire",
-        "Brick"
-      ],
-      [
-        "Campfire",
-        "Wall"
-      ],
-      [
-        "Campfire",
-        "Container"
-      ],
-      [
-        "Wood",
-        "Container"
-      ]
-    ],
-    "Firetruck": [
-      [
-        "Firefighter",
-        "Car"
-      ],
-      [
-        "Firefighter",
-        "Wagon"
-      ],
-      [
-        "Fire",
-        "Car"
-      ],
-      [
-        "Fire",
-        "Wagon"
-      ],
-      [
-        "Fire extinguisher",
-        "Car"
-      ],
-      [
-        "Fire extinguisher",
-        "Wagon"
-      ]
-    ],
-    "Flour": [
-      [
-        "Wheat",
-        "Wheat"
-      ],
-      [
-        "Wheat",
-        "Stone"
-      ],
-      [
-        "Wheat",
-        "Windmill"
-      ],
-      [
-        "Wheat",
-        "Wheel"
-      ],
-      [
-        "Wheat",
-        "Rock"
-      ]
-    ],
-    "Flute": [
-      [
-        "Wood",
-        "Wind"
-      ],
-      [
-        "Wood",
-        "Air"
-      ]
-    ],
-    "Fountain": [
-      [
-        "Statue",
-        "Water"
-      ],
-      [
-        "Statue",
-        "Stream"
-      ]
-    ],
-    "French fries": [
-      [
-        "Oil",
-        "Vegetable"
-      ],
-      [
-        "Oil",
-        "Potato"
-      ],
-      [
-        "Fire",
-        "Potato"
-      ]
-    ],
-    "Fruit tree": [
-      [
-        "Fruit",
-        "Tree"
-      ],
-      [
-        "Fruit",
-        "Plant"
-      ],
-      [
-        "Fruit",
-        "Wood"
-      ]
-    ],
-    "Garage": [
-      [
-        "Car",
-        "House"
-      ],
-      [
-        "Car",
-        "Container"
-      ],
-      [
-        "Car",
-        "Wall"
-      ],
-      [
-        "Car",
-        "Barn"
-      ],
-      [
-        "Ambulance",
-        "House"
-      ],
-      [
-        "Ambulance",
-        "Container"
-      ],
-      [
-        "Ambulance",
-        "Wall"
-      ],
-      [
-        "Ambulance",
-        "Barn"
-      ],
-      [
-        "Motorcycle",
-        "House"
-      ],
-      [
-        "Motorcycle",
-        "Container"
-      ],
-      [
-        "Motorcycle",
-        "Wall"
-      ],
-      [
-        "Motorcycle",
-        "Barn"
-      ],
-      [
-        "Bus",
-        "House"
-      ],
-      [
-        "Bus",
-        "Container"
-      ],
-      [
-        "Bus",
-        "Wall"
-      ],
-      [
-        "Bus",
-        "Barn"
-      ],
-      [
-        "Sleigh",
-        "House"
-      ],
-      [
-        "Sleigh",
-        "Container"
-      ],
-      [
-        "Sleigh",
-        "Wall"
-      ],
-      [
-        "Sleigh",
-        "Barn"
-      ],
-      [
-        "Electric car",
-        "House"
-      ],
-      [
-        "Electric car",
-        "Container"
-      ],
-      [
-        "Electric car",
-        "Wall"
-      ],
-      [
-        "Electric car",
-        "Barn"
-      ],
-      [
-        "Snowmobile",
-        "House"
-      ],
-      [
-        "Snowmobile",
-        "Container"
-      ],
-      [
-        "Snowmobile",
-        "Wall"
-      ],
-      [
-        "Snowmobile",
-        "Barn"
-      ],
-      [
-        "Tractor",
-        "House"
-      ],
-      [
-        "Tractor",
-        "Container"
-      ],
-      [
-        "Tractor",
-        "Wall"
-      ],
-      [
-        "Tractor",
-        "Barn"
-      ],
-      [
-        "Rv",
-        "House"
-      ],
-      [
-        "Rv",
-        "Container"
-      ],
-      [
-        "Rv",
-        "Wall"
-      ],
-      [
-        "Rv",
-        "Barn"
-      ],
-      [
-        "Ice cream truck",
-        "House"
-      ],
-      [
-        "Ice cream truck",
-        "Container"
-      ],
-      [
-        "Ice cream truck",
-        "Wall"
-      ],
-      [
-        "Ice cream truck",
-        "Barn"
-      ]
-    ],
-    "Grim reaper": [
-      [
-        "Human",
-        "Scythe"
-      ],
-      [
-        "Corpse",
-        "Scythe"
-      ],
-      [
-        "Zombie",
-        "Scythe"
-      ],
-      [
-        "Death",
-        "Scythe"
-      ],
-      [
-        "Boat",
-        "Scythe"
-      ],
-      [
-        "River",
-        "Scythe"
-      ],
-      [
-        "Scythe",
-        "Deity"
-      ]
-    ],
-    "Gust": [
-      [
-        "Wind",
-        "Small"
-      ],
-      [
-        "Air",
-        "Small"
-      ]
-    ],
-    "Hay bale": [
-      [
-        "Hay",
-        "Hay"
-      ],
-      [
-        "Hay",
-        "Barn"
-      ],
-      [
-        "Hay",
-        "Tractor"
-      ],
-      [
-        "Hay",
-        "Machine"
-      ]
-    ],
-    "Hill": [
-      [
-        "Big",
-        "Boulder"
-      ],
-      [
-        "Earth",
-        "Boulder"
-      ],
-      [
-        "Stone",
-        "Boulder"
-      ],
-      [
-        "Boulder",
-        "Boulder"
-      ],
-      [
-        "Mountain",
-        "Small"
-      ]
-    ],
-    "Honey": [
-      [
-        "Bee",
-        "Flower"
-      ],
-      [
-        "Bee",
-        "Beehive"
-      ],
-      [
-        "Bee",
-        "Time"
-      ],
-      [
-        "Bee",
-        "Bee"
-      ],
-      [
-        "Beehive",
-        "Beekeeper"
-      ]
-    ],
-    "Ice cream": [
-      [
-        "Milk",
-        "Cold"
-      ],
-      [
-        "Milk",
-        "Ice"
-      ],
-      [
-        "Milk",
-        "Snow"
-      ]
-    ],
-    "Ice sculpture": [
-      [
-        "Ice",
-        "Statue"
-      ]
-    ],
-    "Jam": [
-      [
-        "Juice",
-        "Sugar"
-      ],
-      [
-        "Juice",
-        "Fruit"
-      ],
-      [
-        "Juice",
-        "Machine"
-      ],
-      [
-        "Fruit",
-        "Machine"
-      ],
-      [
-        "Fruit",
-        "Heat"
-      ]
-    ],
-    "Knife": [
-      [
-        "Blade",
-        "Cook"
-      ],
-      [
-        "Sword",
-        "Cook"
-      ]
-    ],
-    "Laptop": [
-      [
-        "Computer",
-        "Small"
-      ]
-    ],
-    "Little alchemy (element)": [
-      [
-        "Small",
-        "Alchemist"
-      ]
-    ],
-    "Log cabin": [
-      [
-        "Wood",
-        "House"
-      ]
-    ],
-    "Maple syrup": [
-      [
-        "Sap",
-        "Heat"
-      ],
-      [
-        "Sap",
-        "Sugar"
-      ]
-    ],
-    "Mayonnaise": [
-      [
-        "Egg",
-        "Oil"
-      ]
-    ],
-    "Moon rover": [
-      [
-        "Moon",
-        "Car"
-      ],
-      [
-        "Moon",
-        "Electric car"
-      ]
-    ],
-    "Motorcycle": [
-      [
-        "Bicycle",
-        "Machine"
-      ],
-      [
-        "Bicycle",
-        "Metal"
-      ],
-      [
-        "Bicycle",
-        "Steel"
-      ],
-      [
-        "Bicycle",
-        "Steam engine"
-      ],
-      [
-        "Bicycle",
-        "Combustion engine"
-      ]
-    ],
-    "Needle": [
-      [
-        "Thread",
-        "Metal"
-      ],
-      [
-        "Thread",
-        "Steel"
-      ],
-      [
-        "Thread",
-        "Tool"
-      ]
-    ],
-    "Paper": [
-      [
-        "Wood",
-        "Pressure"
-      ],
-      [
-        "Wood",
-        "Water"
-      ],
-      [
-        "Wood",
-        "Blender"
-      ],
-      [
-        "Wood",
-        "Machine"
-      ]
-    ],
-    "Peanut butter": [
-      [
-        "Nuts",
-        "Butter"
-      ],
-      [
-        "Nuts",
-        "Pressure"
-      ]
-    ],
-    "Pebble": [
-      [
-        "Small",
-        "Earth"
-      ],
-      [
-        "Small",
-        "Stone"
-      ],
-      [
-        "Small",
-        "Rock"
-      ]
-    ],
-    "Pencil": [
-      [
-        "Wood",
-        "Coal"
-      ],
-      [
-        "Wood",
-        "Charcoal"
-      ]
-    ],
-    "Penicillin": [
-      [
-        "Mold",
-        "Doctor"
-      ],
-      [
-        "Mold",
-        "Science"
-      ],
-      [
-        "Mold",
-        "Idea"
-      ],
-      [
-        "Mold",
-        "Hospital"
-      ]
-    ],
-    "Pinocchio": [
-      [
-        "Wood",
-        "Life"
-      ],
-      [
-        "Wood",
-        "Story"
-      ],
-      [
-        "Golem",
-        "Story"
-      ]
-    ],
-    "Pitchfork": [
-      [
-        "Hay",
-        "Tool"
-      ],
-      [
-        "Hay",
-        "Metal"
-      ],
-      [
-        "Hay",
-        "Steel"
-      ],
-      [
-        "Tool",
-        "Demon"
-      ]
-    ],
-    "Popsicle": [
-      [
-        "Juice",
-        "Ice"
-      ],
-      [
-        "Juice",
-        "Cold"
-      ],
-      [
-        "Juice",
-        "Snow"
-      ],
-      [
-        "Juice",
-        "Wood"
-      ]
-    ],
-    "Quicksand": [
-      [
-        "Sand",
-        "Swamp"
-      ]
-    ],
-    "Rainforest": [
-      [
-        "Rain",
-        "Forest"
-      ]
-    ],
-    "Rat": [
-      [
-        "Animal",
-        "Pirate ship"
-      ],
-      [
-        "Animal",
-        "Sailboat"
-      ],
-      [
-        "Mouse",
-        "Pirate ship"
-      ],
-      [
-        "Mouse",
-        "Sailboat"
-      ],
-      [
-        "Mouse",
-        "City"
-      ],
-      [
-        "Mouse",
-        "Skyscraper"
-      ],
-      [
-        "Mouse",
-        "Village"
-      ],
-      [
-        "Mouse",
-        "Big"
-      ]
-    ],
-    "Reindeer": [
-      [
-        "Animal",
-        "Santa"
-      ],
-      [
-        "Livestock",
-        "Santa"
-      ],
-      [
-        "Animal",
-        "Christmas tree"
-      ],
-      [
-        "Livestock",
-        "Christmas tree"
-      ],
-      [
-        "Animal",
-        "Christmas stocking"
-      ]
-    ],
-    "Restaurant": [
-      [
-        "House",
-        "Cook"
-      ]
-    ],
-    "Roller coaster": [
-      [
-        "Park",
-        "Train"
-      ],
-      [
-        "Park",
-        "Car"
-      ],
-      [
-        "Park",
-        "Cart"
-      ],
-      [
-        "Park",
-        "Wagon"
-      ]
-    ],
-    "Rv": [
-      [
-        "House",
-        "Car"
-      ],
-      [
-        "House",
-        "Bus"
-      ]
-    ],
-    "Sack": [
-      [
-        "Container",
-        "Flour"
-      ],
-      [
-        "Container",
-        "Salt"
-      ],
-      [
-        "Container",
-        "Letter"
-      ]
-    ],
-    "Santa": [
-      [
-        "Christmas tree",
-        "Human"
-      ],
-      [
-        "Christmas tree",
-        "Legend"
-      ],
-      [
-        "Christmas tree",
-        "Story"
-      ],
-      [
-        "Christmas stocking",
-        "Human"
-      ],
-      [
-        "Christmas stocking",
-        "Legend"
-      ],
-      [
-        "Christmas stocking",
-        "Story"
-      ]
-    ],
-    "Scarecrow": [
-      [
-        "Hay",
-        "Human"
-      ],
-      [
-        "Hay",
-        "Statue"
-      ],
-      [
-        "Hay",
-        "Golem"
-      ],
-      [
-        "Hay",
-        "Sack"
-      ],
-      [
-        "Farm",
-        "Statue"
-      ],
-      [
-        "Barn",
-        "Statue"
-      ],
-      [
-        "Pumpkin",
-        "Sack"
-      ],
-      [
-        "Jack-o'-lantern",
-        "Sack"
-      ]
-    ],
-    "Scuba tank": [
-      [
-        "Container",
-        "Air"
-      ],
-      [
-        "Container",
-        "Atmosphere"
-      ],
-      [
-        "Container",
-        "Oxygen"
-      ]
-    ],
-    "Sewing machine": [
-      [
-        "Needle",
-        "Machine"
-      ],
-      [
-        "Needle",
-        "Electricity"
-      ],
-      [
-        "Needle",
-        "Robot"
-      ],
-      [
-        "Thread",
-        "Machine"
-      ],
-      [
-        "Thread",
-        "Electricity"
-      ],
-      [
-        "Thread",
-        "Robot"
-      ]
-    ],
-    "Shovel": [
-      [
-        "Tool",
-        "Gardener"
-      ]
-    ],
-    "Silo": [
-      [
-        "Wheat",
-        "Container"
-      ],
-      [
-        "Wheat",
-        "House"
-      ],
-      [
-        "Wheat",
-        "Barn"
-      ],
-      [
-        "Wheat",
-        "Wall"
-      ],
-      [
-        "Wheat",
-        "Farm"
-      ],
-      [
-        "Wheat",
-        "Safe"
-      ],
-      [
-        "Wheat",
-        "Bank"
-      ]
-    ],
-    "Smoothie": [
-      [
-        "Fruit",
-        "Blender"
-      ],
-      [
-        "Fruit",
-        "Ice"
-      ],
-      [
-        "Fruit",
-        "Cold"
-      ]
-    ],
-    "Snowmobile": [
-      [
-        "Snow",
-        "Motorcycle"
-      ],
-      [
-        "Snow",
-        "Car"
-      ],
-      [
-        "Glacier",
-        "Motorcycle"
-      ],
-      [
-        "Glacier",
-        "Car"
-      ],
-      [
-        "Ice",
-        "Motorcycle"
-      ],
-      [
-        "Ice",
-        "Car"
-      ]
-    ],
-    "Soap": [
-      [
-        "Oil",
-        "Ash"
-      ],
-      [
-        "Oil",
-        "Wax"
-      ],
-      [
-        "Oil",
-        "Clay"
-      ],
-      [
-        "Wax",
-        "Ash"
-      ],
-      [
-        "Wax",
-        "Clay"
-      ]
-    ],
-    "Spider": [
-      [
-        "Animal",
-        "Thread"
-      ],
-      [
-        "Animal",
-        "Web"
-      ],
-      [
-        "Animal",
-        "Net"
-      ]
-    ],
-    "Squirrel": [
-      [
-        "Mouse",
-        "Tree"
-      ],
-      [
-        "Mouse",
-        "Plant"
-      ],
-      [
-        "Mouse",
-        "Nuts"
-      ],
-      [
-        "Animal",
-        "Nuts"
-      ]
-    ],
-    "Steamboat": [
-      [
-        "Steam engine",
-        "Boat"
-      ],
-      [
-        "Steam engine",
-        "Sailboat"
-      ],
-      [
-        "Steam engine",
-        "Pirate ship"
-      ],
-      [
-        "Steam engine",
-        "Ocean"
-      ],
-      [
-        "Steam engine",
-        "Sea"
-      ]
-    ],
-    "Steel wool": [
-      [
-        "Wool",
-        "Steel"
-      ],
-      [
-        "Wool",
-        "Metal"
-      ],
-      [
-        "Wool",
-        "Wire"
-      ]
-    ],
-    "Sugar": [
-      [
-        "Fruit",
-        "Fire"
-      ],
-      [
-        "Fruit",
-        "Energy"
-      ],
-      [
-        "Juice",
-        "Fire"
-      ],
-      [
-        "Juice",
-        "Energy"
-      ],
-      [
-        "Alcohol",
-        "Fire"
-      ],
-      [
-        "Alcohol",
-        "Energy"
-      ],
-      [
-        "Beer",
-        "Fire"
-      ],
-      [
-        "Beer",
-        "Energy"
-      ],
-      [
-        "Wine",
-        "Fire"
-      ],
-      [
-        "Wine",
-        "Energy"
-      ]
-    ],
-    "Sweater": [
-      [
-        "Wool",
-        "Tool"
-      ],
-      [
-        "Wool",
-        "Human"
-      ]
-    ],
-    "Tailor": [
-      [
-        "Human",
-        "Sewing machine"
-      ],
-      [
-        "Human",
-        "Needle"
-      ],
-      [
-        "Human",
-        "Thread"
-      ]
-    ],
-    "Tank": [
-      [
-        "Car",
-        "Armor"
-      ],
-      [
-        "Car",
-        "Gun"
-      ],
-      [
-        "Car",
-        "Metal"
-      ],
-      [
-        "Car",
-        "Steel"
-      ]
-    ],
-    "Tea": [
-      [
-        "Leaf",
-        "Water"
-      ],
-      [
-        "Leaf",
-        "Human"
-      ],
-      [
-        "Leaf",
-        "Heat"
-      ]
-    ],
-    "Thermometer": [
-      [
-        "Quicksilver",
-        "Glass"
-      ],
-      [
-        "Quicksilver",
-        "Tool"
-      ],
-      [
-        "Quicksilver",
-        "Engineer"
-      ]
-    ],
-    "Titanic": [
-      [
-        "Boat",
-        "Iceberg"
-      ],
-      [
-        "Steamboat",
-        "Iceberg"
-      ],
-      [
-        "Iceberg",
-        "Legend"
-      ],
-      [
-        "Steamboat",
-        "Legend"
-      ]
-    ],
-    "Tractor": [
-      [
-        "Car",
-        "Farmer"
-      ],
-      [
-        "Car",
-        "Field"
-      ],
-      [
-        "Car",
-        "Cow"
-      ],
-      [
-        "Wagon",
-        "Farmer"
-      ],
-      [
-        "Wagon",
-        "Field"
-      ],
-      [
-        "Wagon",
-        "Cow"
-      ]
-    ],
-    "Train": [
-      [
-        "Steam engine",
-        "Metal"
-      ],
-      [
-        "Steam engine",
-        "Steel"
-      ],
-      [
-        "Steam engine",
-        "Wheel"
-      ],
-      [
-        "Steam engine",
-        "Wagon"
-      ]
-    ],
-    "Vault": [
-      [
-        "Safe",
-        "Big"
-      ]
-    ],
-    "Water pipe": [
-      [
-        "Water",
-        "Pipe"
-      ]
-    ],
-    "Witch": [
-      [
-        "Broom",
-        "Wizard"
-      ],
-      [
-        "Broom",
-        "Human"
-      ],
-      [
-        "Broom",
-        "Legend"
-      ],
-      [
-        "Broom",
-        "Story"
-      ],
-      [
-        "Broom",
-        "Magic"
-      ],
-      [
-        "Broom",
-        "Cauldron"
-      ],
-      [
-        "Cauldron",
-        "Story"
-      ],
-      [
-        "Cauldron",
-        "Legend"
-      ]
-    ],
-    "Yogurt": [
-      [
-        "Bacteria",
-        "Milk"
-      ],
-      [
-        "Bacteria",
-        "Ice cream"
-      ]
-    ]
-  },
-  "tier 12": {
-    "Apron": [
-      [
-        "Fabric",
-        "Cook"
-      ],
-      [
-        "Fabric",
-        "Baker"
-      ]
-    ],
-    "Armor": [
-      [
-        "Metal",
-        "Fabric"
-      ],
-      [
-        "Steel",
-        "Fabric"
-      ]
-    ],
-    "Bandage": [
-      [
-        "Fabric",
-        "Blood"
-      ],
-      [
-        "Fabric",
-        "Sword"
-      ],
-      [
-        "Fabric",
-        "Blade"
-      ]
-    ],
-    "Batter": [
-      [
-        "Milk",
-        "Flour"
-      ],
-      [
-        "Coconut milk",
-        "Flour"
-      ]
-    ],
-    "Bbq": [
-      [
-        "Campfire",
-        "Metal"
-      ],
-      [
-        "Campfire",
-        "Steel"
-      ],
-      [
-        "Campfire",
-        "Garden"
-      ],
-      [
-        "Campfire",
-        "House"
-      ],
-      [
-        "Campfire",
-        "Meat"
-      ]
-    ],
-    "Beer": [
-      [
-        "Alcohol",
-        "Wheat"
-      ]
-    ],
-    "Box": [
-      [
-        "Container",
-        "Pizza"
-      ],
-      [
-        "Container",
-        "Pencil"
-      ],
-      [
-        "Container",
-        "Cereal"
-      ],
-      [
-        "Container",
-        "Cookie"
-      ],
-      [
-        "Container",
-        "Donut"
-      ],
-      [
-        "Container",
-        "Cake"
-      ],
-      [
-        "Container",
-        "Crayon"
-      ]
-    ],
-    "Candy cane": [
-      [
-        "Sugar",
-        "Christmas tree"
-      ],
-      [
-        "Sugar",
-        "Christmas stocking"
-      ],
-      [
-        "Sugar",
-        "Santa"
-      ],
-      [
-        "Sugar",
-        "Reindeer"
-      ]
-    ],
-    "Canvas": [
-      [
-        "Fabric",
-        "Paint"
-      ]
-    ],
-    "Caramel": [
-      [
-        "Sugar",
-        "Heat"
-      ]
-    ],
-    "Chocolate": [
-      [
-        "Sugar",
-        "Milk"
-      ],
-      [
-        "Sugar",
-        "Oil"
-      ],
-      [
-        "Sugar",
-        "Coconut milk"
-      ],
-      [
-        "Sugar",
-        "Seed"
-      ]
-    ],
-    "Cigarette": [
-      [
-        "Tobacco",
-        "Paper"
-      ]
-    ],
-    "Confetti": [
-      [
-        "Paper",
-        "Scissors"
-      ],
-      [
-        "Paper",
-        "Blade"
-      ]
-    ],
-    "Cookbook": [
-      [
-        "Recipe",
-        "Recipe"
-      ],
-      [
-        "Book",
-        "Cook"
-      ]
-    ],
-    "Cotton candy": [
-      [
-        "Sugar",
-        "Air"
-      ],
-      [
-        "Sugar",
-        "Thread"
-      ],
-      [
-        "Sugar",
-        "Cloud"
-      ]
-    ],
-    "Crayon": [
-      [
-        "Rainbow",
-        "Pencil"
-      ],
-      [
-        "Rainbow",
-        "Wax"
-      ],
-      [
-        "Double rainbow!",
-        "Pencil"
-      ],
-      [
-        "Double rainbow!",
-        "Wax"
-      ],
-      [
-        "Pencil",
-        "Paint"
-      ],
-      [
-        "Wax",
-        "Paint"
-      ]
-    ],
-    "Cup": [
-      [
-        "Container",
-        "Smoothie"
-      ],
-      [
-        "Container",
-        "Tea"
-      ],
-      [
-        "Container",
-        "Milk shake"
-      ],
-      [
-        "Bottle",
-        "Smoothie"
-      ],
-      [
-        "Bottle",
-        "Tea"
-      ],
-      [
-        "Bottle",
-        "Milk shake"
-      ]
-    ],
-    "Diver": [
-      [
-        "Scuba tank",
-        "Human"
-      ],
-      [
-        "Scuba tank",
-        "Swimmer"
-      ],
-      [
-        "Scuba tank",
-        "Sea"
-      ],
-      [
-        "Scuba tank",
-        "Ocean"
-      ],
-      [
-        "Scuba tank",
-        "Lake"
-      ]
-    ],
-    "Dough": [
-      [
-        "Flour",
-        "Water"
-      ],
-      [
-        "Flour",
-        "Puddle"
-      ],
-      [
-        "Flour",
-        "Rain"
-      ]
-    ],
-    "Drunk": [
-      [
-        "Human",
-        "Alcohol"
-      ],
-      [
-        "Human",
-        "Beer"
-      ],
-      [
-        "Human",
-        "Wine"
-      ]
-    ],
-    "Excavator": [
-      [
-        "Shovel",
-        "Big"
-      ],
-      [
-        "Shovel",
-        "Car"
-      ]
-    ],
-    "Flying squirrel": [
-      [
-        "Squirrel",
-        "Bird"
-      ],
-      [
-        "Squirrel",
-        "Hummingbird"
-      ],
-      [
-        "Squirrel",
-        "Seagull"
-      ],
-      [
-        "Squirrel",
-        "Pigeon"
-      ],
-      [
-        "Squirrel",
-        "Air"
-      ],
-      [
-        "Squirrel",
-        "Airplane"
-      ],
-      [
-        "Squirrel",
-        "Seaplane"
-      ],
-      [
-        "Squirrel",
-        "Helicopter"
-      ]
-    ],
-    "Fork": [
-      [
-        "Pitchfork",
-        "Small"
-      ]
-    ],
-    "Frozen yogurt": [
-      [
-        "Yogurt",
-        "Cold"
-      ],
-      [
-        "Yogurt",
-        "Ice"
-      ]
-    ],
-    "Gift": [
-      [
-        "Christmas tree",
-        "Santa"
-      ],
-      [
-        "Christmas tree",
-        "Wrapping paper"
-      ],
-      [
-        "Santa",
-        "Christmas stocking"
-      ],
-      [
-        "Santa",
-        "Chimney"
-      ],
-      [
-        "Santa",
-        "Fireplace"
-      ],
-      [
-        "Santa",
-        "Cookie"
-      ],
-      [
-        "Santa",
-        "Milk"
-      ],
-      [
-        "Santa",
-        "Wrapping paper"
-      ],
-      [
-        "Christmas stocking",
-        "Wrapping paper"
-      ],
-      [
-        "Fireplace",
-        "Wrapping paper"
-      ]
-    ],
-    "Hamburger": [
-      [
-        "Meat",
-        "Bread"
-      ],
-      [
-        "Meat",
-        "Cheese"
-      ]
-    ],
-    "Hamster": [
-      [
-        "Mouse",
-        "Wheel"
-      ],
-      [
-        "Mouse",
-        "Domestication"
-      ],
-      [
-        "Rat",
-        "Wheel"
-      ],
-      [
-        "Rat",
-        "Domestication"
-      ]
-    ],
-    "Hedgehog": [
-      [
-        "Animal",
-        "Needle"
-      ],
-      [
-        "Mouse",
-        "Needle"
-      ],
-      [
-        "Rat",
-        "Needle"
-      ]
-    ],
-    "Ice cream truck": [
-      [
-        "Ice cream",
-        "Car"
-      ],
-      [
-        "Ice cream",
-        "Bus"
-      ],
-      [
-        "Ice cream",
-        "Wagon"
-      ]
-    ],
-    "Iced tea": [
-      [
-        "Tea",
-        "Ice"
-      ],
-      [
-        "Tea",
-        "Cold"
-      ]
-    ],
-    "Jar": [
-      [
-        "Jam",
-        "Container"
-      ],
-      [
-        "Jam",
-        "Bottle"
-      ],
-      [
-        "Jam",
-        "Glass"
-      ],
-      [
-        "Jam",
-        "Bucket"
-      ]
-    ],
-    "Kite": [
-      [
-        "Paper",
-        "Wind"
-      ],
-      [
-        "Paper",
-        "Sky"
-      ],
-      [
-        "Paper",
-        "Air"
-      ]
-    ],
-    "Letter": [
-      [
-        "Paper",
-        "Pencil"
-      ]
-    ],
-    "Library": [
-      [
-        "Book",
-        "Container"
-      ],
-      [
-        "Book",
-        "House"
-      ]
-    ],
-    "Map": [
-      [
-        "Paper",
-        "Land"
-      ],
-      [
-        "Paper",
-        "Hill"
-      ],
-      [
-        "Paper",
-        "Mountain"
-      ],
-      [
-        "Paper",
-        "Mountain range"
-      ],
-      [
-        "Paper",
-        "Continent"
-      ],
-      [
-        "Paper",
-        "Ocean"
-      ],
-      [
-        "Paper",
-        "Sea"
-      ],
-      [
-        "Paper",
-        "Lake"
-      ],
-      [
-        "Paper",
-        "River"
-      ],
-      [
-        "Paper",
-        "City"
-      ],
-      [
-        "Paper",
-        "Village"
-      ]
-    ],
-    "Marshmallows": [
-      [
-        "Sugar",
-        "Campfire"
-      ]
-    ],
-    "Milk shake": [
-      [
-        "Ice cream",
-        "Milk"
-      ],
-      [
-        "Ice cream",
-        "Yogurt"
-      ],
-      [
-        "Ice cream",
-        "Water"
-      ]
-    ],
-    "Money": [
-      [
-        "Paper",
-        "Gold"
-      ],
-      [
-        "Paper",
-        "Diamond"
-      ],
-      [
-        "Paper",
-        "Bank"
-      ]
-    ],
-    "Mouse": [
-      [
-        "Animal",
-        "Cheese"
-      ],
-      [
-        "Cheese",
-        "Barn"
-      ],
-      [
-        "Cheese",
-        "House"
-      ],
-      [
-        "Cheese",
-        "Farm"
-      ],
-      [
-        "Cheese",
-        "Wall"
-      ]
-    ],
-    "Mousetrap": [
-      [
-        "Cheese",
-        "Wood"
-      ],
-      [
-        "Cheese",
-        "Metal"
-      ],
-      [
-        "Cheese",
-        "Steel"
-      ],
-      [
-        "Mouse",
-        "Blade"
-      ]
-    ],
-    "Musician": [
-      [
-        "Human",
-        "Flute"
-      ],
-      [
-        "Human",
-        "Music"
-      ],
-      [
-        "Human",
-        "Sheet music"
-      ],
-      [
-        "Human",
-        "Drum"
-      ],
-      [
-        "Human",
-        "Pan flute"
-      ]
-    ],
-    "Newspaper": [
-      [
-        "Paper",
-        "Paper"
-      ],
-      [
-        "Paper",
-        "Story"
-      ],
-      [
-        "Letter",
-        "Letter"
-      ]
-    ],
-    "Orchard": [
-      [
-        "Fruit tree",
-        "Fruit tree"
-      ],
-      [
-        "Fruit tree",
-        "Field"
-      ],
-      [
-        "Fruit tree",
-        "Tree"
-      ],
-      [
-        "Fruit tree",
-        "Farmer"
-      ],
-      [
-        "Fruit tree",
-        "Farm"
-      ],
-      [
-        "Fruit tree",
-        "Forest"
-      ],
-      [
-        "Fruit tree",
-        "Container"
-      ]
-    ],
-    "Origami": [
-      [
-        "Paper",
-        "Bird"
-      ],
-      [
-        "Paper",
-        "Animal"
-      ],
-      [
-        "Paper",
-        "Eagle"
-      ],
-      [
-        "Paper",
-        "Seagull"
-      ],
-      [
-        "Paper",
-        "Owl"
-      ],
-      [
-        "Paper",
-        "Pigeon"
-      ],
-      [
-        "Paper",
-        "Cow"
-      ],
-      [
-        "Paper",
-        "Horse"
-      ],
-      [
-        "Paper",
-        "Dog"
-      ],
-      [
-        "Paper",
-        "Cat"
-      ],
-      [
-        "Paper",
-        "Lion"
-      ],
-      [
-        "Paper",
-        "Hummingbird"
-      ],
-      [
-        "Paper",
-        "Chicken"
-      ],
-      [
-        "Paper",
-        "Penguin"
-      ],
-      [
-        "Paper",
-        "Duck"
-      ],
-      [
-        "Paper",
-        "Vulture"
-      ]
-    ],
-    "Pan flute": [
-      [
-        "Flute",
-        "Flute"
-      ]
-    ],
-    "Paper airplane": [
-      [
-        "Airplane",
-        "Paper"
-      ]
-    ],
-    "Pasta": [
-      [
-        "Flour",
-        "Egg"
-      ]
-    ],
-    "Pencil sharpener": [
-      [
-        "Pencil",
-        "Blade"
-      ],
-      [
-        "Pencil",
-        "Blender"
-      ],
-      [
-        "Pencil",
-        "Sword"
-      ]
-    ],
-    "Pizza": [
-      [
-        "Cheese",
-        "Dough"
-      ],
-      [
-        "Cheese",
-        "Bread"
-      ],
-      [
-        "Cheese",
-        "Wheel"
-      ]
-    ],
-    "Printer": [
-      [
-        "Computer",
-        "Paper"
-      ],
-      [
-        "Computer",
-        "Newspaper"
-      ]
-    ],
-    "Recipe": [
-      [
-        "Paper",
-        "Flour"
-      ],
-      [
-        "Paper",
-        "Meat"
-      ],
-      [
-        "Paper",
-        "Baker"
-      ],
-      [
-        "Paper",
-        "Bakery"
-      ],
-      [
-        "Paper",
-        "Vegetable"
-      ],
-      [
-        "Paper",
-        "Fruit"
-      ],
-      [
-        "Paper",
-        "Cook"
-      ],
-      [
-        "Newspaper",
-        "Flour"
-      ],
-      [
-        "Newspaper",
-        "Meat"
-      ],
-      [
-        "Newspaper",
-        "Baker"
-      ],
-      [
-        "Newspaper",
-        "Bakery"
-      ],
-      [
-        "Newspaper",
-        "Vegetable"
-      ],
-      [
-        "Newspaper",
-        "Fruit"
-      ]
-    ],
-    "Robot vacuum": [
-      [
-        "Robot",
-        "Vacuum cleaner"
-      ],
-      [
-        "Robot",
-        "Broom"
-      ],
-      [
-        "Computer",
-        "Vacuum cleaner"
-      ],
-      [
-        "Computer",
-        "Broom"
-      ]
-    ],
-    "Rock": [
-      [
-        "Pebble",
-        "Pebble"
-      ],
-      [
-        "Pebble",
-        "Big"
-      ],
-      [
-        "Boulder",
-        "Small"
-      ]
-    ],
-    "Ruler": [
-      [
-        "Wood",
-        "Pencil"
-      ]
-    ],
-    "Sailboat": [
-      [
-        "Boat",
-        "Wind"
-      ],
-      [
-        "Boat",
-        "Fabric"
-      ],
-      [
-        "Steamboat",
-        "Wind"
-      ],
-      [
-        "Steamboat",
-        "Fabric"
-      ]
-    ],
-    "Sandpaper": [
-      [
-        "Sand",
-        "Paper"
-      ],
-      [
-        "Sand",
-        "Fabric"
-      ]
-    ],
-    "Sleigh": [
-      [
-        "Cart",
-        "Snow"
-      ],
-      [
-        "Cart",
-        "Ice"
-      ],
-      [
-        "Cart",
-        "Arctic"
-      ],
-      [
-        "Cart",
-        "Antarctica"
-      ],
-      [
-        "Wagon",
-        "Snow"
-      ],
-      [
-        "Wagon",
-        "Ice"
-      ],
-      [
-        "Wagon",
-        "Arctic"
-      ],
-      [
-        "Wagon",
-        "Antarctica"
-      ]
-    ],
-    "Smoke signal": [
-      [
-        "Fabric",
-        "Campfire"
-      ],
-      [
-        "Fabric",
-        "Smoke"
-      ],
-      [
-        "Smoke",
-        "Letter"
-      ]
-    ],
-    "Spoon": [
-      [
-        "Shovel",
-        "Small"
-      ]
-    ],
-    "Sprinkles": [
-      [
-        "Sugar",
-        "Confetti"
-      ],
-      [
-        "Sugar",
-        "Paint"
-      ],
-      [
-        "Sugar",
-        "Rainbow"
-      ],
-      [
-        "Sugar",
-        "Double rainbow!"
-      ]
-    ],
-    "Syringe": [
-      [
-        "Doctor",
-        "Needle"
-      ],
-      [
-        "Tool",
-        "Needle"
-      ]
-    ],
-    "Tablet": [
-      [
-        "Laptop",
-        "Small"
-      ]
-    ],
-    "Tent": [
-      [
-        "Fabric",
-        "Wood"
-      ],
-      [
-        "Fabric",
-        "House"
-      ],
-      [
-        "Fabric",
-        "Village"
-      ],
-      [
-        "Fabric",
-        "Wall"
-      ]
-    ],
-    "Trainyard": [
-      [
-        "Train",
-        "Container"
-      ],
-      [
-        "Train",
-        "House"
-      ],
-      [
-        "Train",
-        "Wall"
-      ],
-      [
-        "Train",
-        "Garage"
-      ]
-    ],
-    "Vacuum cleaner": [
-      [
-        "Broom",
-        "Electricity"
-      ],
-      [
-        "Broom",
-        "Machine"
-      ]
-    ],
-    "Vine": [
-      [
-        "Rainforest",
-        "Rope"
-      ],
-      [
-        "Rainforest",
-        "Thread"
-      ],
-      [
-        "Rainforest",
-        "Wire"
-      ]
-    ],
-    "Wagon": [
-      [
-        "Cart",
-        "Horse"
-      ],
-      [
-        "Cart",
-        "Fabric"
-      ],
-      [
-        "Cart",
-        "House"
-      ],
-      [
-        "Cart",
-        "Wall"
-      ],
-      [
-        "Cart",
-        "Cow"
-      ]
-    ],
-    "Wax": [
-      [
-        "Beehive",
-        "Bee"
-      ],
-      [
-        "Beehive",
-        "Wall"
-      ],
-      [
-        "Beehive",
-        "Blade"
-      ],
-      [
-        "Beehive",
-        "Sword"
-      ],
-      [
-        "Beehive",
-        "Tool"
-      ],
-      [
-        "Beehive",
-        "Beekeeper"
-      ]
-    ],
-    "Web": [
-      [
-        "Spider",
-        "Thread"
-      ],
-      [
-        "Spider",
-        "Cotton"
-      ],
-      [
-        "Spider",
-        "Fabric"
-      ],
-      [
-        "Spider",
-        "Net"
-      ]
-    ],
-    "Wine": [
-      [
-        "Alcohol",
-        "Fruit"
-      ],
-      [
-        "Alcohol",
-        "Juice"
-      ],
-      [
-        "Tool",
-        "Dionysus"
-      ]
-    ],
-    "Wrapping paper": [
-      [
-        "Paper",
-        "Gift"
-      ],
-      [
-        "Paper",
-        "Christmas tree"
-      ],
-      [
-        "Paper",
-        "Christmas stocking"
-      ],
-      [
-        "Paper",
-        "Santa"
-      ]
-    ],
-    "Writer": [
-      [
-        "Human",
-        "Book"
-      ],
-      [
-        "Human",
-        "Pencil"
-      ]
-    ]
-  },
-  "tier 13": {
-    "Armadillo": [
-      [
-        "Armor",
-        "Animal"
-      ],
-      [
-        "Armor",
-        "Dog"
-      ],
-      [
-        "Armor",
-        "Cat"
-      ]
-    ],
-    "Baker": [
-      [
-        "Human",
-        "Bakery"
-      ],
-      [
-        "Human",
-        "Bread"
-      ],
-      [
-        "Human",
-        "Banana bread"
-      ],
-      [
-        "Human",
-        "Pizza"
-      ],
-      [
-        "Human",
-        "Toast"
-      ],
-      [
-        "Human",
-        "Batter"
-      ],
-      [
-        "Human",
-        "Pie"
-      ],
-      [
-        "Human",
-        "Donut"
-      ],
-      [
-        "Human",
-        "Cookie"
-      ],
-      [
-        "Human",
-        "Cookie dough"
-      ],
-      [
-        "Human",
-        "Dough"
-      ]
-    ],
-    "Banana bread": [
-      [
-        "Bread",
-        "Banana"
-      ],
-      [
-        "Dough",
-        "Banana"
-      ]
-    ],
-    "Barrel": [
-      [
-        "Wine",
-        "Container"
-      ],
-      [
-        "Wine",
-        "Wood"
-      ]
-    ],
-    "Bat": [
-      [
-        "Mouse",
-        "Sky"
-      ],
-      [
-        "Mouse",
-        "Air"
-      ],
-      [
-        "Mouse",
-        "Bird"
-      ],
-      [
-        "Mouse",
-        "Hummingbird"
-      ],
-      [
-        "Mouse",
-        "Atmosphere"
-      ]
-    ],
-    "Bread": [
-      [
-        "Dough",
-        "Fire"
-      ],
-      [
-        "Dough",
-        "Energy"
-      ]
-    ],
-    "Bulletproof vest": [
-      [
-        "Bullet",
-        "Armor"
-      ],
-      [
-        "Gun",
-        "Armor"
-      ]
-    ],
-    "Candle": [
-      [
-        "Wax",
-        "Thread"
-      ],
-      [
-        "Wax",
-        "Fire"
-      ],
-      [
-        "Wax",
-        "Light"
-      ],
-      [
-        "Wax",
-        "Flashlight"
-      ],
-      [
-        "Wax",
-        "Lamp"
-      ]
-    ],
-    "Cheeseburger": [
-      [
-        "Cheese",
-        "Hamburger"
-      ],
-      [
-        "Cheese",
-        "Sandwich"
-      ]
-    ],
-    "Chocolate milk": [
-      [
-        "Chocolate",
-        "Milk"
-      ],
-      [
-        "Chocolate",
-        "Coconut milk"
-      ]
-    ],
-    "Circus": [
-      [
-        "Tent",
-        "Big"
-      ],
-      [
-        "Tent",
-        "Animal"
-      ]
-    ],
-    "Cookie cutter": [
-      [
-        "Blade",
-        "Dough"
-      ],
-      [
-        "Blade",
-        "Cookie dough"
-      ]
-    ],
-    "Cookie dough": [
-      [
-        "Dough",
-        "Cookie"
-      ],
-      [
-        "Dough",
-        "Sugar"
-      ],
-      [
-        "Dough",
-        "Chocolate"
-      ]
-    ],
-    "Donut": [
-      [
-        "Dough",
-        "Oil"
-      ],
-      [
-        "Dough",
-        "Wheel"
-      ],
-      [
-        "Cookie dough",
-        "Oil"
-      ],
-      [
-        "Cookie dough",
-        "Wheel"
-      ]
-    ],
-    "Email": [
-      [
-        "Letter",
-        "Computer"
-      ],
-      [
-        "Letter",
-        "Computer mouse"
-      ],
-      [
-        "Letter",
-        "Internet"
-      ],
-      [
-        "Letter",
-        "Electricity"
-      ]
-    ],
-    "Gingerbread house": [
-      [
-        "House",
-        "Gingerbread man"
-      ],
-      [
-        "House",
-        "Dough"
-      ],
-      [
-        "House",
-        "Cookie dough"
-      ],
-      [
-        "House",
-        "Cookie"
-      ],
-      [
-        "House",
-        "Donut"
-      ],
-      [
-        "House",
-        "Cake"
-      ]
-    ],
-    "Gingerbread man": [
-      [
-        "Dough",
-        "Life"
-      ],
-      [
-        "Dough",
-        "Magic"
-      ],
-      [
-        "Dough",
-        "Story"
-      ],
-      [
-        "Cookie",
-        "Life"
-      ],
-      [
-        "Cookie",
-        "Magic"
-      ],
-      [
-        "Cookie",
-        "Story"
-      ],
-      [
-        "Cookie dough",
-        "Life"
-      ],
-      [
-        "Cookie dough",
-        "Magic"
-      ],
-      [
-        "Cookie dough",
-        "Story"
-      ]
-    ],
-    "Hot chocolate": [
-      [
-        "Chocolate milk",
-        "Heat"
-      ],
-      [
-        "Chocolate",
-        "Heat"
-      ]
-    ],
-    "Librarian": [
-      [
-        "Human",
-        "Library"
-      ]
-    ],
-    "Mac and cheese": [
-      [
-        "Cheese",
-        "Pasta"
-      ]
-    ],
-    "Mail truck": [
-      [
-        "Car",
-        "Letter"
-      ],
-      [
-        "Car",
-        "Mailman"
-      ],
-      [
-        "Car",
-        "Post office"
-      ]
-    ],
-    "Mailbox": [
-      [
-        "Letter",
-        "Box"
-      ],
-      [
-        "Letter",
-        "Metal"
-      ],
-      [
-        "Letter",
-        "Steel"
-      ],
-      [
-        "Letter",
-        "Wood"
-      ],
-      [
-        "Mailman",
-        "Box"
-      ],
-      [
-        "Mailman",
-        "Metal"
-      ],
-      [
-        "Mailman",
-        "Steel"
-      ],
-      [
-        "Mailman",
-        "Wood"
-      ]
-    ],
-    "Mailman": [
-      [
-        "Human",
-        "Letter"
-      ],
-      [
-        "Human",
-        "Newspaper"
-      ],
-      [
-        "Letter",
-        "Mailbox"
-      ]
-    ],
-    "Music": [
-      [
-        "Musician",
-        "Flute"
-      ],
-      [
-        "Musician",
-        "Sheet music"
-      ],
-      [
-        "Musician",
-        "Drum"
-      ],
-      [
-        "Musician",
-        "Pan flute"
-      ]
-    ],
-    "Painting": [
-      [
-        "Canvas",
-        "Paint"
-      ],
-      [
-        "Canvas",
-        "Painter"
-      ]
-    ],
-    "Paper cup": [
-      [
-        "Cup",
-        "Paper"
-      ]
-    ],
-    "Paraglider": [
-      [
-        "Kite",
-        "Big"
-      ]
-    ],
-    "Pie": [
-      [
-        "Dough",
-        "Fruit"
-      ],
-      [
-        "Cookie dough",
-        "Fruit"
-      ],
-      [
-        "Dough",
-        "Meat"
-      ],
-      [
-        "Fruit",
-        "Baker"
-      ],
-      [
-        "Fruit",
-        "Bakery"
-      ]
-    ],
-    "Post office": [
-      [
-        "Mailman",
-        "House"
-      ],
-      [
-        "Mailman",
-        "Wall"
-      ],
-      [
-        "Mailman",
-        "Container"
-      ],
-      [
-        "Mailman",
-        "Letter"
-      ],
-      [
-        "Letter",
-        "Letter"
-      ],
-      [
-        "Letter",
-        "House"
-      ],
-      [
-        "Letter",
-        "Wall"
-      ]
-    ],
-    "Smartphone": [
-      [
-        "Small",
-        "Tablet"
-      ]
-    ],
-    "Spaghetti": [
-      [
-        "Pasta",
-        "Thread"
-      ],
-      [
-        "Pasta",
-        "Wire"
-      ],
-      [
-        "Pasta",
-        "Rope"
-      ]
-    ],
-    "String phone": [
-      [
-        "Paper cup",
-        "Wire"
-      ],
-      [
-        "Paper cup",
-        "Thread"
-      ],
-      [
-        "Cup",
-        "Wire"
-      ],
-      [
-        "Cup",
-        "Thread"
-      ]
-    ],
-    "Treasure map": [
-      [
-        "Map",
-        "Pirate"
-      ],
-      [
-        "Map",
-        "Pirate ship"
-      ],
-      [
-        "Map",
-        "Treasure"
-      ],
-      [
-        "Map",
-        "Island"
-      ]
-    ],
-    "Vinegar": [
-      [
-        "Wine",
-        "Time"
-      ],
-      [
-        "Wine",
-        "Air"
-      ],
-      [
-        "Wine",
-        "Oxygen"
-      ]
-    ]
-  },
-  "tier 14": {
-    "Bakery": [
-      [
-        "House",
-        "Bread"
-      ],
-      [
-        "House",
-        "Baker"
-      ],
-      [
-        "House",
-        "Donut"
-      ],
-      [
-        "House",
-        "Cake"
-      ],
-      [
-        "City",
-        "Bread"
-      ],
-      [
-        "City",
-        "Baker"
-      ],
-      [
-        "City",
-        "Donut"
-      ],
-      [
-        "City",
-        "Cake"
-      ],
-      [
-        "Village",
-        "Bread"
-      ],
-      [
-        "Village",
-        "Baker"
-      ],
-      [
-        "Village",
-        "Donut"
-      ],
-      [
-        "Village",
-        "Cake"
-      ],
-      [
-        "Baker",
-        "Container"
-      ]
-    ],
-    "Cake": [
-      [
-        "Dough",
-        "Candle"
-      ],
-      [
-        "Donut",
-        "Candle"
-      ],
-      [
-        "Bread",
-        "Sugar"
-      ]
-    ],
-    "Cookie": [
-      [
-        "Cookie dough",
-        "Heat"
-      ],
-      [
-        "Cookie dough",
-        "Fire"
-      ],
-      [
-        "Cookie dough",
-        "Baker"
-      ],
-      [
-        "Cookie dough",
-        "Cookie cutter"
-      ],
-      [
-        "Dough",
-        "Cookie cutter"
-      ]
-    ],
-    "Fortune cookie": [
-      [
-        "Paper",
-        "Cookie"
-      ],
-      [
-        "Paper",
-        "Cookie dough"
-      ],
-      [
-        "Paper",
-        "Gingerbread man"
-      ]
-    ],
-    "Sandwich": [
-      [
-        "Bread",
-        "Meat"
-      ],
-      [
-        "Bread",
-        "Bacon"
-      ],
-      [
-        "Bread",
-        "Ham"
-      ],
-      [
-        "Bread",
-        "Cheese"
-      ],
-      [
-        "Bread",
-        "Vegetable"
-      ]
-    ],
-    "Sheet music": [
-      [
-        "Music",
-        "Paper"
-      ],
-      [
-        "Music",
-        "Book"
-      ]
-    ],
-    "Toast": [
-      [
-        "Sandwich",
-        "Fire"
-      ],
-      [
-        "Bread",
-        "Fire"
-      ]
-    ],
-    "Treasure": [
-      [
-        "Treasure map",
-        "Pirate"
-      ],
-      [
-        "Treasure map",
-        "Pirate ship"
-      ],
-      [
-        "Treasure map",
-        "Island"
-      ],
-      [
-        "Treasure map",
-        "Sailor"
-      ]
-    ]
-  },
-  "tier 15": {
-    "Grilled cheese": [
-      [
-        "Cheese",
-        "Toast"
-      ]
-    ],
-    "Picnic": [
-      [
-        "Sandwich",
-        "Grass"
-      ],
-      [
-        "Sandwich",
-        "Beach"
-      ],
-      [
-        "Sandwich",
-        "Lawn"
-      ],
-      [
-        "Sandwich",
-        "Garden"
-      ],
-      [
-        "Sandwich",
-        "Fabric"
       ]
     ]
   }
