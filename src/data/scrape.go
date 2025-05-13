@@ -100,8 +100,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	output := make(map[int]map[string][][]string)
-	currentTier := -1
+	output := make(map[string]map[string][][]string)
+	currentTierKey := ""
 	totalElements := 0
 
 	doc.Find("h2, h3, tr").Each(func(i int, s *goquery.Selection) {
@@ -114,9 +114,9 @@ func main() {
 				if len(parts) >= 2 {
 					tierNum, err := strconv.Atoi(parts[1])
 					if err == nil {
-						currentTier = tierNum
-						if _, exists := output[currentTier]; !exists {
-							output[currentTier] = make(map[string][][]string)
+						currentTierKey = fmt.Sprintf("tier %d", tierNum)
+						if _, ok := output[currentTierKey]; !ok {
+							output[currentTierKey] = make(map[string][][]string)
 						}
 					}
 				}
@@ -124,7 +124,7 @@ func main() {
 			return
 		}
 
-		if tag != "tr" || currentTier == -1 {
+		if tag != "tr" || currentTierKey == "" {
 			return
 		}
 
@@ -158,7 +158,7 @@ func main() {
 		})
 
 		if len(recipes) > 0 {
-			output[currentTier][element] = recipes
+			output[currentTierKey][element] = recipes
 			totalElements++
 		}
 	})
