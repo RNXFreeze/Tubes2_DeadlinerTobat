@@ -22,9 +22,9 @@ import (
 )
 
 type Element struct {
-	Name    string
-	Tier    int
-	Parents [][]string
+	Name    string;
+	Tier    int;
+	Parents [][]string;
 }
 
 type Gallery struct {
