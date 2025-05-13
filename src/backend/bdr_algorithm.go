@@ -13,7 +13,10 @@
 
 package backend;
 
-import "sync/atomic";
+import (
+    "sync";
+    "sync/atomic";
+)
 
 func EnumerateTopBDR(gallery *Gallery , name string , mid_tier int , memory map[string][]*RecipeNode) []*RecipeNode {
     touch();
@@ -76,10 +79,11 @@ func EnumerateBotBDR(gallery *Gallery, name string, memory map[string][]*RecipeN
 	}
 }
 
-func BDR(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
+func BDR(gallery *Gallery, target string, max_recipe int) AlgorithmResult {
     if (GetTier(gallery , target) == 0) {
-        node := &RecipeNode{Name : target}
-        return AlgorithmResult{Trees : []*RecipeNode{node} , VisitedCount : 1};
+        touch();
+        node := &RecipeNode{Name : target};
+        return AlgorithmResult{Trees : []*RecipeNode{node} , VisitedCount : int(atomic.LoadInt64(&counter))};
     } else {
 		if (max_recipe == 0) {
 			max_recipe = int(^uint(0) >> 1);
@@ -87,59 +91,76 @@ func BDR(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 		mid_tier := GetMidTier(gallery , target);
 		memory_top := make(map[string][]*RecipeNode);
 		EnumerateTopBDR(gallery , target , mid_tier , memory_top);
-		nxt := memory_top[target];
-		grp := make(map[string][]*RecipeNode);
-		for _ , nt := range nxt {
+		mnext := memory_top[target];
+		group := make(map[string][]*RecipeNode);
+		for _ , next := range mnext {
 			var Collecting func(*RecipeNode);
 			Collecting = func(node *RecipeNode) {
 				if (len(node.Parents) == 0) {
-					if (GetTier(gallery , node.Name) >= mid_tier) {
-						grp[node.Name] = append(grp[node.Name] , nt);
+					if (GetTier(gallery, node.Name) >= mid_tier) {
+						group[node.Name] = append(group[node.Name] , next);
 					}
 				} else {
-					for _ , nodes := range node.Parents {
-						Collecting(nodes);
+					for _ , parent := range node.Parents {
+						Collecting(parent);
 					}
 				}
 			}
-			Collecting(nt);
+			Collecting(next)
 		}
-		var res []*RecipeNode;
-		signature_tree := make(map[string]struct{});
-		memory_bot := make(map[string][]*RecipeNode);
-		for name , part := range grp {
-			trees_bot := EnumerateBotBDR(gallery , name , memory_bot);
-			for _ , pt := range part {
-				for _ , bt := range trees_bot {
-					touch();
-					clone_top , clone_map := CloneTreeMap(pt);
-					var leaf *RecipeNode;
-					var Finding func(*RecipeNode);
-					Finding = func(node *RecipeNode) {
-						if (leaf == nil) {
-							if (node.Name == name && len(node.Parents) == 0) {
+		var (
+			wg    sync.WaitGroup;
+			res   []*RecipeNode;
+			mutex sync.Mutex;
+			signature_tree = make(map[string]struct{});
+		)
+		for name , parts := range group {
+			wg.Add(1);
+			go func() {
+				defer wg.Done();
+				memory_bot := make(map[string][]*RecipeNode);
+				trees_bot := EnumerateBotBDR(gallery , name , memory_bot);
+				var local_res []*RecipeNode;
+				for _ , pt := range parts {
+					for _ , bt := range trees_bot {
+						touch();
+						clone_top , clone_map := CloneTreeMap(pt);
+						var leaf *RecipeNode;
+						var FindLeaf func(*RecipeNode)
+						FindLeaf = func(node *RecipeNode) {
+							if (leaf != nil) {
+								return;
+							} else if (node.Name == name && len(node.Parents) == 0) {
 								leaf = node;
 							} else {
-								for _ , nodes := range node.Parents {
-									Finding(nodes);
+								for _ , parent := range node.Parents {
+									FindLeaf(parent);
 								}
 							}
 						}
-					}
-					Finding(pt);
-					clone_bot , _ := CloneTreeMap(bt);
-					clone_map[leaf].Parents = clone_bot.Parents;
-					signature := SignatureTree(clone_top);
-					if _ , check := signature_tree[signature] ; !check {
-						signature_tree[signature] = struct{}{};
-						res = append(res , clone_top);
-						if (len(res) >= max_recipe) {
-							return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
+						FindLeaf(pt);
+						clone_bot , _ := CloneTreeMap(bt);
+						clone_map[leaf].Parents = clone_bot.Parents;
+						signature := SignatureTree(clone_top);
+						mutex.Lock();
+						if _ , check := signature_tree[signature]; !check {
+							signature_tree[signature] = struct{}{};
+							local_res = append(local_res , clone_top);
+							if (len(local_res) >= max_recipe) {
+								mutex.Unlock();
+								goto flush;
+							}
 						}
+						mutex.Unlock();
 					}
 				}
-			}
+				flush :
+					mutex.Lock();
+					res = append(res , local_res...);
+					mutex.Unlock();
+			}();
 		}
+		wg.Wait();
 		if (len(res) > max_recipe) {
 			res = res[:max_recipe];
 		}

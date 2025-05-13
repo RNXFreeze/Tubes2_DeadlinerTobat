@@ -14,13 +14,12 @@
 package main
 
 import (
-	"Tubes2_DeadlinerTobat/src/backend"
 	"log"
-	"net/http"
 	"strconv"
-
-	"github.com/gin-contrib/cors"
+	"net/http"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
+	"Tubes2_DeadlinerTobat/src/backend"
 )
 
 type AlgorithmResponse struct {
@@ -104,5 +103,4 @@ func main() {
 	if err := r.Run(":8080"); err != nil {
 		log.Fatal(err)
 	}
-
 }

@@ -59,6 +59,21 @@ func IsBase(name string) bool {
 	return check;
 }
 
+func FindPointer(root *RecipeNode , name string) *RecipeNode {
+    if (root == nil) {
+        return nil;
+    } else if (root.Name == name && len(root.Parents) == 0) {
+        return root;
+    } else {
+		for _ , parent := range root.Parents {
+			if node := FindPointer(parent , name) ; node != nil {
+				return node;
+			}
+		}
+		return nil;
+	}
+}
+
 func IsExpandable(element *Element) bool {
     return element != nil && element.Tier > 0 && len(element.Parents) > 0;
 }
@@ -168,6 +183,14 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 	}
 }
 
+func (gallery *Gallery) GetAllNames() []string {
+	names := make([]string , 0 , len(gallery.GalleryName));
+	for name := range gallery.GalleryName {
+		names = append(names , name);
+	}
+	return names;
+}
+
 func LoadRecipeGallery(path string) (*Gallery , error) {
     file , err := os.Open(path);
     if (err != nil) {
@@ -235,12 +258,4 @@ func LoadRecipeGallery(path string) (*Gallery , error) {
             return gallery , nil;
         }
     }
-}
-
-func (gallery *Gallery) GetAllNames() []string {
-	names := make([]string , 0 , len(gallery.GalleryName));
-	for name := range gallery.GalleryName {
-		names = append(names , name);
-	}
-	return names;
 }
