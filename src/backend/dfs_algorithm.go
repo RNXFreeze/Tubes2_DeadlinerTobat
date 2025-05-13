@@ -13,13 +13,9 @@
 
 package backend;
 
-import (
-	"time";
-	"sync/atomic";
-)
+import "sync/atomic";
 
-func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmResult {
-	max_recipe := option.MaxRecipes;
+func DFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 	if (max_recipe == 0) {
 		max_recipe = int(^uint(0) >> 1);
 	}
@@ -45,7 +41,8 @@ func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 						pl := EnumerateDFS(parent[0]);
 						pr := EnumerateDFS(parent[1]);
 						for _ , ll := range pl {
-							for _ , rr := range pr { 
+							for _ , rr := range pr {
+								touch();
 								res = append(res , &RecipeNode {Name : name , Parents : []*RecipeNode{ll , rr}});
 								if (len(res) >= max_recipe) {
 									memory[name] = res;
@@ -65,14 +62,6 @@ func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 	res := EnumerateDFS(target);
 	if (len(res) > max_recipe) {
 		res = res[:max_recipe];
-	}
-	if (option.LiveChan != nil) {
-		go func() {
-			for _ , t := range res {
-				option.LiveChan <- t;
-				time.Sleep(1500 * time.Millisecond);
-			}
-		}();
 	}
 	return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
 }

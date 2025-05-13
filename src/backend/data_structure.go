@@ -14,12 +14,11 @@
 package backend
 
 import (
-	"encoding/json"
-	"fmt"
 	"os"
+	"fmt"
 	"strconv"
 	"strings"
-	"time"
+	"encoding/json"
 )
 
 type Element struct {
@@ -27,6 +26,7 @@ type Element struct {
 	Tier    int
 	Parents [][]string
 }
+
 type Gallery struct {
 	GalleryName map[string]*Element;
 }
@@ -44,11 +44,6 @@ type PartialTree struct {
 type AlgorithmResult struct {
 	Trees        []*RecipeNode;
 	VisitedCount int;
-}
-
-type AlgorithmOption struct {
-	MaxRecipes int;
-	LiveChan   chan<- *RecipeNode;
 }
 
 var base_element = map[string]struct{} {
@@ -240,22 +235,6 @@ func LoadRecipeGallery(path string) (*Gallery , error) {
             return gallery , nil;
         }
     }
-}
-
-func StreamTree(root *RecipeNode , destination chan<- *RecipeNode , delay time.Duration) {
-	if root == nil {
-		close(destination);
-	} else {
-		queue := []*RecipeNode{root};
-		for (len(queue) > 0) {
-			cur := queue[0];
-			queue = queue[1:];
-			destination <- cur;
-			time.Sleep(delay);
-			queue = append(queue , cur.Parents...);
-		}
-		close(destination);
-	}
 }
 
 func (gallery *Gallery) GetAllNames() []string {

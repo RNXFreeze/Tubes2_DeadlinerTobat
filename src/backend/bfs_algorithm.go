@@ -13,13 +13,9 @@
 
 package backend
 
-import (
-	"time";
-	"sync/atomic";
-)
+import "sync/atomic";
 
-func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmResult {
-	max_recipe := option.MaxRecipes;
+func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
     if (max_recipe == 0) {
         max_recipe = int(^uint(0) >> 1);
     }
@@ -91,14 +87,6 @@ func BFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 		}
 		if (len(res) > max_recipe) {
 			res = res[:max_recipe];
-		}
-		if (option.LiveChan != nil) {
-			go func() {
-				for _ , t := range res {
-					option.LiveChan <- t;
-					time.Sleep(1500 * time.Millisecond);
-				}
-			}();
 		}
 		return AlgorithmResult{Trees : res , VisitedCount : int(atomic.LoadInt64(&counter))};
 	}
