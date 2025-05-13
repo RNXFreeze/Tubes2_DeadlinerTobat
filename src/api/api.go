@@ -127,7 +127,7 @@ func main() {
 				LiveChan:  results,
 			}
 			fmt.Println("MaxRecipes =", maxRecipe)
-			backend.BFSStream(gallery, target, option)
+			backend.BFSStream(gallery, target, option.MaxRecipes, option.LiveChan)
 		}()
 
 		enc := json.NewEncoder(w)

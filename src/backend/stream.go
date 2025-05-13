@@ -13,7 +13,15 @@
 
 package backend
 
-func BFSStream(gallery *Gallery , target string , option AlgorithmOption) {
+func BFSStream(gallery *Gallery, target string, maxRecipe int, out chan<- *RecipeNode) {
+    res := BFS(gallery, target, AlgorithmOption{MaxRecipes: maxRecipe, LiveChan: out})
+
+    for _, tree := range res.Trees {
+        out <- tree // kirim 1 tree utuh per sekali kirim
+    }
+}
+
+func BFSStream1(gallery *Gallery , target string , option AlgorithmOption) {
 	visited := make(map[string]bool);
 	queue := []*RecipeNode{};
 	res := BFS(gallery , target , option);
