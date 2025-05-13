@@ -12,12 +12,12 @@ Dalam program ini, terdapat 3 algoritma pencarian yang digunakan, yaitu algoritm
 ## Project Feature
 - Recipe Finder Game Little Alchemy 2
 - Single & Multiple Recipe Result With Node Counter
-- Algoritma BFS & DFS & Bidirectional (BDR)
-- Terminal CLI Interaktif & Website Visual Menarik
-- Optimalisasi Program Dengan Multithreading
-- Live Update Searching Tree Algorithm
+- Using BFS & DFS & Bidirectional (BDR) Algorithm
+- Interactive CLI Detail & Amazing Visual Website
+- Multithreading Program Optimization
+- Live Update Searching Tree Visualization
 - Containerize With Docker
-- Deployed On Internet
+- Deployed On The Internet
 
 ## Program Requirements
 - Version Go v1.24.3+
