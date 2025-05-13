@@ -168,13 +168,16 @@ func MainTerminal() {
 			atomic.StoreInt64(&counter , 0);
 			start := time.Now();
 			var res AlgorithmResult;
-			if (algorithm == "BFS") {
-				res = BFS(gallery , target , max_recipe);
-			} else if (algorithm == "DFS") {
-				res = DFS(gallery , target , max_recipe);
-			} else {
-				res = BDR(gallery , target , max_recipe);
-			}
+			SubmitJob(func() {
+				if (algorithm == "BFS") {
+					res = BFS(gallery , target , max_recipe);
+				} else if (algorithm == "DFS") {
+					res = DFS(gallery , target , max_recipe);
+				} else {
+					res = BDR(gallery , target , max_recipe);
+				}
+			});
+			WaitJobs();
 			DisplayResultTerminal(res , start , gallery , target , algorithm , &max_recipe);
 			fmt.Println("==============================================================");
 			var answer string;
