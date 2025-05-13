@@ -120,10 +120,94 @@ func main() {
 		w.Header().Set("Connection", "keep-alive")
 
 		results := make(chan *backend.RecipeNode)
-		option := backend.AlgorithmOption{MaxRecipes : maxRecipe , LiveChan : results};
+
 		go func() {
+			option := backend.AlgorithmOption{
+				MaxRecipes: maxRecipe,
+				LiveChan:  results,
+			}
+			fmt.Println("MaxRecipes =", maxRecipe)
 			backend.BFSStream(gallery, target, option)
-			close(results)
+		}()
+
+		enc := json.NewEncoder(w)
+		for node := range results {
+			fmt.Fprint(w, "data: ")
+			if err := enc.Encode(node); err != nil {
+				log.Println("encode:", err)
+				break
+			}
+			fmt.Fprint(w, "\n")
+			flusher.Flush()
+		}
+	})
+
+	r.GET("/api/dfs/stream", func(c *gin.Context) {
+		target := c.Query("target")
+		if target == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "'target' is required"})
+			return
+		}
+		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+
+		w := c.Writer
+		flusher, ok := w.(http.Flusher)
+		if !ok {
+			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "streaming not supported"})
+			return
+		}
+		w.Header().Set("Content-Type", "text/event-stream")
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Connection", "keep-alive")
+
+		results := make(chan *backend.RecipeNode)
+
+		go func() {
+			option := backend.AlgorithmOption{
+				MaxRecipes: maxRecipe,
+				LiveChan:  results,
+			}
+			backend.DFSStream(gallery, target, option)
+		}()
+
+		enc := json.NewEncoder(w)
+		for node := range results {
+			fmt.Fprint(w, "data: ")
+			if err := enc.Encode(node); err != nil {
+				log.Println("encode:", err)
+				break
+			}
+			fmt.Fprint(w, "\n")
+			flusher.Flush()
+		}
+	})
+
+	r.GET("/api/bdr/stream", func(c *gin.Context) {
+		target := c.Query("target")
+		if target == "" {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "'target' is required"})
+			return
+		}
+		maxRecipe, _ := strconv.Atoi(c.DefaultQuery("max_recipe", "0"))
+
+		w := c.Writer
+		flusher, ok := w.(http.Flusher)
+		if !ok {
+			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "streaming not supported"})
+			return
+		}
+		w.Header().Set("Content-Type", "text/event-stream")
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Connection", "keep-alive")
+
+		results := make(chan *backend.RecipeNode)
+
+		go func() {
+			option := backend.AlgorithmOption{
+				MaxRecipes: maxRecipe,
+				LiveChan:  results,
+			}
+			backend.BDRStream(gallery, target, option)
 		}()
 
 		enc := json.NewEncoder(w)

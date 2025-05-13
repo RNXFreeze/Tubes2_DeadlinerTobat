@@ -1,34 +1,57 @@
 'use client';
 import Tree from 'react-d3-tree';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-export default function TreeVisualizer({ target }) {
+export default function TreeVisualizer({target, algorithmType, maxRecipe}) {
   const [treeData, setTreeData] = useState(null);
-  const [incomingTrees, setIncomingTrees] = useState([]);
-
+  const incomingTreesRef = useRef([]);
+  const treeCountRef = useRef(0);
+  const seenSignatures = useRef(new Set());
+  
   useEffect(() => {
-    if (!target) return;
-
-    setIncomingTrees([]); // reset saat target baru
-
+    if (!target || !algorithmType || !maxRecipe || maxRecipe <= 0) return;
+    
+    incomingTreesRef.current = [];
+    treeCountRef.current = 0;
+    
     const baseURL = 'http://localhost:8080/api';
-    const es = new EventSource(`${baseURL}/bfs/stream?target=${encodeURIComponent(target)}`);
-
+    const algoPath = algorithmType.toLowerCase();
+    const es = new EventSource(
+      `${baseURL}/${algoPath}/stream?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`
+    );
+    
     es.onmessage = (e) => {
       const newTree = JSON.parse(e.data);
-      console.log('SSE-node:', newTree);
+      console.log(`[${algorithmType}] SSE-node:`, newTree);
+      
+      const sig = getSignature(newTree);
+      if (
+        newTree.name === target &&
+        Array.isArray(newTree.children) &&
+        newTree.children.length === 2 &&
+        !seenSignatures.current.has(sig)
+      ) {
+        seenSignatures.current.add(sig);
+        treeCountRef.current += 1;
+      }
+    
+      incomingTreesRef.current.push(newTree);
+      const combined = combineTrees(incomingTreesRef.current, target);
+      setTreeData(combined);
 
-      setIncomingTrees(prev => {
-        const updated = [...prev, newTree];
-        const combined = combineTrees(updated, target);
-        setTreeData(combined);
-        return updated;
-      });
+      if (treeCountRef.current >= maxRecipe) {
+        es.close();
+        console.log('Stopped SSE because maxRecipe reached');
+      }
     };
 
-    es.onerror = () => es.close();
+    es.onerror = () => {
+      es.close();
+      console.warn(`[${algorithmType}] SSE closed`);
+    };
+
     return () => es.close();
-  }, [target]);
+  }, [target, maxRecipe, algorithmType]);
 
   return (
     <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
@@ -75,17 +98,17 @@ export default function TreeVisualizer({ target }) {
   );
 }
 
-function mergeIntoRoot(root, newTree) {
-  if (root.name === newTree.name) {
-    // gabungkan children dari tree baru ke root
-    root.children = [...(root.children || []), ...(newTree.children || [])];
+// function mergeIntoRoot(root, newTree) {
+//   if (root.name === newTree.name) {
+//     // gabungkan children dari tree baru ke root
+//     root.children = [...(root.children || []), ...(newTree.children || [])];
 
-    // root.children = mergeChildren(root.children || [], newTree.children || []);
-  } else {
-    // cari node yang cocok di bawah root, lalu merge
-    insertNodeRecursively(root, newTree);
-  }
-}
+//     // root.children = mergeChildren(root.children || [], newTree.children || []);
+//   } else {
+//     // cari node yang cocok di bawah root, lalu merge
+//     insertNodeRecursively(root, newTree);
+//   }
+// }
 
 // function mergeChildren(oldChildren, newChildren) {
 //   const merged = [...oldChildren];
@@ -103,20 +126,20 @@ function mergeIntoRoot(root, newTree) {
 //   return merged;
 // }
 
-function insertNodeRecursively(current, incoming) {
-  if (current.name === incoming.name) {
-    current.children = [...(current.children || []), ...(incoming.children || [])];
-    return true;
-  }
+// function insertNodeRecursively(current, incoming) {
+//   if (current.name === incoming.name) {
+//     current.children = [...(current.children || []), ...(incoming.children || [])];
+//     return true;
+//   }
 
-  if (!current.children) return false;
+//   if (!current.children) return false;
 
-  for (const child of current.children) {
-    if (insertNodeRecursively(child, incoming)) return true;
-  }
+//   for (const child of current.children) {
+//     if (insertNodeRecursively(child, incoming)) return true;
+//   }
 
-  return false;
-}
+//   return false;
+// }
 
 function combineTrees(trees, rootName = "Root") {
   if (!Array.isArray(trees) || trees.length === 0) return null;
@@ -137,4 +160,19 @@ function combineTrees(trees, rootName = "Root") {
     name: rootName,
     children: recipePairs
   };
+}
+
+function getSignature(node) {
+  if (!node) return '';
+  if (!node.children || node.children.length === 0) {
+    return node.name;
+  }
+
+  // Ambil signature anak-anak
+  const childSigs = node.children.map(getSignature);
+
+  // Urutkan biar konsisten (misal "Water,Fire" sama dengan "Fire,Water")
+  childSigs.sort();
+
+  return `${node.name}(${childSigs.join(',')})`;
 }
