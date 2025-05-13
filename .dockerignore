@@ -1,0 +1,11 @@
+# common noise
+.git
+.gitignore
+*.log
+node_modules
+# Go
+/build
+/bin
+# Next.js
+.next
+out

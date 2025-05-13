@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: ./src            # build context = folder yg ada go.mod
+      dockerfile: Dockerfile.backend
+    container_name: tubes2_backend
+    ports:
+      - "8080:8080"
+    networks:
+      - appnet
+
+  frontend:
+    build:
+      context: ./src/frontend   # Next.js project folder
+      dockerfile: Dockerfile.frontend
+    container_name: tubes2_frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - appnet
+
+networks:
+  appnet:

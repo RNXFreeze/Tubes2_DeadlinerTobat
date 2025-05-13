@@ -6,11 +6,11 @@ export default function TreeVisualizer({ target, algorithmType, maxRecipe, setNo
   const [treeData, setTreeData] = useState(null);
 
   useEffect(() => {
-    if (!enabled || !target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
 
-    setNodeCount(0);
-
-    const baseURL = 'http://localhost:8080/api';
+    if (!target || !algorithmType || maxRecipe == null || maxRecipe < 0) return;
+    
+    const baseURL = 'http://backend:8080/api';
+>>>>>>> 10f1928 (feat: docker)
     const algoPath = algorithmType.toLowerCase();
     const url = `${baseURL}/${algoPath}?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`;
 

@@ -30,11 +30,16 @@ export default function TreePage({
     setTimeout(() => setTriggerSearch(true), 0);
 
     setIsLoading(true);
+    const baseURL = 'http://backend:8080/api';
+    let url = '';
 
-    const baseURL = 'http://localhost:8080/api';
-    const algoPath = algorithmType.toLowerCase();
-    const effectiveMaxRecipe = recipeType === 'single' ? 1 : maxRecipe;
-    const url = `${baseURL}/${algoPath}?target=${encodeURIComponent(searchElement)}&max_recipe=${effectiveMaxRecipe}`;
+    if (algorithmType === 'BFS') {
+      url = `${baseURL}/bfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
+    } else if (algorithmType === 'DFS') {
+      url = `${baseURL}/dfs?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
+    } else {
+      url = `${baseURL}/bdr?target=${encodeURIComponent(searchElement)}&max_recipe=${maxRecipe}`;
+    }
 
     try {
       const t0 = performance.now();
