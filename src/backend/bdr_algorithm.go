@@ -14,6 +14,7 @@
 package backend
 
 import "sync/atomic"
+import "time"
 
 func EnumerateTopBDR(gallery *Gallery , name string , mid_tier int , memory map[string][]*RecipeNode) []*RecipeNode {
     touch();
@@ -148,6 +149,7 @@ func BDR(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 			go func() {
 				for _ , t := range res {
 					option.LiveChan <- t;
+					time.Sleep(150 * time.Millisecond)
 				}
 			}();
 		}
