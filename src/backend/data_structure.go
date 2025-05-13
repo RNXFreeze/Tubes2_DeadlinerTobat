@@ -167,19 +167,20 @@ func CalculateTier(name string , gallery *Gallery , visited map[string]bool) int
 			return element.Tier;
 		} else if (visited[name]) {
 			return 1;
-		}
-		best := 0
-		visited[name] = true;
-		for _ , p := range element.Parents {
-			t1 := CalculateTier(p[0] , gallery , visited);
-			t2 := CalculateTier(p[1] , gallery , visited);
-			if t := max(t1 , t2) + 1 ; t > best {
-				best = t;
+		} else {
+			best := 0
+			visited[name] = true;
+			for _ , p := range element.Parents {
+				t1 := CalculateTier(p[0] , gallery , visited);
+				t2 := CalculateTier(p[1] , gallery , visited);
+				if t := max(t1 , t2) + 1 ; t > best {
+					best = t;
+				}
 			}
+			visited[name] = false;
+			element.Tier = best;
+			return best;
 		}
-		visited[name] = false;
-		element.Tier = best;
-		return best;
 	}
 }
 
