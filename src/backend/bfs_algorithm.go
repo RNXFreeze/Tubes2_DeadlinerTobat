@@ -50,12 +50,12 @@ func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 			mutex_next sync.Mutex;
 			signature_tree = make(map[string]struct{});
 		)
-		queue = append(queue , PartialTree{tree : &RecipeNode{Name : target} , leaf : []*RecipeNode{{Name : target}}});
+		queue = append(queue , PartialTree{Tree : &RecipeNode{Name : target} , Leaf : []*RecipeNode{{Name : target}}});
 		for (len(queue) > 0 && len(res) < max_recipe) {
 			var wg sync.WaitGroup;
 			next = next[:0];
 			for _ , cur := range queue {
-				exp := cur.leaf[0];
+				exp := cur.Leaf[0];
 				element := gallery.GalleryName[exp.Name];
 				for _ , parent := range GetParentPairs(exp.Name) {
 					touch();
@@ -65,8 +65,8 @@ func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 						wg.Add(1);
 						go func(l string , r string , cur PartialTree) {
 							defer wg.Done()
-							new_root , _ := CloneTreeMap(cur.tree);
-							ptr := FindPointer(new_root, cur.leaf[0].Name)
+							new_root , _ := CloneTreeMap(cur.Tree);
+							ptr := FindPointer(new_root, cur.Leaf[0].Name)
 							if (ptr == nil) {
 								return;
 							} else {
@@ -74,8 +74,8 @@ func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 								pr := &RecipeNode{Name : r};
 								ptr.Parents = []*RecipeNode{pl , pr};
 								var new_leaf []*RecipeNode;
-								for _ , leaf := range cur.leaf[1:] {
-									if np := FindPointer(new_root , leaf.Name) ; np != nil {
+								for _ , Leaf := range cur.Leaf[1:] {
+									if np := FindPointer(new_root , Leaf.Name) ; np != nil {
 										new_leaf = append(new_leaf , np);
 									}
 								}
@@ -95,7 +95,7 @@ func BFS(gallery *Gallery , target string , max_recipe int) AlgorithmResult {
 									mutex_res.Unlock();
 								} else {
 									mutex_next.Lock();
-									next = append(next , PartialTree{tree : new_root , leaf : new_leaf});
+									next = append(next , PartialTree{Tree : new_root , Leaf : new_leaf});
 									mutex_next.Unlock();
 								}
 							}

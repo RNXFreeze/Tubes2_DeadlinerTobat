@@ -37,8 +37,8 @@ type RecipeNode struct {
 }
 
 type PartialTree struct {
-    tree *RecipeNode;
-    leaf []*RecipeNode;
+    Tree *RecipeNode;
+    Leaf []*RecipeNode;
 }
 
 type AlgorithmResult struct {
