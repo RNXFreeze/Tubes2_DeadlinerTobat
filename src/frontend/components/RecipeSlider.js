@@ -2,7 +2,7 @@ export default function RecipeSlider({ value, setValue }) {
   return (
     <div className="flex flex-col text-center gap-2">
       <h2 className="font-bold">How many recipe do you want to see?</h2>
-      <h3 className="font"> (0 for all recipes)</h3>
+      <h3 className="font"> (0 for all recipes, max shown = 50)</h3>
       <div className="flex items-center gap-2 justify-center">
         <span>0</span>
         <input

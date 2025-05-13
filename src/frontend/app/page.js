@@ -13,6 +13,7 @@ export default function Home() {
   const [execTime, setExecTime] = useState(null);
   const [nodeCount, setNodeCount] = useState(null);
   const [treeData, setTreeData] = useState([]); 
+  const [totalRecipes, setTotalRecipes] = useState(null);
 
   return (
     <div className="min-h-screen bg-purple-100 flex flex-col">
@@ -25,6 +26,7 @@ export default function Home() {
           setAlgorithm={setAlgorithm}
           maxRecipe={maxRecipe}
           setMaxRecipe={setMaxRecipe}
+          totalRecipes={totalRecipes}
           execTime={execTime}
           nodeCount={nodeCount}
         />
@@ -40,6 +42,7 @@ export default function Home() {
           maxRecipe={maxRecipe}
           treeData={treeData}
           setTreeData={setTreeData}
+          setTotalRecipes={setTotalRecipes}
         />
       </div>
     </div>

@@ -1,3 +1,10 @@
+/**
+ * @typedef {Object} BFSResponse
+ * @property {string} target
+ * @property {number} visited_count
+ * @property {Array<any>} trees
+ */
+
 'use client';
 
 import { useState } from 'react';
@@ -13,6 +20,7 @@ export default function TreePage({
   nodeCount,
   setNodeCount,
   maxRecipe,
+  setTotalRecipes,
 }) {
   const [target, setTarget] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -39,11 +47,18 @@ export default function TreePage({
     try {
       const t0 = performance.now();
       const res = await fetch(url);
+      /** @type {BFSResponse} */
       const data = await res.json();
       const t1 = performance.now();
 
+      console.log("Visited:", data.visited_count);
+      console.log("Total recipes:", data.trees?.length);
+      console.log("Time:", (t1 - t0).toFixed(2));
+
       setExecTime((t1 - t0).toFixed(2));
       setNodeCount(data.visited_count);
+      setTotalRecipes(data.trees?.length || 0);
+
     } catch (err) {
       console.error(err);
       setExecTime(null);
