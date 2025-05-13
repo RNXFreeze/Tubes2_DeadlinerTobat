@@ -13,8 +13,10 @@
 
 package backend;
 
-import "sync/atomic";
-import "time"
+import (
+	"time";
+	"sync/atomic";
+)
 
 func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmResult {
 	max_recipe := option.MaxRecipes;
@@ -68,7 +70,7 @@ func DFS(gallery *Gallery , target string , option AlgorithmOption) AlgorithmRes
 		go func() {
 			for _ , t := range res {
 				option.LiveChan <- t;
-				time.Sleep(1500 * time.Millisecond)
+				time.Sleep(1500 * time.Millisecond);
 			}
 		}();
 	}

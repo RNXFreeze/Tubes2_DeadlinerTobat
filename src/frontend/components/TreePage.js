@@ -15,6 +15,7 @@ export default function TreePage({
 }) {
   const [target, setTarget] = useState('');    // ← state baru untuk trigger SSE
   const [isLoading, setIsLoading] = useState(false);
+  const [isLive, setIsLive] = useState(true);
 
   const searchRecipe = async () => {
     if (!searchElement.trim()) return;
@@ -95,13 +96,38 @@ export default function TreePage({
             </div>
         </div>
       </div>
-
+      <div className="flex items-center space-x-3 mt-4 justify-center">
+        <span className="text-sm font-medium">Live Tree:</span>
+        <button
+          onClick={() => setIsLive(prev => !prev)}
+          className={`relative w-16 h-8 rounded-full transition-colors duration-300 
+            ${isLive ? 'bg-purple-500' : 'bg-gray-300'}`}
+        >
+          <span
+            className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300
+              ${isLive ? 'translate-x-8' : 'translate-x-0'}`}
+          />
+          <span
+            className={`absolute top-1/2 transform -translate-y-1/2 text-xs font-bold px-2 text-white
+              ${isLive ? 'left-2 opacity-0' : 'right-2 opacity-100'}`}
+          >
+            OFF
+          </span>
+          <span
+            className={`absolute top-1/2 transform -translate-y-1/2 text-xs font-bold px-2 text-white
+              ${isLive ? 'right-2 opacity-100' : 'left-2 opacity-0'}`}
+          >
+            ON
+          </span>
+        </button>
+      </div>
       <div className="min-w-[800px] min-h-[500px] border rounded bg-white p-4">
         {target && (
             <TreeVisualizer
             target={target}
             algorithmType={algorithmType}
             maxRecipe={maxRecipe}
+            isLive={isLive}
             />
         )}
       </div>

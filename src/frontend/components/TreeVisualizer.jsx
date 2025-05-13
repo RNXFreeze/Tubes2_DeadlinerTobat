@@ -2,7 +2,7 @@
 import Tree from 'react-d3-tree';
 import { useState, useEffect, useRef } from 'react';
 
-export default function TreeVisualizer({target, algorithmType, maxRecipe}) {
+export default function TreeVisualizer({target, algorithmType, maxRecipe, isLive}) {
   const [treeData, setTreeData] = useState(null);
   const incomingTreesRef = useRef([]);
   const treeCountRef = useRef(0);
@@ -11,30 +11,47 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe}) {
   useEffect(() => {
     if (!target || !algorithmType || !maxRecipe || maxRecipe <= 0) return;
     
-    incomingTreesRef.current = [];
-    treeCountRef.current = 0;
-    
     const baseURL = 'http://localhost:8080/api';
     const algoPath = algorithmType.toLowerCase();
+
+    if (!isLive) {
+      // NON-LIVE MODE: fetch data statis dan gabungkan
+      fetch(`${baseURL}/${algoPath}?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`)
+        .then(res => res.json())
+        .then(data => {
+          setTreeData(combineTrees(data.trees, target));
+        })
+        .catch(err => console.error('Fetch error:', err));
+
+      return;
+    }
+
+    // LIVE MODE
+    incomingTreesRef.current = [];
+    treeCountRef.current = 0;
+    seenSignatures.current = new Set();
+
     const es = new EventSource(
       `${baseURL}/${algoPath}/stream?target=${encodeURIComponent(target)}&max_recipe=${maxRecipe}`
     );
-    
+
     es.onmessage = (e) => {
       const newTree = JSON.parse(e.data);
       console.log(`[${algorithmType}] SSE-node:`, newTree);
-      
+
       const sig = getSignature(newTree);
-      if (
-        newTree.name === target &&
-        Array.isArray(newTree.children) &&
-        newTree.children.length === 2 &&
-        !seenSignatures.current.has(sig)
-      ) {
+      if (!seenSignatures.current.has(sig)) {
         seenSignatures.current.add(sig);
-        treeCountRef.current += 1;
+
+        if (
+          newTree.name === target &&
+          Array.isArray(newTree.children) &&
+          newTree.children.length === 2
+        ) {
+          treeCountRef.current += 1;
+        }
       }
-    
+
       incomingTreesRef.current.push(newTree);
       const combined = combineTrees(incomingTreesRef.current, target);
       setTreeData(combined);
@@ -51,7 +68,7 @@ export default function TreeVisualizer({target, algorithmType, maxRecipe}) {
     };
 
     return () => es.close();
-  }, [target, maxRecipe, algorithmType]);
+  }, [target, maxRecipe, algorithmType, isLive]);
 
   return (
     <div style={{ width: '100%', height: '100vh', overflow: 'auto', background: '#fafafa' }}>
