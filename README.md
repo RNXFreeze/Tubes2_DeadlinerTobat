@@ -16,7 +16,6 @@ Dalam program ini, terdapat 3 algoritma pencarian yang digunakan, yaitu algoritm
 - Interactive CLI Detail & Amazing Visual Website
 - Multithreading Program Optimization
 - Searching Tree Result Visualization
-- Deployed On The Internet
 
 ## Program Requirements
 - Version Go v1.24.3+
@@ -59,12 +58,6 @@ npm run dev
 Lalu, klik link local host yang muncul di terminal seperti berikut:
 ```bash
 https://localhost:3000/
-```
-
-## How To Compile & Run - Website Public
-Untuk run, langsung buka website dengan link berikut:
-```bash
-https://DeadlinerTobat_LittleAlchemy2RecipeFinder.com/
 ```
 
 ## Author
